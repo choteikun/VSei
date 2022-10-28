@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1223223985, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
+  m_Name: DropIcon
+  m_EditorClassIdentifier: 
+  mEventID: DropIcon
+  mEventList:
+  - mStartSample: 371840
+    mEndSample: 371840
+  - mStartSample: 417920
+    mEndSample: 417920
+  - mStartSample: 464000
+    mEndSample: 464000
+  - mStartSample: 510080
+    mEndSample: 510080
+  - mStartSample: 556160
+    mEndSample: 556160
+  - mStartSample: 602240
+    mEndSample: 602240
+  - mStartSample: 648320
+    mEndSample: 648320
+  - mStartSample: 694400
+    mEndSample: 694400
+  - mStartSample: 740480
+    mEndSample: 740480
+  - mStartSample: 786560
+    mEndSample: 786560
+  - mStartSample: 832640
+    mEndSample: 832640
+  - mStartSample: 878720
+    mEndSample: 878720
+  - mStartSample: 924800
+    mEndSample: 924800
+  - mStartSample: 970880
+    mEndSample: 970880
+  - mStartSample: 1016960
+    mEndSample: 1016960
+  - mStartSample: 1063040
+    mEndSample: 1063040
+  - mStartSample: 1109120
+    mEndSample: 1109120
+  - mStartSample: 1155200
+    mEndSample: 1155200
+  - mStartSample: 1201280
+    mEndSample: 1201280
+  - mStartSample: 1247360
+    mEndSample: 1247360
+  - mStartSample: 1293440
+    mEndSample: 1293440
+  - mStartSample: 1339520
+    mEndSample: 1339520
+  - mStartSample: 1385600
+    mEndSample: 1385600
+  - mStartSample: 1431680
+    mEndSample: 1431680
+  - mStartSample: 1477760
+    mEndSample: 1477760
+  - mStartSample: 1523840
+    mEndSample: 1523840
+  - mStartSample: 1569920
+    mEndSample: 1569920
+  - mStartSample: 1616000
+    mEndSample: 1616000
+  - mStartSample: 1662080
+    mEndSample: 1662080
+  - mStartSample: 1708160
+    mEndSample: 1708160
+  - mStartSample: 1754240
+    mEndSample: 1754240
+  - mStartSample: 1800320
+    mEndSample: 1800320
+  - mStartSample: 2583680
+    mEndSample: 2583680
+  - mStartSample: 2629760
+    mEndSample: 2629760
+  - mStartSample: 2675840
+    mEndSample: 2675840
+  - mStartSample: 2721920
+    mEndSample: 2721920
+  - mStartSample: 2768000
+    mEndSample: 2768000
+  - mStartSample: 2814080
+    mEndSample: 2814080
+  - mStartSample: 2860160
+    mEndSample: 2860160
+  - mStartSample: 2906240
+    mEndSample: 2906240
+  - mStartSample: 2952320
+    mEndSample: 2952320
+  - mStartSample: 2998400
+    mEndSample: 2998400
+  - mStartSample: 3044480
+    mEndSample: 3044480
+  - mStartSample: 3090560
+    mEndSample: 3090560
+  - mStartSample: 3136640
+    mEndSample: 3136640
+  - mStartSample: 3182720
+    mEndSample: 3182720
+  - mStartSample: 3228800
+    mEndSample: 3228800
+  - mStartSample: 3274880
+    mEndSample: 3274880
+  - mStartSample: 3320960
+    mEndSample: 3320960
+  - mStartSample: 3367040
+    mEndSample: 3367040
+  - mStartSample: 3413120
+    mEndSample: 3413120
+  - mStartSample: 3459200
+    mEndSample: 3459200
+  - mStartSample: 3505280
+    mEndSample: 3505280
+  - mStartSample: 3551360
+    mEndSample: 3551360
+  - mStartSample: 3597440
+    mEndSample: 3597440
+  - mStartSample: 3643520
+    mEndSample: 3643520
+  - mStartSample: 3689600
+    mEndSample: 3689600
+  - mStartSample: 3735680
+    mEndSample: 3735680
+  - mStartSample: 3781760
+    mEndSample: 3781760
+  - mStartSample: 3827840
+    mEndSample: 3827840
+  - mStartSample: 3873920
+    mEndSample: 3873920
+  - mStartSample: 3920000
+    mEndSample: 3920000
+  - mStartSample: 3966080
+    mEndSample: 3966080
+  - mStartSample: 4012160
+    mEndSample: 4012160
+  _SerializedPayloadTypes: []
+  _ColorPayloads: []
+  _ColorPayloadIdxs: 
+  _CurvePayloads: []
+  _CurvePayloadIdxs: 
+  _FloatPayloads: []
+  _FloatPayloadIdxs: 
+  _GradientPayloads: []
+  _GradientPayloadIdxs: 
+  _IntPayloads: []
+  _IntPayloadIdxs: 
+  _SpectrumPayloads: []
+  _SpectrumPayloadIdxs: 
+  _TextPayloads: []
+  _TextPayloadIdxs: 
