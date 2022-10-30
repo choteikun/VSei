@@ -49,7 +49,7 @@ public class SliderCtrl : MonoBehaviour
         //}
 
         //判斷當前位於哪個區間，設置自動滑動至的位置
-        if (scrollbar.value <= 0.08f)
+        if (scrollbar.value <= 0.075f)
         {
             targetValue = 0;
         }
@@ -57,33 +57,33 @@ public class SliderCtrl : MonoBehaviour
         {
             targetValue = 0.128f;
         }
-        else if (scrollbar.value <= 0.33f)
+        else if (scrollbar.value <= 0.335f)
         {
-            targetValue = 0.256f;
+            targetValue = 0.258f;
         }
-        else if (scrollbar.value <= 0.455f)
+        else if (scrollbar.value <= 0.465f)
         {
-            targetValue = 0.384f;
+            targetValue = 0.388f;
         }
-        else if (scrollbar.value <= 0.580f)
+        else if (scrollbar.value <= 0.595f)
         {
-            targetValue = 0.512f;
+            targetValue = 0.518f;
         }
-        else if (scrollbar.value <= 0.705f)
+        else if (scrollbar.value <= 0.725f)
         {
-            targetValue = 0.640f;
+            targetValue = 0.648f;
         }
-        else if (scrollbar.value <= 0.83f)
+        else if (scrollbar.value <= 0.855f)
         {
-            targetValue = 0.768f;
+            targetValue = 0.778f;
         }
-        else if (scrollbar.value <= 0.955f)
+        else if (scrollbar.value <= 0.985f)
         {
-            targetValue = 0.896f;
+            targetValue = 0.908f;
         }
         else
         {
-            targetValue = 0.896f;
+            targetValue = 0.908f;
         }
         needMove = true;
         moveSpeed = 0;

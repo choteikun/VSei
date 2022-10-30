@@ -6,9 +6,14 @@ using UnityEngine.UI;
 
 public class CharPanel : MonoBehaviour
 {
+    private CanvasScaler canvasScaler;
+
     void Start()
     {
-        transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(850, 0);
+        canvasScaler = transform.GetComponentInParent<CanvasScaler>();
+
+        transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(10000, 0);//往最右端挪，自動對齊
+        transform.GetComponent<RectTransform>().sizeDelta = new Vector2(canvasScaler.referenceResolution.x * 3, 150);
     }
 
     // Update is called once per frame

@@ -2,9 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
+    private CanvasScaler canvasScaler;
+    void Start()
+    {
+        Debug.Log("Screen.width : " + Screen.width);
+        Debug.Log("Screen.height : " + Screen.height);
+
+        canvasScaler = GetComponent<CanvasScaler>();
+
+        Application.targetFrameRate = 60;
+        QualitySettings.vSyncCount = 0;
+
+        if (Screen.width > canvasScaler.referenceResolution.x) 
+        {
+            canvasScaler.matchWidthOrHeight = 1.0f;
+        }
+        else
+        {
+            canvasScaler.matchWidthOrHeight = 0f;
+        }
+    }
     public void StartScene()
     {
         //AudioSourceController.PlaySE("Sounds_SE", "");
