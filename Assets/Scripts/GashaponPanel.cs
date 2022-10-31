@@ -45,9 +45,13 @@ public class GashaponPanel : MonoBehaviour
     {
 
     }
-    public void GashaPanelFadeIn()//過場
+    public void OneGashaPanelFadeIn()//過場
     {
-        gashaPanelAnim.Play();
+        gashaPanelAnim.Play("OneGachaResult");
+    }
+    public void TenGashaPanelFadeIn()//過場
+    {
+        gashaPanelAnim.Play("TenGachaResult");
     }
     public void Test()
     {
