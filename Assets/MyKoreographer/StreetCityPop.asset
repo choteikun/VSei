@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2076007791, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
+  m_Name: StreetCityPop
+  m_EditorClassIdentifier: 
+  mSourceClip: {fileID: 8300000, guid: a549b30b11981034e916b852ae2aeeae, type: 3}
+  mAudioFilePath: 
+  mSampleRate: 48000
+  mIgnoreLatencyOffset: 0
+  mTempoSections:
+  - sectionName: New Section
+    startSample: 0
+    samplesPerBeat: 26181.818181818184
+    beatsPerMeasure: 4
+    bStartNewMeasure: 1
+  - sectionName: New Section
+    startSample: 2100
+    samplesPerBeat: 26181.818181818184
+    beatsPerMeasure: 4
+    bStartNewMeasure: 1
+  - sectionName: New Section
+    startSample: 2100
+    samplesPerBeat: 26181.818181818184
+    beatsPerMeasure: 4
+    bStartNewMeasure: 1
+  mTracks:
+  - {fileID: 11400000, guid: 29d85446bd02df740bb669021b81c561, type: 2}
+  - {fileID: 11400000, guid: 4fb76e0312d0b4145b2d43dd19cdbe36, type: 2}

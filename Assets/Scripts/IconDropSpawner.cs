@@ -16,6 +16,8 @@ public class IconDropSpawner : MonoBehaviour
     public Koreography koreography;
     public List<KoreographyEvent> rhythmEvents;
 
+
+
     void Start()
     {
         //獲取koreography文件
@@ -28,10 +30,10 @@ public class IconDropSpawner : MonoBehaviour
 
     void Update()
     {
-
+        
     }
     void Maker(KoreographyEvent koreographyEvent)
-    {
+    {   
         //Instantiate(DropIconImages[Random.Range(0, 2)], transform.position + new Vector3(Random.Range(-360.0f, 360.0f), 1000, 0), Quaternion.identity);
         Instantiate(dropIconImages[Random.Range(0, 2)], transform.position + new Vector3(Random.Range(-320.0f, 320.0f), 0, 0), Quaternion.identity).transform.SetParent(dropIconSpawner.transform, false);
     }
