@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SensorL : MonoBehaviour
-{
-    
+{ 
+    RythmGameCanvas gameCanvas;
+
     //記錄螢幕中間的X軸
     float midScreenPosX;
 
@@ -13,12 +14,13 @@ public class SensorL : MonoBehaviour
     [SerializeField]bool touched;
     public bool playerTouched { get => touched; }
     public int testBonusPoint;
-    public GameObject obstacle;
+    public GameObject rootUI;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        gameCanvas = rootUI.GetComponent<RythmGameCanvas>();
         touched = false;
         //初始螢幕中間X軸
         midScreenPosX = Screen.width / 2f;
@@ -40,6 +42,7 @@ public class SensorL : MonoBehaviour
                 Debug.Log("Good" + "，觸碰位置: " + firstTouch.position);
                 testBonusPoint++;
                 touched = true;
+                gameCanvas.GoodEffect();
                 Destroy(other.gameObject);
             }
             StartCoroutine(DelayedTriggerExit());
@@ -56,6 +59,7 @@ public class SensorL : MonoBehaviour
                 Debug.Log("Perfect" + "，觸碰位置: " + firstTouch.position);
                 testBonusPoint++;
                 touched = true;
+                gameCanvas.PerfectEffect();
                 Destroy(other.gameObject);
             }
             StartCoroutine(DelayedTriggerExit());
@@ -72,6 +76,7 @@ public class SensorL : MonoBehaviour
                 Debug.Log("Good" + "，觸碰位置: " + firstTouch.position);
                 testBonusPoint++;
                 touched = true;
+                gameCanvas.GoodEffect();
                 Destroy(other.gameObject);
             }
             StartCoroutine(DelayedTriggerExit());
