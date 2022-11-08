@@ -85,7 +85,7 @@ public class RythmBeatSpawner : MonoBehaviour
         //audioCom.time = 0f;
         //audioCom.Play();
 
-        //SceneManager.LoadScene(2);
+        SceneManager.LoadScene(2);
 
         //koreography.ResetTimings();
 

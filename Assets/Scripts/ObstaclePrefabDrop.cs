@@ -5,10 +5,15 @@ using UnityEngine;
 public class ObstaclePrefabDrop : MonoBehaviour
 {
     public float obstacleDropSpeed;
-    //public float iconSpeenSpeed;
+
+    //public SensorL sensorL;
+    //public SensorR sensorR;
 
     void Start()
     {
+        //sensorL = GameObject.FindGameObjectWithTag("SensorL").GetComponent<SensorL>();
+        //sensorR = GameObject.FindGameObjectWithTag("SensorR").GetComponent<SensorR>();
+
         var euler = transform.eulerAngles;
         euler.z = Random.Range(0.0f, 360.0f);
         transform.eulerAngles = euler;
@@ -19,13 +24,6 @@ public class ObstaclePrefabDrop : MonoBehaviour
         if (transform.position.y <= -10)
         {
             Destroy(gameObject);
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            //Destroy(gameObject);
         }
     }
 }

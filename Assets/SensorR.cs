@@ -9,6 +9,7 @@ public class SensorR : MonoBehaviour
     private float midScreenPosX;
     Touch firstTouch;
     bool touched;
+    public bool playerTouched { get => touched; }
 
     // Start is called before the first frame update
     void Start()
@@ -21,19 +22,23 @@ public class SensorR : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Obstacle" && Input.touchCount > 0)
         {
             firstTouch = Input.GetTouch(0);
-            Debug.Log("Ä²¸I¸Ë¸m¤¤" + "¡AÄ²¸I¦ì¸m: " + firstTouch.position);
+            
             if (firstTouch.position.x > midScreenPosX && !touched)
             {
+                Debug.Log("Good" + "¡AÄ²¸I¦ì¸m: " + firstTouch.position);
                 testBonusPoint++;
                 touched = true;
+                Destroy(other.gameObject);
             }
+            StartCoroutine(DelayedTriggerExit());
         }
     }
     private void OnTriggerStay(Collider other)
@@ -41,12 +46,15 @@ public class SensorR : MonoBehaviour
         if (other.transform.tag == "Obstacle" && Input.touchCount > 0)
         {
             firstTouch = Input.GetTouch(0);
-            Debug.Log("Ä²¸I¸Ë¸m¤¤" + "¡AÄ²¸I¦ì¸m: " + firstTouch.position);
+            
             if (firstTouch.position.x > midScreenPosX && !touched)
             {
+                Debug.Log("Perfect" + "¡AÄ²¸I¦ì¸m: " + firstTouch.position);
                 testBonusPoint++;
                 touched = true;
+                Destroy(other.gameObject);
             }
+            StartCoroutine(DelayedTriggerExit());
         }
     }
     private void OnTriggerExit(Collider other)
@@ -54,21 +62,21 @@ public class SensorR : MonoBehaviour
         if (other.transform.tag == "Obstacle" && Input.touchCount > 0)
         {
             firstTouch = Input.GetTouch(0);
-            Debug.Log("Ä²¸I¸Ë¸m¤¤" + "¡AÄ²¸I¦ì¸m: " + firstTouch.position);
+            
             if (firstTouch.position.x > midScreenPosX && !touched)
             {
+                Debug.Log("Good" + "¡AÄ²¸I¦ì¸m: " + firstTouch.position);
                 testBonusPoint++;
                 touched = true;
+                Destroy(other.gameObject);
             }
-        }
-        if (other.transform.tag == "Obstacle")
-        {
             StartCoroutine(DelayedTriggerExit());
         }
+
     }
     IEnumerator DelayedTriggerExit()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         touched = false;
     }
 }
