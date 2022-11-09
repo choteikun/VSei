@@ -10,6 +10,8 @@ public class RythmBeatSpawner : MonoBehaviour
 {
     [Tooltip("譜面生成的物件")]
     public GameObject obstaclePrefab;
+    public GameObject sensorL;
+    public GameObject sensorR;
 
     public int curTime;//當前時間
     public int spawnTime;//紀錄當前生成節拍的時間
@@ -63,7 +65,7 @@ public class RythmBeatSpawner : MonoBehaviour
             if (changeTrack)
             {
                 obstaclePrefab.name = "Element左" + curCheckIdx;
-                Instantiate(obstaclePrefab, transform.position + new Vector3(-2, 0, 0), Quaternion.identity);
+                Instantiate(obstaclePrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
                 spawnTime = curTime;
 
                 changeTrack = !changeTrack;
@@ -71,7 +73,7 @@ public class RythmBeatSpawner : MonoBehaviour
             else
             {
                 obstaclePrefab.name = "Element右" + curCheckIdx;
-                Instantiate(obstaclePrefab, transform.position + new Vector3(2, 0, 0), Quaternion.identity);
+                Instantiate(obstaclePrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
                 spawnTime = curTime;
 
                 changeTrack = !changeTrack;

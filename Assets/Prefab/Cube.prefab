@@ -110,4 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd5705b5bd221247828ae1a1279a32f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleDropSpeed: 10
+  obstacleDropSpeed: 14

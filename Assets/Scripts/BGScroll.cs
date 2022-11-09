@@ -6,19 +6,19 @@ public class BGScroll : MonoBehaviour
 {
     public float BGScrollSpeed;
 
-    Vector3 StartPos;
+    Vector3 startPos;
     void Start()
     {
-        StartPos = transform.position;
+        startPos = transform.position;
     }
 
     
     void Update()
     {
         transform.Translate(Vector3.down * BGScrollSpeed * Time.deltaTime);
-        if (transform.position.y < -19.5f)
+        if (transform.GetComponent<RectTransform>().anchoredPosition.y < -85.2f)
         {
-            transform.position = StartPos;
+            transform.position = startPos;
         }
     }
 }
