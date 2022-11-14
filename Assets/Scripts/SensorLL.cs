@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SensorL : MonoBehaviour
-{ 
+public class SensorLL : MonoBehaviour
+{
     RythmGameCanvas gameCanvas;
 
-    //記錄螢幕中間的X軸
-    float midScreenPosX;
+    //記錄左側螢幕中間的X軸
+    float leftMidScreenPosX;
 
     Touch firstTouch;
 
-    [SerializeField]bool touched;
+    [SerializeField] bool touched;
     public bool playerTouched { get => touched; }
-    public int testBonusPoint;
     public GameObject rootUI;
+    public int testBonusPoint;
+   
 
 
     // Start is called before the first frame update
@@ -22,8 +23,9 @@ public class SensorL : MonoBehaviour
     {
         gameCanvas = rootUI.GetComponent<RythmGameCanvas>();
         touched = false;
-        //初始螢幕中間X軸
-        midScreenPosX = Screen.width / 2f;
+        //左側螢幕中間X軸
+        leftMidScreenPosX = Screen.width / 4f;
+        
     }
 
     // Update is called once per frame
@@ -36,14 +38,15 @@ public class SensorL : MonoBehaviour
         if (other.transform.tag == "Obstacle" && Input.touchCount > 0)
         {
             firstTouch = Input.GetTouch(0);
-            
-            if(firstTouch.position.x < midScreenPosX && !touched)
+
+            if (firstTouch.position.x < leftMidScreenPosX && !touched)
             {
                 Debug.Log("Good" + "，觸碰位置: " + firstTouch.position);
                 testBonusPoint++;
                 touched = true;
                 gameCanvas.GoodEffect();
-                Destroy(other.gameObject);
+                //Destroy(other.gameObject);
+                other.gameObject.SetActive(false);
             }
             StartCoroutine(DelayedTriggerExit());
         }
@@ -53,14 +56,15 @@ public class SensorL : MonoBehaviour
         if (other.transform.tag == "Obstacle" && Input.touchCount > 0)
         {
             firstTouch = Input.GetTouch(0);
-            
-            if (firstTouch.position.x < midScreenPosX && !touched)
+
+            if (firstTouch.position.x < leftMidScreenPosX && !touched)
             {
                 Debug.Log("Perfect" + "，觸碰位置: " + firstTouch.position);
                 testBonusPoint++;
                 touched = true;
                 gameCanvas.PerfectEffect();
-                Destroy(other.gameObject);
+                //Destroy(other.gameObject);
+                other.gameObject.SetActive(false);
             }
             StartCoroutine(DelayedTriggerExit());
         }
@@ -70,14 +74,15 @@ public class SensorL : MonoBehaviour
         if (other.transform.tag == "Obstacle" && Input.touchCount > 0)
         {
             firstTouch = Input.GetTouch(0);
-            
-            if (firstTouch.position.x < midScreenPosX && !touched)
+
+            if (firstTouch.position.x < leftMidScreenPosX && !touched)
             {
                 Debug.Log("Good" + "，觸碰位置: " + firstTouch.position);
                 testBonusPoint++;
                 touched = true;
                 gameCanvas.GoodEffect();
-                Destroy(other.gameObject);
+                //Destroy(other.gameObject);
+                other.gameObject.SetActive(false);
             }
             StartCoroutine(DelayedTriggerExit());
         }
