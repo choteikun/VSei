@@ -95,7 +95,7 @@ public class RythmBeatSpawner : MonoBehaviour
             }
             else { sensorSet = (SensorSet)Random.Range(0, System.Enum.GetValues(typeof(SensorSet)).Length); }
 
-            Debug.Log("Element" + curCheckIdx);
+            //Debug.Log("Element" + curCheckIdx);
 
             //obstaclePrefab.name = "Element" + curCheckIdx;
 
