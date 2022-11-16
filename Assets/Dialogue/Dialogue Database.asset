@@ -584,7 +584,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: GO!
+        value: "\u9EDE\u64CAGO\u958B\u59CB\u5427"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -1016,7 +1016,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: GO!
+        value: "\u9EDE\u64CAGO\u958B\u59CB\u5427"
         type: 0
         typeString: 
       - title: Sequence
@@ -1444,7 +1444,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: GO!
+        value: "\u9EDE\u64CAGO\u958B\u59CB\u5427"
         type: 0
         typeString: 
       - title: Sequence
@@ -1817,7 +1817,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: GO!
+        value: "\u9EDE\u64CAGO\u958B\u59CB\u5427"
         type: 0
         typeString: 
       - title: Sequence
@@ -2300,7 +2300,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: GO!
+        value: "\u9EDE\u64CAGO\u958B\u59CB\u5427"
         type: 0
         typeString: 
       - title: Sequence

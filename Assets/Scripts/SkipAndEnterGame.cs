@@ -5,13 +5,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SkipAndGo : MonoBehaviour
+public class SkipAndEnterGame : MonoBehaviour
 {
     public GameObject dialogue;
     // Start is called before the first frame update
     void Start()
     {
-        this.GetComponent<Button>().onClick.AddListener(OnClick);
+        this.GetComponent<Button>().onClick.AddListener(ChangeScene);
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class SkipAndGo : MonoBehaviour
         
     }
 
-    void OnClick()
+    public void ChangeScene()
     {
         Destroy(dialogue);
         SceneManager.LoadScene("GameScene");
