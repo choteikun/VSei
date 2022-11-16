@@ -21,10 +21,14 @@ public class ObstaclePrefabDrop : MonoBehaviour
     void Update()
     {
         transform.Translate(new Vector3(0f, (0f - obstacleDropSpeed) * Time.deltaTime, 0f), Space.World);
-        if (transform.position.y <= -10)
+        if (transform.position.y <= -15)
         {
             //Destroy(gameObject);
             gameObject.SetActive(false);
         }
+    }
+    public void SetActiveFalseObj()
+    {
+        gameObject.SetActive(false);
     }
 }
