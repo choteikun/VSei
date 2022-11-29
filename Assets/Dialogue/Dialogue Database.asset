@@ -584,7 +584,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: GO!
+        value: "\u9EDE\u64CAGO\u958B\u59CB\u5427!"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -1016,7 +1016,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: GO!
+        value: "\u9EDE\u64CAGO\u958B\u59CB\u5427!"
         type: 0
         typeString: 
       - title: Sequence
@@ -1444,7 +1444,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: GO!
+        value: "\u9EDE\u64CAGO\u958B\u59CB\u5427!"
         type: 0
         typeString: 
       - title: Sequence
@@ -1817,7 +1817,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: GO!
+        value: "\u9EDE\u64CAGO\u958B\u59CB\u5427!"
         type: 0
         typeString: 
       - title: Sequence
@@ -2300,7 +2300,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: GO!
+        value: "\u9EDE\u64CAGO\u958B\u59CB\u5427!"
         type: 0
         typeString: 
       - title: Sequence
@@ -2323,7 +2323,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 30
-        y: 320
+        y: 319
         width: 160
         height: 30
     entryGroups: []
@@ -2826,7 +2826,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: BYE!
+        value: "\u9EDE\u64CABYE\u96E2\u958B\u5466!"
         type: 0
         typeString: 
       - title: Sequence
@@ -3254,7 +3254,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: BYE!
+        value: "\u9EDE\u64CABYE\u96E2\u958B\u5466!"
         type: 0
         typeString: 
       - title: Sequence
@@ -3682,7 +3682,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: BYE!
+        value: "\u9EDE\u64CABYE\u96E2\u958B\u5466!"
         type: 0
         typeString: 
       - title: Sequence
@@ -4055,7 +4055,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: BYE!
+        value: "\u9EDE\u64CABYE\u96E2\u958B\u5466!"
         type: 0
         typeString: 
       - title: Sequence
@@ -4538,7 +4538,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: BYE!
+        value: "\u9EDE\u64CABYE\u96E2\u958B\u5466!"
         type: 0
         typeString: 
       - title: Sequence
