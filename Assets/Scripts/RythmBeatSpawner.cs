@@ -5,11 +5,14 @@ using SonicBloom;
 using SonicBloom.Koreo;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using SonicBloom.Koreo.Players;
 
 public class RythmBeatSpawner : MonoBehaviour
 {
     [Tooltip("譜面生成的物件")]
     public GameObject obstaclePrefab;
+    [Tooltip("依據歌單選擇的歌曲號碼Data")]
+    public SongsInfo songsInfo;
 
     public GameObject sensorLL;
     public GameObject sensorL;
@@ -23,13 +26,21 @@ public class RythmBeatSpawner : MonoBehaviour
 
     public AudioSource audioCom;
 
+
     [EventID]
-    public string eventID;
-    public Koreography koreography;
+    public string normalEventID;
+    //[EventID]
+    //public string hardEventID;
+    //public Koreography koreography;
     public List<KoreographyEvent> rhythmEvents;
+    //獲取musicplayer script
+    public SimpleMusicPlayer musicPlayer;
+    //koreography list
+    public List<Koreography> loadedKoreo = new();
 
     //bool changeTrack;
-    private ExcelLineManage LineManage;
+    private ExcelLineManage LineManageNormal;
+    //private ExcelLineManage LineManageHard;
 
     public enum SensorSet
     {
@@ -40,31 +51,57 @@ public class RythmBeatSpawner : MonoBehaviour
     }
     public SensorSet sensorSet;
 
+    void Awake()
+    {
+        switch (songsInfo.songNumIs)
+        {
+            case 1:
+                normalEventID = "StreetCityPop_SnareDrum";
+                LineManageNormal = Resources.Load<ExcelLineManage>("Release/rythmBeatSet_StreetCityPop");
+                break;
+            case 2:
+                normalEventID = "Take_Off_Into_the_Sky_SnareDrum";
+                LineManageNormal = Resources.Load<ExcelLineManage>("Release/rythmBeatSet_Take_Off_Into_the_Sky");
+                break;
+            default:
+                break;
+        }
+        
+        
+    }
     void Start()
     {
+        Koreographer.Instance.GetAllLoadedKoreography(loadedKoreo);
 
-        //Initialize events.
-        koreography = Koreographer.Instance.GetKoreographyAtIndex(0);
+        rhythmEvents = loadedKoreo[songsInfo.songNumIs - 1].GetTrackByID(normalEventID).GetAllEvents();
+        Koreographer.Instance.RegisterForEvents(normalEventID, NormalMaker);
+        //Koreographer.Instance.RegisterForEvents(hardEventID, HardMaker);
+        musicPlayer.LoadSong(loadedKoreo[songsInfo.songNumIs - 1]);
 
-        // Grab all the events out of the Koreography.
-        rhythmEvents = koreography.GetTrackByID(eventID).GetAllEvents();
+        ////Initialize events.
+        //koreography = Koreographer.Instance.GetKoreographyAtIndex(0);
 
-        Koreographer.Instance.RegisterForEvents(eventID, Maker);
+        //// Grab all the events out of the Koreography.
+        //rhythmEvents = koreography.GetTrackByID(eventID).GetAllEvents();
 
-        LineManage = Resources.Load<ExcelLineManage>("Release/rythmBeatSetTest");
+        //Koreographer.Instance.RegisterForEvents(eventID, Maker);
+
+        //musicPlayer.LoadSong(koreography);
+
+        //LineManageNormal = Resources.Load<ExcelLineManage>("Release/rythmBeatSetTest");
+        //LineManageHard = Resources.Load<ExcelLineManage>("Release/XXX");
 
         curCheckIdx = 0;
         spawnTime = 0;
-        //changeTrack = true;
     }
     void Update()
     {
         if (curCheckIdx < rhythmEvents.Count)
         {
             curTime = Koreographer.GetSampleTime();
-            //Debug.Log("Element " + curCheckIdx);//第幾拍
-            //Debug.Log("curTime" + curTime);
-            //Debug.Log("StartSample" + rhythmEvents[curCheckIdx].StartSample);
+            Debug.Log("Element " + curCheckIdx);//第幾拍
+            Debug.Log("curTime" + curTime);
+            Debug.Log("StartSample" + rhythmEvents[curCheckIdx].StartSample);
             if (curTime > rhythmEvents[curCheckIdx].StartSample)
             {
                 curCheckIdx++;
@@ -73,79 +110,129 @@ public class RythmBeatSpawner : MonoBehaviour
         }
         
     }
-    void Maker(KoreographyEvent koreographyEvent)
+    void NormalMaker(KoreographyEvent koreographyEvent)
     {
         if (curTime - spawnTime > beatsLimitTimeDifference)//最少要超過多少beatsTimeDifference才生成節拍
         {
-            if (LineManage.dataArray[curCheckIdx-1].BeatPosLL == "1")//按照excel上的表格位置
+            if (LineManageNormal.dataArray[curCheckIdx].BeatPosLL == "1")//按照excel上的表格位置
             {
-                sensorSet = SensorSet.SensorLL_SetPosX;
+                //sensorSet = SensorSet.SensorLL_SetPosX;
+                PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//生成節拍
+                spawnTime = curTime;
             }
-            else if (LineManage.dataArray[curCheckIdx-1].BeatPosL == "1")
+            if (LineManageNormal.dataArray[curCheckIdx].BeatPosL == "1")
             {
-                sensorSet = SensorSet.SensorL_SetPosX;
+                //sensorSet = SensorSet.SensorL_SetPosX;
+                PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
+                spawnTime = curTime;
             }
-            else if (LineManage.dataArray[curCheckIdx-1].BeatPosR == "1")
+            if (LineManageNormal.dataArray[curCheckIdx].BeatPosR == "1")
             {
-                sensorSet = SensorSet.SensorR_SetPosX;
+                //sensorSet = SensorSet.SensorR_SetPosX;
+                PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
+                spawnTime = curTime;
             }
-            else if (LineManage.dataArray[curCheckIdx-1].BeatPosRR == "1")
+            if (LineManageNormal.dataArray[curCheckIdx].BeatPosRR == "1")
             {
-                sensorSet = SensorSet.SensorRR_SetPosX;
+                //sensorSet = SensorSet.SensorRR_SetPosX;
+                PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
+                spawnTime = curTime;
             }
-            else { sensorSet = (SensorSet)Random.Range(0, System.Enum.GetValues(typeof(SensorSet)).Length); }
+            if ((LineManageNormal.dataArray[curCheckIdx].BeatPosLL != "1" && LineManageNormal.dataArray[curCheckIdx].BeatPosL != "1" && LineManageNormal.dataArray[curCheckIdx].BeatPosR != "1" && LineManageNormal.dataArray[curCheckIdx].BeatPosRR != "1")
+                &&(LineManageNormal.dataArray[curCheckIdx].BeatPosLL != "0" && LineManageNormal.dataArray[curCheckIdx].BeatPosL != "0" && LineManageNormal.dataArray[curCheckIdx].BeatPosR != "0" && LineManageNormal.dataArray[curCheckIdx].BeatPosRR != "0")
+                ) //若excel裡沒有任何數字是1&0則隨機安排位置(一橫排只會有1個節拍生成)
+            {
+                Debug.Log("no rythmBeats");
+                switch (sensorSet)//分配位置
+                {
+                    case SensorSet.SensorLL_SetPosX:
 
+                        //Instantiate(obstaclePrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);
+                        PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//生成節拍
+                        spawnTime = curTime;
+                        break;
+                    case SensorSet.SensorL_SetPosX:
+
+                        //Instantiate(obstaclePrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
+                        PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
+                        spawnTime = curTime;
+                        break;
+                    case SensorSet.SensorR_SetPosX:
+
+                        //Instantiate(obstaclePrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
+                        PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
+                        spawnTime = curTime;
+                        break;
+                    case SensorSet.SensorRR_SetPosX:
+
+                        //Instantiate(obstaclePrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
+                        PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
+                        spawnTime = curTime;
+                        break;
+                    default:
+                        break;
+                }
+                sensorSet = (SensorSet)Random.Range(0, System.Enum.GetValues(typeof(SensorSet)).Length);
+            }
             //Debug.Log("Element" + curCheckIdx);
 
             //obstaclePrefab.name = "Element" + curCheckIdx;
-
-            switch (sensorSet)
-            {
-                case SensorSet.SensorLL_SetPosX:
-
-                    //Instantiate(obstaclePrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);
-                    PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//生成節拍
-                    spawnTime = curTime;
-                    break;
-                case SensorSet.SensorL_SetPosX:
-
-                    //Instantiate(obstaclePrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
-                    PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
-                    spawnTime = curTime;
-                    break;
-                case SensorSet.SensorR_SetPosX:
- 
-                    //Instantiate(obstaclePrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
-                    PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
-                    spawnTime = curTime;
-                    break;
-                case SensorSet.SensorRR_SetPosX:
-
-                    //Instantiate(obstaclePrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
-                    PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
-                    spawnTime = curTime;
-                    break;
-                default:
-                    break;
-            }
-            //if (changeTrack)
-            //{
-            //    obstaclePrefab.name = "Element左" + curCheckIdx;
-            //    Instantiate(obstaclePrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
-            //    spawnTime = curTime;
-
-            //    changeTrack = !changeTrack;
-            //}
-            //else
-            //{
-            //    obstaclePrefab.name = "Element右" + curCheckIdx;
-            //    Instantiate(obstaclePrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
-            //    spawnTime = curTime;
-
-            //    changeTrack = !changeTrack;
-            //}
         }
     }
+    //void HardMaker(KoreographyEvent koreographyEvent)
+    //{
+    //    if (curTime - spawnTime > beatsLimitTimeDifference)//最少要超過多少beatsTimeDifference才生成節拍
+    //    {
+    //        if (LineManageHard.dataArray[curCheckIdx - 1].BeatPosLL == "1")//按照excel上的表格位置
+    //        {
+    //            //PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//生成節拍
+    //            spawnTime = curTime;
+    //        }
+    //        if (LineManageHard.dataArray[curCheckIdx - 1].BeatPosL == "1")
+    //        {
+    //            //PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
+    //            spawnTime = curTime;
+    //        }
+    //        if (LineManageHard.dataArray[curCheckIdx - 1].BeatPosR == "1")
+    //        {
+    //            //PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
+    //            spawnTime = curTime;
+    //        }
+    //        if (LineManageHard.dataArray[curCheckIdx - 1].BeatPosRR == "1")
+    //        {
+    //            //PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
+    //            spawnTime = curTime;
+    //        }
+    //        if (LineManageHard.dataArray[curCheckIdx - 1].BeatPosLL != "1" && LineManageNormal.dataArray[curCheckIdx - 1].BeatPosL != "1" && LineManageNormal.dataArray[curCheckIdx - 1].BeatPosR != "1" && LineManageNormal.dataArray[curCheckIdx - 1].BeatPosRR != "1") //若excel裡沒有任何數字是1則隨機安排位置(一橫排只會有1個節拍生成)
+    //        {
+    //            Debug.Log("no rythmBeats");
+    //            switch (sensorSet)//分配位置
+    //            {
+    //                case SensorSet.SensorLL_SetPosX:
+    //                    PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//生成節拍
+    //                    spawnTime = curTime;
+    //                    break;
+    //                case SensorSet.SensorL_SetPosX:
+    //                    PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
+    //                    spawnTime = curTime;
+    //                    break;
+    //                case SensorSet.SensorR_SetPosX:
+    //                    PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
+    //                    spawnTime = curTime;
+    //                    break;
+    //                case SensorSet.SensorRR_SetPosX:
+    //                    PoolManager.Release(obstaclePrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
+    //                    spawnTime = curTime;
+    //                    break;
+    //                default:
+    //                    break;
+    //            }
+    //            sensorSet = (SensorSet)Random.Range(0, System.Enum.GetValues(typeof(SensorSet)).Length);
+    //        }
+    //        //Debug.Log("Element" + curCheckIdx);
+    //        //obstaclePrefab.name = "Element" + curCheckIdx;
+    //    }
+    //}
 
     public void Restart()
     {
@@ -154,7 +241,7 @@ public class RythmBeatSpawner : MonoBehaviour
         //audioCom.time = 0f;
         //audioCom.Play();
         Time.timeScale = 1;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("GameScene");
     }
     public void PauseButton()
     {
@@ -169,6 +256,7 @@ public class RythmBeatSpawner : MonoBehaviour
     public void BackHomeScene()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("HomeScene");
     }
+
 }

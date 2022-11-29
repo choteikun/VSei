@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: 720790578c0137248831b7b1b5843e92
   - enabled: 1
+    path: Assets/Scenes/CreateAccount.unity
+    guid: 64a420fae5116d84393520632f492a38
+  - enabled: 1
     path: Assets/Scenes/HomeScene.unity
     guid: 14df590bc25c2aa45803e73a1b6052d3
   - enabled: 1
@@ -23,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AliceStart.unity
     guid: 5f941779f06cffc4c829e02480313bb1
+  - enabled: 1
+    path: Assets/Scenes/SongSelectScene.unity
+    guid: c7124dc2a4827374ab349ec6fbae08b5
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: fe17c92f888cff847b5b2fa47e9f860c,
       type: 2}

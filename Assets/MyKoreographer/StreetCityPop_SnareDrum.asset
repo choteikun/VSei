@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mEventID: StreetCityPop_SnareDrum
   mEventList:
-  - mStartSample: 0
-    mEndSample: 0
   - mStartSample: 26182
     mEndSample: 26182
   - mStartSample: 45818

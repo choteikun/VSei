@@ -8,16 +8,20 @@ public class SensorRR : MonoBehaviour
 
     //記錄右側螢幕中間的X軸
     float rightMidScreenPosX;
+    //記錄螢幕中間的Y軸
+    float midScreenPosY;
 
     Touch firstTouch;
+    Touch secondTouch;
 
-    bool touched;
 
-    public bool playerTouched { get => touched; }
+    //bool touched;
+    //public bool playerTouched { get => touched; }
     public GameObject rootUI;
     public int testBonusPoint;
 
-    bool touchedLastFrame = false;
+    public bool firstTouchedLastFrame = false;
+    public bool secondTouchedLastFrame = false;
 
     public enum JugeArea
     {
@@ -29,15 +33,25 @@ public class SensorRR : MonoBehaviour
     public JugeArea jugeArea;
     void Start()
     {
+        Input.multiTouchEnabled = true;
         gameCanvas = rootUI.GetComponent<RythmGameCanvas>();
-        touched = false;
+        //touched = false;
         //右側螢幕中間X軸
         rightMidScreenPosX = Screen.width * 3 / 4f;
+        //螢幕中間的Y軸
+        midScreenPosY = Screen.height / 2;
         jugeArea = JugeArea.None;
     }
     void Update()
     {
-
+        if (firstTouchedLastFrame && Input.touchCount == 0)
+        {
+            firstTouchedLastFrame = false;
+        }
+        if (secondTouchedLastFrame && Input.touchCount == 1)
+        {
+            secondTouchedLastFrame = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -77,42 +91,75 @@ public class SensorRR : MonoBehaviour
     //}
     private void OnTriggerStay(Collider other)
     {
-        if (touchedLastFrame && Input.touchCount == 0)
+        if (secondTouchedLastFrame && Input.touchCount == 1)
         {
-            touchedLastFrame = false;
+            secondTouchedLastFrame = false;
         }
-        else if (!touchedLastFrame && Input.touchCount > 0)
+        if (firstTouchedLastFrame && Input.touchCount == 0)
+        {
+            firstTouchedLastFrame = false;
+        }
+        else if (!firstTouchedLastFrame && Input.touchCount == 1)
         {
             //這裡只會偵測第一次按下
-
             firstTouch = Input.GetTouch(0);
-            if (firstTouch.position.x > rightMidScreenPosX && !touched && jugeArea == JugeArea.Perfect)
+            if (firstTouch.position.x > rightMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Perfect)
             {
                 Debug.Log("Perfect" + "，觸碰位置: " + firstTouch.position);
-                testBonusPoint += 5;
-                touched = true;
+                gameCanvas.rythmPoint += 5;
+
                 gameCanvas.PerfectEffect();
                 jugeArea = JugeArea.None;
                 other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
             }
-            else if (firstTouch.position.x > rightMidScreenPosX && !touched && jugeArea == JugeArea.Good)
+            else if (firstTouch.position.x > rightMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Good)
             {
                 Debug.Log("Good" + "，觸碰位置: " + firstTouch.position);
-                testBonusPoint += 1;
-                touched = true;
+                gameCanvas.rythmPoint += 1;
+
                 gameCanvas.GoodEffect();
                 jugeArea = JugeArea.None;
                 other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
             }
-            else if (firstTouch.position.x > rightMidScreenPosX && !touched && jugeArea == JugeArea.Miss)
+            else if (firstTouch.position.x > rightMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Miss)
             {
                 Debug.Log("Miss" + "，觸碰位置: " + firstTouch.position);
-                touched = true;
+
                 jugeArea = JugeArea.None;
                 other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
             }
-            StartCoroutine(DelayedTriggerExit());
-            touchedLastFrame = true;
+            firstTouchedLastFrame = true;
+            //StartCoroutine(DelayedTriggerExit());
+        }
+        else if (firstTouchedLastFrame && Input.touchCount == 2 && !secondTouchedLastFrame)//第一下還按著接著到第二下進來
+        {
+            secondTouch = Input.GetTouch(1);
+            if (secondTouch.position.x > rightMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Perfect)
+            {
+                Debug.Log("Perfect" + "，觸碰位置: " + firstTouch.position);
+                gameCanvas.rythmPoint += 5;
+
+                gameCanvas.PerfectEffect();
+                jugeArea = JugeArea.None;
+                other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+            }
+            else if (secondTouch.position.x > rightMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Good)
+            {
+                Debug.Log("Good" + "，觸碰位置: " + firstTouch.position);
+                gameCanvas.rythmPoint += 1;
+
+                gameCanvas.GoodEffect();
+                jugeArea = JugeArea.None;
+                other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+            }
+            else if (secondTouch.position.x > rightMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Miss)
+            {
+                Debug.Log("Miss" + "，觸碰位置: " + firstTouch.position);
+
+                jugeArea = JugeArea.None;
+                other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+            }
+            secondTouchedLastFrame = true;
         }
     }
     //private void OnTriggerExit(Collider other)
@@ -133,9 +180,9 @@ public class SensorRR : MonoBehaviour
     //    }
 
     //}
-    IEnumerator DelayedTriggerExit()
-    {
-        yield return new WaitForSeconds(0.2f);
-        touched = false;
-    }
+    //IEnumerator DelayedTriggerExit()
+    //{
+    //    yield return new WaitForSeconds(0.2f);
+    //    touched = false;
+    //}
 }

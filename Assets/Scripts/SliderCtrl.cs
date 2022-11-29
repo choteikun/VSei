@@ -22,72 +22,29 @@ public class SliderCtrl : MonoBehaviour
     public void OnPointerDown()
     {
         needMove = false;
+        Debug.Log("OnPointerDown");
     }
 
-    public void OnPointerUp()
-    {
-        //判斷當前位於哪個區間，設置自動滑動至的位置
-        //if (scrollbar.value <= 0.125f)
-        //{
-        //    targetValue = 0;
-        //}
-        //else if (scrollbar.value <= 0.375f)
-        //{
-        //    targetValue = 0.25f;
-        //}
-        //else if (scrollbar.value <= 0.625f)
-        //{
-        //    targetValue = 0.5f;
-        //}
-        //else if (scrollbar.value <= 0.875f)
-        //{
-        //    targetValue = 0.75f;
-        //}
-        //else
-        //{
-        //    targetValue = 1f;
-        //}
 
-        //判斷當前位於哪個區間，設置自動滑動至的位置
-        if (scrollbar.value <= 0.075f)
-        {
-            targetValue = 0;
-        }
-        else if (scrollbar.value <= 0.205f)
-        {
-            targetValue = 0.128f;
-        }
-        else if (scrollbar.value <= 0.335f)
-        {
-            targetValue = 0.258f;
-        }
-        else if (scrollbar.value <= 0.465f)
-        {
-            targetValue = 0.388f;
-        }
-        else if (scrollbar.value <= 0.595f)
-        {
-            targetValue = 0.518f;
-        }
-        else if (scrollbar.value <= 0.725f)
-        {
-            targetValue = 0.648f;
-        }
-        else if (scrollbar.value <= 0.855f)
-        {
-            targetValue = 0.778f;
-        }
-        else if (scrollbar.value <= 0.985f)
-        {
-            targetValue = 0.908f;
-        }
-        else
-        {
-            targetValue = 0.908f;
-        }
-        needMove = true;
-        moveSpeed = 0;
-    }
+    //public void OnPointerUp()
+    //{
+    //    //判斷當前位於哪個區間，設置自動滑動至的位置
+    //    if (scrollbar.value <= 0.182f)
+    //    {
+    //        targetValue = 0;
+    //    }
+    //    else if (scrollbar.value <= 0.548f)
+    //    {
+    //        targetValue = 0.365f;
+    //    }
+    //    else if (scrollbar.value <= 0.914f)
+    //    {
+    //        targetValue = 0.731f;
+    //    }
+    //    needMove = true;
+    //    moveSpeed = 0;
+    //    Debug.Log("OnPointerUp");
+    //}
 
     public void OnButtonClick(int value)
     {
@@ -97,22 +54,23 @@ public class SliderCtrl : MonoBehaviour
                 targetValue = 0;
                 break;
             case 2:
-                targetValue = 0.25f;
+                targetValue = 0.365f;
                 break;
             case 3:
-                targetValue = 0.5f;
+                targetValue = 0.731f;
                 break;
-            case 4:
-                targetValue = 0.75f;
-                break;
-            case 5:
-                targetValue = 1f;
-                break;
+            //case 4:
+            //    targetValue = 0.388f;
+            //    break;
+            //case 5:
+            //    targetValue = 0.518f;
+            //    break;
             default:
                 Debug.LogError("!!!!!");
                 break;
         }
         needMove = true;
+        Debug.Log("OnButtonClick");
     }
 
     void Update()
@@ -127,5 +85,24 @@ public class SliderCtrl : MonoBehaviour
             }
             scrollbar.value = Mathf.SmoothDamp(scrollbar.value, targetValue, ref moveSpeed, SMOOTH_TIME);
         }
+        if (Input.touchCount == 1 && (Input.GetTouch(0).phase == TouchPhase.Ended)) //手指離開螢幕
+        {
+            //判斷當前位於哪個區間，設置自動滑動至的位置
+            if (scrollbar.value <= 0.182f)
+            {
+                targetValue = 0;
+            }
+            else if (scrollbar.value <= 0.548f)
+            {
+                targetValue = 0.365f;
+            }
+            else if (scrollbar.value <= 1.5f)
+            {
+                targetValue = 0.731f;
+            }
+            needMove = true;
+            moveSpeed = 0;
+        }
     }
+    
 }

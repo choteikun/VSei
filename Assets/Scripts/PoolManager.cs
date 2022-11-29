@@ -117,10 +117,8 @@ public class PoolManager : MonoBehaviour
         {
             return uiDictionary[prefab].PreparedObject();
         }
-        #if UNITY_EDITOR
         Debug.LogError("Pool Manager 找不到prefab: " + prefab.name);
         return null;
-        #endif
     }
     /// <summary>
     /// 根據傳入的prefab參數，在position的參數位置釋放對象池中預備好的遊戲對象
@@ -151,10 +149,8 @@ public class PoolManager : MonoBehaviour
         {
             return uiDictionary[prefab].PreparedObject(position);
         }
-        #if UNITY_EDITOR
         Debug.LogError("Pool Manager 找不到prefab: " + prefab.name);
         return null;
-        #endif
     }
     /// <summary>
     /// 根據傳入的prefab參數和rotation參數，在position的參數位置釋放對象池中預備好的遊戲對象
@@ -188,10 +184,8 @@ public class PoolManager : MonoBehaviour
         {
             return uiDictionary[prefab].PreparedObject(position, rotation);
         }
-        #if UNITY_EDITOR
         Debug.LogError("Pool Manager 找不到prefab: " + prefab.name);
         return null;
-        #endif
     }
     /// <summary>
     /// 根據傳入的prefab參數，rotation參數和localScale參數，在position的參數位置釋放對象池中預備好的遊戲對象
@@ -228,9 +222,7 @@ public class PoolManager : MonoBehaviour
         {
             return uiDictionary[prefab].PreparedObject(position, rotation, localScale);
         }
-        #if UNITY_EDITOR
         Debug.LogError("Pool Manager 找不到prefab: " + prefab.name);
         return null;
-        #endif
     }
 }

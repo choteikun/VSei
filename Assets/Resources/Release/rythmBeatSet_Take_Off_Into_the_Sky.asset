@@ -1,0 +1,760 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be809a6810d40040941d739fad65d31, type: 3}
+  m_Name: rythmBeatSet_Take_Off_Into_the_Sky
+  m_EditorClassIdentifier: 
+  dataArray:
+  - BeatElement: 1
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
+  - BeatElement: 2
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
+  - BeatElement: 3
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
+  - BeatElement: 4
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
+  - BeatElement: 5
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
+  - BeatElement: 6
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
+  - BeatElement: 7
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
+  - BeatElement: 8
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
+  - BeatElement: 9
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
+  - BeatElement: 10
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
+  - BeatElement: 11
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
+  - BeatElement: 12
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
+  - BeatElement: 13
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
+  - BeatElement: 14
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
+  - BeatElement: 15
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
+  - BeatElement: 16
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
+  - BeatElement: 17
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
+  - BeatElement: 18
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
+  - BeatElement: 19
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
+  - BeatElement: 20
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 21
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 22
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 23
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 24
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 25
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 26
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 27
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 28
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 29
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 30
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 31
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 32
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 33
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 34
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 35
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 36
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 37
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 38
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 39
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 40
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 41
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 42
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 43
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 44
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 45
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 46
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 47
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 48
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 49
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 50
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 51
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 52
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 53
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 54
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 55
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 56
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 57
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 58
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 59
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 60
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 61
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 62
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 63
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 64
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 65
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 66
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 67
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 68
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 69
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 70
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 71
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 72
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 73
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 74
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 75
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 76
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 77
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 78
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 79
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 80
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 81
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 82
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 83
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 84
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 85
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 86
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 87
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 88
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 89
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 90
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 91
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 92
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 93
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 94
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 95
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 96
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 97
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 98
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 99
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 100
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 101
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 102
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 103
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 104
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 105
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 106
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 107
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 108
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 109
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 110
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 111
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 112
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 113
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 114
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 115
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 116
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 117
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 118
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 119
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 120
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 121
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 122
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 123
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 124
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 125
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 126
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 127
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 128
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 129
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 130
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 131
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 132
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 133
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 134
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 135
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 136
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 137
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 138
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 139
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 140
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 141
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 142
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 143
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 144
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 145
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 146
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 147
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 148
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 
+  - BeatElement: 149
+    BeatPosLL: 
+    BeatPosL: 
+    BeatPosR: 
+    BeatPosRR: 

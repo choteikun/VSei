@@ -14,7 +14,7 @@ public class SceneLoader : MonoBehaviour
 
         canvasScaler = GetComponent<CanvasScaler>();
 
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 120;
         QualitySettings.vSyncCount = 0;
 
         if (Screen.width > canvasScaler.referenceResolution.x) 
@@ -46,11 +46,21 @@ public class SceneLoader : MonoBehaviour
         //AudioSourceController.PlaySE("Sounds_SE", "");
         StartCoroutine(DelayedStoreScene());
     }
-    public void FinalScene()
+    public void SongSelectScene()
     {
         //AudioSourceController.PlaySE("Sounds_SE", "");
-        StartCoroutine(DelayedFinalScene());
+        StartCoroutine(DelayedSongSelectScene());
     }
+    public void CreateAccountScene()
+    {
+        //AudioSourceController.PlaySE("Sounds_SE", "");
+        StartCoroutine(DelayedCreateAccountScene());
+    }
+    //public void FinalScene()
+    //{
+    //    //AudioSourceController.PlaySE("Sounds_SE", "");
+    //    StartCoroutine(DelayedFinalScene());
+    //}
     public void ExitGame()
     {
         Application.Quit();
@@ -58,26 +68,37 @@ public class SceneLoader : MonoBehaviour
     IEnumerator DelayedStartScene()
     {
         yield return new WaitForSeconds(0.3f);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("StartScene");
     }
     IEnumerator DelayedHomeScene()
     {
         yield return new WaitForSeconds(0.3f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("HomeScene");
     }
     IEnumerator DelayedGameScene()
     {
         yield return new WaitForSeconds(0.3f);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("GameScene");
     }
     IEnumerator DelayedStoreScene()
     {
         yield return new WaitForSeconds(0.3f);
-        SceneManager.LoadScene(3);
-    }    
-    IEnumerator DelayedFinalScene()
+        SceneManager.LoadScene("StoreScene");
+    }
+    IEnumerator DelayedSongSelectScene()
     {
         yield return new WaitForSeconds(0.3f);
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("SongSelectScene");
     }
+    IEnumerator DelayedCreateAccountScene()
+    {
+        yield return new WaitForSeconds(0.3f);
+        SceneManager.LoadScene("CreateAccount");
+    }
+
+    //IEnumerator DelayedFinalScene()
+    //{
+    //    yield return new WaitForSeconds(0.3f);
+    //    SceneManager.LoadScene(6);
+    //}
 }
