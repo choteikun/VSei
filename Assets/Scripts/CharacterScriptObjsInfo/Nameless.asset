@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bf5fd07bfb8c334e82fc3f8a1e914c8, type: 3}
-  m_Name: MalibetaRorem
+  m_Name: Nameless
   m_EditorClassIdentifier: 
-  charName: "\u746A\u8389\u8C9D\u5854\u2027\u863F\u502B"
+  charName: "\u7121\u540D"
   charType: "\u6C34"
   charLevel: 0
+  gashaProbability: 12

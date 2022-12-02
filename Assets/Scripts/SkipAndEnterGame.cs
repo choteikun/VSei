@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class SkipAndEnterGame : MonoBehaviour
 {
-    public GameObject dialogue;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +21,7 @@ public class SkipAndEnterGame : MonoBehaviour
 
     public void ChangeScene()
     {
-        Destroy(dialogue);
+        Destroy(GameObject.FindGameObjectWithTag("DialogueManager"));
         SceneManager.LoadScene("GameScene");
     }
 }

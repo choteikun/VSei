@@ -12,5 +12,7 @@ public class CreateMyAccount : MonoBehaviour
     public void CreateAccountButton()
     {
         myAccount.myAccountName = MyAccountInput.text;
+        myAccount.firstPlay = false;
+        myAccount.tutorialClose = false;
     }
 }

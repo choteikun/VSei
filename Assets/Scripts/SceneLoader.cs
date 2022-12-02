@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class SceneLoader : MonoBehaviour
 {
     private CanvasScaler canvasScaler;
+    public MyAccount myAccount;
+
     void Start()
     {
         Debug.Log("Screen.width : " + Screen.width);
@@ -53,8 +55,16 @@ public class SceneLoader : MonoBehaviour
     }
     public void CreateAccountScene()
     {
-        //AudioSourceController.PlaySE("Sounds_SE", "");
-        StartCoroutine(DelayedCreateAccountScene());
+        if (myAccount.firstPlay)
+        {
+            //AudioSourceController.PlaySE("Sounds_SE", "");
+            StartCoroutine(DelayedCreateAccountScene());
+        }
+        else
+        {
+            //AudioSourceController.PlaySE("Sounds_SE", "");
+            HomeScene();
+        }
     }
     //public void FinalScene()
     //{
