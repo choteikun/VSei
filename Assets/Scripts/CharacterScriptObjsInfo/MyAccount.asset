@@ -7,15 +7,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f668907c36d1c24db78c07dec6418c4, type: 3}
   m_Name: MyAccount
   m_EditorClassIdentifier: 
   myAccountName: 
   stamina: 0
+  FelbelemAlice: 1
   AikaAmimi: 0
-  FelbelemAlice: 0
   MalibetaRorem: 0
   Nameless: 0
   ShiorhaiYai: 0
@@ -26,3 +26,4 @@ MonoBehaviour:
   PointBounsItem: 0
   HpAddItem: 0
   Trash: 0
+  curCharacterUse: 0

@@ -9,6 +9,10 @@ TagManager:
   - PerfectArea
   - Obstacle
   - DialogueManager
+  - SensorLL
+  - SensorL
+  - SensorR
+  - SensorRR
   layers:
   - Default
   - TransparentFX

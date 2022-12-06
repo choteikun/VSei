@@ -13,4 +13,12 @@ public class SongSelect : MonoBehaviour
     {
         songsInfo.songNumIs = 2;
     }
+    public void SongDifficultySelection_Normal()
+    {
+        songsInfo.difficultySelection = "Normal";
+    }
+    public void SongDifficultySelection_Hard()
+    {
+        songsInfo.difficultySelection = "Hard";
+    }
 }

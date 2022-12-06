@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 2656342753815509370}
   - component: {fileID: -8472253194214875653}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: NormalBeat
   m_TagString: PerfectArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,6 +158,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleDropSpeed: 14
+  perfectPoint: 300
+  goodPoint: 100
+  missPoint: 150
 --- !u!114 &-8472253194214875653
 MonoBehaviour:
   m_ObjectHideFlags: 0

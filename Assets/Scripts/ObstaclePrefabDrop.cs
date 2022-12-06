@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class ObstaclePrefabDrop : MonoBehaviour
 {
+    [Tooltip("節拍掉落速度")]
     public float obstacleDropSpeed;
+    [Tooltip("節拍Perfect獲得分數")]
+    public int perfectPoint;
+    [Tooltip("節拍Good獲得分數")]
+    public int goodPoint;
+    [Tooltip("節拍Miss扣分")]
+    public int missPoint;
     DropMeshRenderCtrl dropMeshRenderCtrl;
 
     //Renderer rend;

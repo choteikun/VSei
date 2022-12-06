@@ -8,4 +8,5 @@ public class SongsInfo : ScriptableObject
 {
     public int songNumIs;
     public int trackID;
+    public string difficultySelection;
 }

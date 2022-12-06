@@ -30,6 +30,7 @@ public class GashaponPanel : MonoBehaviour
 
     void Start()
     {
+        InitItemDictionary();
         gashaPanelAnim = GetComponent<Animation>();
         //gashaCanvasGroup = GetComponent<GashaponPanel>().gameObject.GetComponent<CanvasGroup>();
 

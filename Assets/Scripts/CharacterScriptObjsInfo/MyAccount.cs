@@ -11,15 +11,15 @@ public class MyAccount : ScriptableObject
     [Tooltip("體力值")]
     public float stamina;
 
-    [Tooltip("艾卡‧阿米米")]
-    public bool AikaAmimi;
-    [Tooltip("菲爾貝倫‧阿莉絲")]
+    [Tooltip("是否持有菲爾貝倫‧阿莉絲")]
     public bool FelbelemAlice;
-    [Tooltip("瑪莉貝塔‧蘿倫")]
+    [Tooltip("是否持有艾卡‧阿米米")]
+    public bool AikaAmimi;
+    [Tooltip("是否持有瑪莉貝塔‧蘿倫")]
     public bool MalibetaRorem;
-    [Tooltip("無名")]
+    [Tooltip("是否持有無名")]
     public bool Nameless;
-    [Tooltip("白灰.亞衣")]
+    [Tooltip("是否持有白灰.亞衣")]
     public bool ShiorhaiYai;
 
     [Tooltip("教學指引關閉")]
@@ -38,4 +38,13 @@ public class MyAccount : ScriptableObject
     public int HpAddItem;
     [Tooltip("垃圾")]
     public int Trash;
+    public enum CurCharacterUse
+    {
+        FelbelemAlice,
+        AikaAmimi,
+        MalibetaRorem,
+        Nameless,
+        ShiorhaiYai
+    }
+    public CurCharacterUse curCharacterUse;
 }

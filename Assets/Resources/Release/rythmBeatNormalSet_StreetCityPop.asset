@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2be809a6810d40040941d739fad65d31, type: 3}
-  m_Name: rythmBeatSet_Take_Off_Into_the_Sky
+  m_Name: rythmBeatNormalSet_StreetCityPop
   m_EditorClassIdentifier: 
   dataArray:
   - BeatElement: 1
@@ -19,95 +19,95 @@ MonoBehaviour:
     BeatPosR: 0
     BeatPosRR: 1
   - BeatElement: 2
-    BeatPosLL: 1
+    BeatPosLL: 0
     BeatPosL: 0
-    BeatPosR: 0
+    BeatPosR: 1
     BeatPosRR: 0
   - BeatElement: 3
     BeatPosLL: 0
-    BeatPosL: 1
-    BeatPosR: 0
+    BeatPosL: 0
+    BeatPosR: 1
     BeatPosRR: 0
   - BeatElement: 4
-    BeatPosLL: 1
+    BeatPosLL: 0
     BeatPosL: 0
     BeatPosR: 0
-    BeatPosRR: 0
+    BeatPosRR: 1
   - BeatElement: 5
-    BeatPosLL: 0
-    BeatPosL: 1
+    BeatPosLL: 1
+    BeatPosL: 0
     BeatPosR: 0
     BeatPosRR: 0
   - BeatElement: 6
     BeatPosLL: 0
-    BeatPosL: 0
-    BeatPosR: 1
+    BeatPosL: 1
+    BeatPosR: 0
     BeatPosRR: 0
   - BeatElement: 7
     BeatPosLL: 0
     BeatPosL: 0
-    BeatPosR: 0
-    BeatPosRR: 1
-  - BeatElement: 8
-    BeatPosLL: 0
-    BeatPosL: 0
     BeatPosR: 1
+    BeatPosRR: 0
+  - BeatElement: 8
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
     BeatPosRR: 0
   - BeatElement: 9
     BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
+  - BeatElement: 10
+    BeatPosLL: 0
     BeatPosL: 0
     BeatPosR: 1
     BeatPosRR: 0
-  - BeatElement: 10
-    BeatPosLL: 1
-    BeatPosL: 0
-    BeatPosR: 0
-    BeatPosRR: 0
   - BeatElement: 11
-    BeatPosLL: 1
+    BeatPosLL: 0
     BeatPosL: 0
-    BeatPosR: 0
+    BeatPosR: 1
     BeatPosRR: 0
   - BeatElement: 12
     BeatPosLL: 0
-    BeatPosL: 1
+    BeatPosL: 0
     BeatPosR: 0
-    BeatPosRR: 0
+    BeatPosRR: 1
   - BeatElement: 13
     BeatPosLL: 0
-    BeatPosL: 1
+    BeatPosL: 0
     BeatPosR: 0
-    BeatPosRR: 0
+    BeatPosRR: 1
   - BeatElement: 14
-    BeatPosLL: 0
-    BeatPosL: 1
+    BeatPosLL: 1
+    BeatPosL: 0
     BeatPosR: 0
     BeatPosRR: 0
   - BeatElement: 15
     BeatPosLL: 0
-    BeatPosL: 0
-    BeatPosR: 0
-    BeatPosRR: 1
-  - BeatElement: 16
-    BeatPosLL: 0
-    BeatPosL: 0
-    BeatPosR: 1
-    BeatPosRR: 0
-  - BeatElement: 17
-    BeatPosLL: 0
     BeatPosL: 1
     BeatPosR: 0
     BeatPosRR: 0
-  - BeatElement: 18
+  - BeatElement: 16
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
+  - BeatElement: 17
     BeatPosLL: 1
     BeatPosL: 0
     BeatPosR: 0
     BeatPosRR: 0
-  - BeatElement: 19
+  - BeatElement: 18
     BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
+  - BeatElement: 19
+    BeatPosLL: 1
     BeatPosL: 0
     BeatPosR: 0
-    BeatPosRR: 1
+    BeatPosRR: 0
   - BeatElement: 20
     BeatPosLL: 
     BeatPosL: 
@@ -599,161 +599,6 @@ MonoBehaviour:
     BeatPosR: 
     BeatPosRR: 
   - BeatElement: 118
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 119
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 120
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 121
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 122
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 123
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 124
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 125
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 126
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 127
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 128
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 129
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 130
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 131
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 132
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 133
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 134
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 135
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 136
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 137
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 138
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 139
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 140
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 141
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 142
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 143
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 144
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 145
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 146
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 147
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 148
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
-  - BeatElement: 149
     BeatPosLL: 
     BeatPosL: 
     BeatPosR: 

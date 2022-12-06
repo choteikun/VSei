@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExcelLineManage : ScriptableObject
+public class ExcelLineManageNormal : ScriptableObject
 {
-    public RythmBeatData[] dataArray;
+    public RythmBeatDataNormal[] dataArray;
 
     //excel表格中的每列數據名稱
     [System.Serializable]
-    public class RythmBeatData
+    public class RythmBeatDataNormal
     {
         public string BeatElement;
         public string BeatPosLL;

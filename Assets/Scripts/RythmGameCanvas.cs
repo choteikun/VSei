@@ -10,7 +10,21 @@ public class RythmGameCanvas : MonoBehaviour
     public GameObject perfectEffectPrefab;
     public GameObject goodEffectPrefab;
     public TMP_Text rythmPointText;
+    public MyAccount myAccount;
+
+    public CharInfo[] charInfoList;
+    [System.Serializable]
+    public struct CharInfo
+    {
+        public MyAccount.CurCharacterUse curCharacterUse;
+        public CharactersInfo charsInfo;
+    }
+
+    public Dictionary<MyAccount.CurCharacterUse, CharactersInfo> charInfoDictionary = new();//item<名字,ItemsInfo>
+
+
     public int rythmPoint;
+    public int feverTime;
     Canvas canvas;
     
     Vector3 screenPos_sensorLL;
@@ -48,6 +62,24 @@ public class RythmGameCanvas : MonoBehaviour
         sensorButtonL.anchoredPosition = new Vector3((screenPos_sensorL.x - w / 2) / s, (screenPos_sensorL.y - h / 2) / s, screenPos_sensorL.z);
         sensorButtonR.anchoredPosition = new Vector3((screenPos_sensorR.x - w / 2) / s, (screenPos_sensorR.y - h / 2) / s, screenPos_sensorR.z);
         sensorButtonRR.anchoredPosition = new Vector3((screenPos_sensorRR.x - w / 2) / s, (screenPos_sensorRR.y - h / 2) / s, screenPos_sensorRR.z);
+
+        InitItemDictionary();
+
+
+    }
+    private void InitItemDictionary()
+    {
+        charInfoDictionary = new Dictionary<MyAccount.CurCharacterUse, CharactersInfo>();
+        for (int i = 0; i < charInfoList.Length; i++)
+        {
+            //注意：若charactersInfoList出現相同的key轉換後只會導入第一次出現的數據，
+            //重複key值視為bug並且沒有保護，請小心使用!
+
+            if (!charInfoDictionary.ContainsKey(charInfoList[i].curCharacterUse))//不存在這個key的話
+            {
+                charInfoDictionary.Add(charInfoList[i].curCharacterUse, charInfoList[i].charsInfo);
+            }
+        }
     }
     void Update()
     {

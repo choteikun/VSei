@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charName: "\u827E\u5361\u2027\u963F\u7C73\u7C73"
   charType: "\u6C34"
-  charLevel: 0
+  charLevel: 1
   gashaProbability: 12
