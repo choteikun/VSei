@@ -20,8 +20,9 @@ public class SensorLL : MonoBehaviour
     Touch thirTouch;
     Touch fourthTouch;
 
-
-
+    Ray ray;
+    RaycastHit hit;
+    bool touchSensor;
 
     //記錄左側螢幕中間的X軸
     float leftMidScreenPosX;
@@ -51,41 +52,46 @@ public class SensorLL : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (firstTouchedLastFrame && Input.touchCount == 0)
+        if (Input.touchCount > 0)
         {
-            firstTouchedLastFrame = false;
+            for (int i = 0; i < Input.touchCount; i++)
+            {
+                Touch touch = Input.GetTouch(i);
+                if (touch.phase == TouchPhase.Began)
+                {
+                    ray = Camera.main.ScreenPointToRay(touch.position);
+                    if (Physics.Raycast(ray, out hit) && hit.collider.CompareTag("SensorLL"))
+                    {
+                        touchSensor = true;
+                    }
+                    else
+                    {
+                        Debug.Log("return false");
+                    }
+                }
+            }
         }
-        if (secondTouchedLastFrame && Input.touchCount == 1)
+        else
         {
-            secondTouchedLastFrame = false;
+            touchSensor = false;
         }
-        if (thirdTouchedLastFrame && Input.touchCount == 2)
-        {
-            thirdTouchedLastFrame = false;
-        }
-        if (fourthTouchedLastFrame && Input.touchCount == 3)
-        {
-            fourthTouchedLastFrame = false;
-        }
+        //if (firstTouchedLastFrame && Input.touchCount == 0)//第一根手指離開&&沒有任何觸碰
+        //{
+        //    firstTouchedLastFrame = false;
+        //}
+        //if (secondTouchedLastFrame && Input.touchCount == 1)//第二根手指離開&&第一根手指還沒離開
+        //{
+        //    secondTouchedLastFrame = false;
+        //}
+        //if (thirdTouchedLastFrame && Input.touchCount == 2)//第三根手指離開&&第二根手指還沒離開
+        //{
+        //    thirdTouchedLastFrame = false;
+        //}
+        //if (fourthTouchedLastFrame && Input.touchCount == 3)//第四根手指離開&&第三根手指還沒離開
+        //{
+        //    fourthTouchedLastFrame = false;
+        //}
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.transform.CompareTag("Obstacle") && Input.touchCount > 0)
-    //    {
-    //        firstTouch = Input.GetTouch(0);
-    //        if (firstTouch.position.x < leftMidScreenPosX && !touched)
-    //        {
-    //            Debug.Log("Good" + "，觸碰位置: " + firstTouch.position);
-    //            testBonusPoint++;
-    //            touched = true;
-    //            gameCanvas.GoodEffect();
-    //            //Destroy(other.gameObject);
-    //            other.gameObject.SetActive(false);
-    //        }
-    //        StartCoroutine(DelayedTriggerExit());
-    //    }
-    //}
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("MissArea"))
@@ -106,161 +112,181 @@ public class SensorLL : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (!firstTouchedLastFrame && Input.touchCount == 1)
+        if (touchSensor)
         {
-            firstTouch = Input.GetTouch(0);
-            if (firstTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Perfect)
+            print(hit.collider.transform.name);
+            if (jugeArea == JugeArea.Perfect)
             {
                 Debug.Log("Perfect" + "，觸碰位置: " + firstTouch.position);
                 gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint;
 
                 gameCanvas.PerfectEffect();
                 jugeArea = JugeArea.None;
+                touchSensor = false;
                 other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
-            }
-            else if (firstTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Good)
-            {
-                Debug.Log("Good" + "，觸碰位置: " + firstTouch.position);
-                gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().goodPoint;
 
-                gameCanvas.GoodEffect();
-                jugeArea = JugeArea.None;
-                other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
             }
-            else if (firstTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Miss)
-            {
-                Debug.Log("Miss" + "，觸碰位置: " + firstTouch.position);
-                gameCanvas.rythmPoint -= other.GetComponentInParent<ObstaclePrefabDrop>().missPoint;
-
-                jugeArea = JugeArea.None;
-                other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
-            }
-            firstTouchedLastFrame = true;
-            //StartCoroutine(DelayedTriggerExit());
-        }
-        else if (firstTouchedLastFrame && Input.touchCount == 2 && !secondTouchedLastFrame)//第一下還按著接著到第二下進來
-        {
-            //(!secondTouchedLastFrame && Input.touchCount == 1) || (!secondTouchedLastFrame && Input.touchCount == 2)
-            secondTouch = Input.GetTouch(1);
-            if (secondTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Perfect)
+            else if (jugeArea == JugeArea.Good)
             {
                 Debug.Log("Perfect" + "，觸碰位置: " + firstTouch.position);
                 gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint;
 
-                gameCanvas.PerfectEffect();
-                jugeArea = JugeArea.None;
-                other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
-            }
-            else if (secondTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Good)
-            {
-                Debug.Log("Good" + "，觸碰位置: " + firstTouch.position);
-                gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().goodPoint;
-
                 gameCanvas.GoodEffect();
                 jugeArea = JugeArea.None;
+                touchSensor = false;
                 other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
             }
-            else if (secondTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Miss)
-            {
-                Debug.Log("Miss" + "，觸碰位置: " + firstTouch.position);
-                gameCanvas.rythmPoint -= other.GetComponentInParent<ObstaclePrefabDrop>().missPoint;
-
-                jugeArea = JugeArea.None;
-                other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
-            }
-            secondTouchedLastFrame = true;
-        }
-        else if (secondTouchedLastFrame && Input.touchCount == 3 && !thirdTouchedLastFrame)//第二下還按著接著到第三下進來
-        {
-            thirTouch = Input.GetTouch(2);
-            if (thirTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Perfect)
+            else if (jugeArea == JugeArea.Miss)
             {
                 Debug.Log("Perfect" + "，觸碰位置: " + firstTouch.position);
                 gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint;
 
-                gameCanvas.PerfectEffect();
                 jugeArea = JugeArea.None;
+                touchSensor = false;
                 other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
             }
-            else if (thirTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Good)
-            {
-                Debug.Log("Good" + "，觸碰位置: " + firstTouch.position);
-                gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().goodPoint;
-
-                gameCanvas.GoodEffect();
-                jugeArea = JugeArea.None;
-                other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
-            }
-            else if (thirTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Miss)
-            {
-                Debug.Log("Miss" + "，觸碰位置: " + firstTouch.position);
-                gameCanvas.rythmPoint -= other.GetComponentInParent<ObstaclePrefabDrop>().missPoint;
-
-                jugeArea = JugeArea.None;
-                other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
-            }
-            thirdTouchedLastFrame = true;
         }
-        else if (thirdTouchedLastFrame && Input.touchCount == 4 && !fourthTouchedLastFrame)//第三下還按著接著到第四下進來
-        {
-            fourthTouch = Input.GetTouch(3);
-            if (fourthTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Perfect)
-            {
-                Debug.Log("Perfect" + "，觸碰位置: " + firstTouch.position);
-                gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint;
+        //if (!firstTouchedLastFrame && Input.touchCount == 1)//從沒有觸碰到第一根手指按下
+        //{
+        //    firstTouch = Input.GetTouch(0);
+        //    if (firstTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Perfect)
+        //    {
+        //        Debug.Log("Perfect" + "，觸碰位置: " + firstTouch.position);
+        //        gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint;
 
-                gameCanvas.PerfectEffect();
-                jugeArea = JugeArea.None;
-                other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
-            }
-            else if (fourthTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Good)
-            {
-                Debug.Log("Good" + "，觸碰位置: " + firstTouch.position);
-                gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().goodPoint;
+        //        gameCanvas.PerfectEffect();
+        //        jugeArea = JugeArea.None;
+        //        other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+        //    }
+        //    else if (firstTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Good)
+        //    {
+        //        Debug.Log("Good" + "，觸碰位置: " + firstTouch.position);
+        //        gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().goodPoint;
 
-                gameCanvas.GoodEffect();
-                jugeArea = JugeArea.None;
-                other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
-            }
-            else if (fourthTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Miss)
-            {
-                Debug.Log("Miss" + "，觸碰位置: " + firstTouch.position);
-                gameCanvas.rythmPoint -= other.GetComponentInParent<ObstaclePrefabDrop>().missPoint;
+        //        gameCanvas.GoodEffect();
+        //        jugeArea = JugeArea.None;
+        //        other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+        //    }
+        //    else if (firstTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Miss)
+        //    {
+        //        Debug.Log("Miss" + "，觸碰位置: " + firstTouch.position);
+        //        gameCanvas.rythmPoint -= other.GetComponentInParent<ObstaclePrefabDrop>().missPoint;
 
-                jugeArea = JugeArea.None;
-                other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
-            }
-            fourthTouchedLastFrame = true;
-        }
+        //        jugeArea = JugeArea.None;
+        //        other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+        //    }
+        //    firstTouchedLastFrame = true;
+        //    //StartCoroutine(DelayedTriggerExit());
+        //}
+        //else if (firstTouchedLastFrame && Input.touchCount == 2 && !secondTouchedLastFrame)//第一下還按著接著到第二下進來
+        //{
+        //    //(!secondTouchedLastFrame && Input.touchCount == 1) || (!secondTouchedLastFrame && Input.touchCount == 2)
+        //    secondTouch = Input.GetTouch(1);
+        //    if (secondTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Perfect)
+        //    {
+        //        Debug.Log("Perfect" + "，觸碰位置: " + firstTouch.position);
+        //        gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint;
+
+        //        gameCanvas.PerfectEffect();
+        //        jugeArea = JugeArea.None;
+        //        other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+        //    }
+        //    else if (secondTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Good)
+        //    {
+        //        Debug.Log("Good" + "，觸碰位置: " + firstTouch.position);
+        //        gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().goodPoint;
+
+        //        gameCanvas.GoodEffect();
+        //        jugeArea = JugeArea.None;
+        //        other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+        //    }
+        //    else if (secondTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Miss)
+        //    {
+        //        Debug.Log("Miss" + "，觸碰位置: " + firstTouch.position);
+        //        gameCanvas.rythmPoint -= other.GetComponentInParent<ObstaclePrefabDrop>().missPoint;
+
+        //        jugeArea = JugeArea.None;
+        //        other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+        //    }
+        //    secondTouchedLastFrame = true;
+        //}
+        //else if (secondTouchedLastFrame && Input.touchCount == 3 && !thirdTouchedLastFrame)//第二下還按著接著到第三下進來
+        //{
+        //    thirTouch = Input.GetTouch(2);
+        //    if (thirTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Perfect)
+        //    {
+        //        Debug.Log("Perfect" + "，觸碰位置: " + firstTouch.position);
+        //        gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint;
+
+        //        gameCanvas.PerfectEffect();
+        //        jugeArea = JugeArea.None;
+        //        other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+        //    }
+        //    else if (thirTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Good)
+        //    {
+        //        Debug.Log("Good" + "，觸碰位置: " + firstTouch.position);
+        //        gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().goodPoint;
+
+        //        gameCanvas.GoodEffect();
+        //        jugeArea = JugeArea.None;
+        //        other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+        //    }
+        //    else if (thirTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Miss)
+        //    {
+        //        Debug.Log("Miss" + "，觸碰位置: " + firstTouch.position);
+        //        gameCanvas.rythmPoint -= other.GetComponentInParent<ObstaclePrefabDrop>().missPoint;
+
+        //        jugeArea = JugeArea.None;
+        //        other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+        //    }
+        //    thirdTouchedLastFrame = true;
+        //}
+        //else if (thirdTouchedLastFrame && Input.touchCount == 4 && !fourthTouchedLastFrame)//第三下還按著接著到第四下進來
+        //{
+        //    fourthTouch = Input.GetTouch(3);
+        //    if (fourthTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Perfect)
+        //    {
+        //        Debug.Log("Perfect" + "，觸碰位置: " + firstTouch.position);
+        //        gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint;
+
+        //        gameCanvas.PerfectEffect();
+        //        jugeArea = JugeArea.None;
+        //        other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+        //    }
+        //    else if (fourthTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Good)
+        //    {
+        //        Debug.Log("Good" + "，觸碰位置: " + firstTouch.position);
+        //        gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().goodPoint;
+
+        //        gameCanvas.GoodEffect();
+        //        jugeArea = JugeArea.None;
+        //        other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+        //    }
+        //    else if (fourthTouch.position.x < leftMidScreenPosX && firstTouch.position.y < midScreenPosY && jugeArea == JugeArea.Miss)
+        //    {
+        //        Debug.Log("Miss" + "，觸碰位置: " + firstTouch.position);
+        //        gameCanvas.rythmPoint -= other.GetComponentInParent<ObstaclePrefabDrop>().missPoint;
+
+        //        jugeArea = JugeArea.None;
+        //        other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+        //    }
+        //    fourthTouchedLastFrame = true;
+        //}
     }
 
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (touchedLastFrame && Input.touchCount == 0)
-    //    {
-    //        touchedLastFrame = false;
-    //    }
-    //    else if (!touchedLastFrame && Input.touchCount > 0)
-    //    {
-    //        //這裡只會偵測第一次按下
-
-    //        firstTouch = Input.GetTouch(0);
-    //       if (firstTouch.position.x < leftMidScreenPosX && !touched)
-    //        {
-    //            Debug.Log("Miss" + "，觸碰位置: " + firstTouch.position);
-    //            touched = true;
-    //            jugeArea = JugeArea.None;
-    //            other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
-    //        }
-    //        StartCoroutine(DelayedTriggerExit());
-    //        touchedLastFrame = true;
-    //    }
-    //}
-
-    //IEnumerator DelayedTriggerExit()
-    //{
-    //    yield return new WaitForSeconds(0.2f);
-    //    touched = false;
-    //}
-
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.transform.CompareTag("PerfectArea") && jugeArea == JugeArea.Perfect)
+        {
+            jugeArea = JugeArea.Good;
+        }
+        else if(other.transform.CompareTag("GoodArea") && jugeArea == JugeArea.Good)
+        {
+            jugeArea = JugeArea.Miss;
+        }
+        else if(other.transform.CompareTag("MissArea") && jugeArea == JugeArea.Miss)
+        {
+            jugeArea = JugeArea.None;
+        }
+    }
 }

@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 147661755}
   m_Layer: 0
   m_Name: Sensor(L)
-  m_TagString: Untagged
+  m_TagString: SensorL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,10 +172,6 @@ MonoBehaviour:
   gameSceneRootUI: {fileID: 1515154077}
   myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
   testBonusPoint: 0
-  firstTouchedLastFrame: 0
-  secondTouchedLastFrame: 0
-  thirdTouchedLastFrame: 0
-  fourthTouchedLastFrame: 0
   jugeArea: 0
 --- !u!65 &147661751
 BoxCollider:
@@ -377,9 +373,10 @@ GameObject:
   - component: {fileID: 319000560}
   - component: {fileID: 319000559}
   - component: {fileID: 319000558}
+  - component: {fileID: 319000561}
   m_Layer: 5
   m_Name: SensorButton(L)
-  m_TagString: SensorL
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -486,6 +483,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319000556}
   m_CullTransparentMesh: 1
+--- !u!65 &319000561
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319000556}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &323316446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,9 +1064,10 @@ GameObject:
   - component: {fileID: 854853996}
   - component: {fileID: 854853995}
   - component: {fileID: 854853994}
+  - component: {fileID: 854853997}
   m_Layer: 5
   m_Name: SensorButton(LL)
-  m_TagString: SensorLL
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1163,6 +1174,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 854853992}
   m_CullTransparentMesh: 1
+--- !u!65 &854853997
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854853992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1031650013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,7 +1459,7 @@ GameObject:
   - component: {fileID: 1305982309}
   m_Layer: 0
   m_Name: Sensor(R)
-  m_TagString: Untagged
+  m_TagString: SensorR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1455,10 +1479,6 @@ MonoBehaviour:
   gameSceneRootUI: {fileID: 1515154077}
   myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
   testBonusPoint: 0
-  firstTouchedLastFrame: 0
-  secondTouchedLastFrame: 0
-  thirdTouchedLastFrame: 0
-  fourthTouchedLastFrame: 0
   jugeArea: 0
 --- !u!65 &1305982305
 BoxCollider:
@@ -1985,7 +2005,7 @@ GameObject:
   - component: {fileID: 1545738623}
   m_Layer: 5
   m_Name: SensorButton(R)
-  m_TagString: SensorR
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2384,12 +2404,12 @@ GameObject:
   - component: {fileID: 1655215983}
   - component: {fileID: 1655215982}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: DebugText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1655215981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2423,6 +2443,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tmp_text: {fileID: 1655215983}
+  sensorLL: {fileID: 1926527007}
+  sensorL: {fileID: 147661750}
+  sensorR: {fileID: 1305982304}
+  sensorRR: {fileID: 2030646560}
 --- !u!114 &1655215983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2471,8 +2495,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2725,7 +2749,7 @@ GameObject:
   - component: {fileID: 1727944874}
   m_Layer: 5
   m_Name: SensorButton(RR)
-  m_TagString: SensorRR
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3190,7 +3214,7 @@ GameObject:
   - component: {fileID: 1926527006}
   m_Layer: 0
   m_Name: Sensor(LL)
-  m_TagString: Untagged
+  m_TagString: SensorLL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3325,7 +3349,7 @@ GameObject:
   - component: {fileID: 2030646559}
   m_Layer: 0
   m_Name: Sensor(RR)
-  m_TagString: Untagged
+  m_TagString: SensorRR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3361,10 +3385,6 @@ MonoBehaviour:
   gameSceneRootUI: {fileID: 1515154077}
   myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
   testBonusPoint: 0
-  firstTouchedLastFrame: 0
-  secondTouchedLastFrame: 0
-  thirdTouchedLastFrame: 0
-  fourthTouchedLastFrame: 0
   jugeArea: 0
 --- !u!65 &2030646561
 BoxCollider:
