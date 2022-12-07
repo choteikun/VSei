@@ -1,16 +1,15 @@
-using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SkipAndEnterGame : MonoBehaviour
+public class ExitGame : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        this.GetComponent<Button>().onClick.AddListener(ChangeScene);
+        this.GetComponent<Button>().onClick.AddListener(ChangeScene); //ÂIÀ»Ä²µoChangeScene
     }
 
     // Update is called once per frame
@@ -22,6 +21,6 @@ public class SkipAndEnterGame : MonoBehaviour
     public void ChangeScene()
     {
         Destroy(GameObject.FindGameObjectWithTag("DialogueManager"));
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("HomeScene");
     }
 }

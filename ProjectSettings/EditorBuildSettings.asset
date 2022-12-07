@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/4A9K0033.unity
     guid: 25c5dc9524232314092ebfe683c0def6
   - enabled: 1
-    path: Assets/Scenes/AliceStart.unity
+    path: Assets/DialogueScene/AliceStart.unity
     guid: 5f941779f06cffc4c829e02480313bb1
   - enabled: 1
     path: Assets/Scenes/SongSelectScene.unity
