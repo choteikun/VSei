@@ -172,6 +172,7 @@ MonoBehaviour:
   gameSceneRootUI: {fileID: 1515154077}
   myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
   testBonusPoint: 0
+  perfectPointBounsMulti: 0
   jugeArea: 0
 --- !u!65 &147661751
 BoxCollider:
@@ -1479,6 +1480,7 @@ MonoBehaviour:
   gameSceneRootUI: {fileID: 1515154077}
   myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
   testBonusPoint: 0
+  perfectPointBounsMulti: 0
   jugeArea: 0
 --- !u!65 &1305982305
 BoxCollider:
@@ -1906,12 +1908,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe2837090f446146b7fae6003398946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sensorLL: {fileID: 1926527007}
+  sensorL: {fileID: 147661750}
+  sensorR: {fileID: 1305982304}
+  sensorRR: {fileID: 2030646560}
   perfectEffectPrefab: {fileID: 4651770343503347132, guid: fda2e2c43b57335469f8d3bd5bb48f5d,
     type: 3}
   goodEffectPrefab: {fileID: 2412416455454166835, guid: 0b20ab2baba234743af3dbb444a9ad2b,
     type: 3}
   rythmPointText: {fileID: 689435597}
   myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
+  feverTimer: 0
   charInfoList:
   - curCharacterUse: 0
     charsInfo: {fileID: 11400000, guid: 02c94bbd5181eb643be5b586fd8ea5d5, type: 2}
@@ -1924,7 +1931,8 @@ MonoBehaviour:
   - curCharacterUse: 4
     charsInfo: {fileID: 11400000, guid: ceda1f0cb9007da4f8b19c7b5cc49c47, type: 2}
   rythmPoint: 0
-  feverTime: 0
+  specialPoint: 0
+  feverNeedPoint: 0
 --- !u!1 &1518320147
 GameObject:
   m_ObjectHideFlags: 0
@@ -3250,6 +3258,7 @@ MonoBehaviour:
   gameSceneRootUI: {fileID: 1515154077}
   myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
   testBonusPoint: 0
+  perfectPointBounsMulti: 0
   firstTouchedLastFrame: 0
   secondTouchedLastFrame: 0
   thirdTouchedLastFrame: 0
@@ -3385,6 +3394,7 @@ MonoBehaviour:
   gameSceneRootUI: {fileID: 1515154077}
   myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
   testBonusPoint: 0
+  perfectPointBounsMulti: 0
   jugeArea: 0
 --- !u!65 &2030646561
 BoxCollider:

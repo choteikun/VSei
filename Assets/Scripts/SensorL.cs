@@ -8,7 +8,6 @@ public class SensorL : MonoBehaviour
 
     public GameObject gameSceneRootUI;
     public MyAccount myAccount;
-    public int testBonusPoint;
 
     Ray ray;
     RaycastHit hit;
@@ -81,7 +80,7 @@ public class SensorL : MonoBehaviour
             if (jugeArea == JugeArea.Perfect)
             {
                 Debug.Log("Perfect" + "¡AÄ²¸I¦ì¸m: " + hit.transform.position);
-                gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint;
+                gameCanvas.rythmPoint += (int)Mathf.Round(other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint * gameCanvas.PerfectPointBounsMulti);
 
                 gameCanvas.PerfectEffect();
                 jugeArea = JugeArea.None;
@@ -92,7 +91,7 @@ public class SensorL : MonoBehaviour
             else if (jugeArea == JugeArea.Good)
             {
                 Debug.Log("Perfect" + "¡AÄ²¸I¦ì¸m: " + hit.transform.position);
-                gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint;
+                gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().goodPoint;
 
                 gameCanvas.GoodEffect();
                 jugeArea = JugeArea.None;
@@ -102,7 +101,15 @@ public class SensorL : MonoBehaviour
             else if (jugeArea == JugeArea.Miss)
             {
                 Debug.Log("Perfect" + "¡AÄ²¸I¦ì¸m: " + hit.transform.position);
-                gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint;
+                if (gameCanvas.CurCharMissShield <= 0)
+                {
+                    gameCanvas.CurCharMissShield = 0;
+                    gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().missPoint;
+                }
+                else
+                {
+                    gameCanvas.CurCharMissShield -= 1;
+                }
 
                 jugeArea = JugeArea.None;
                 touchSensor = false;

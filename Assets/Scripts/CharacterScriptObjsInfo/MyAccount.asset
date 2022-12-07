@@ -20,7 +20,7 @@ MonoBehaviour:
   Nameless: 0
   ShiorhaiYai: 0
   tutorialClose: 0
-  firstPlay: 0
+  firstPlay: 1
   EnergyDrink: 0
   CharacterFragment: 0
   PointBounsItem: 0

@@ -9,7 +9,6 @@ public class SensorLL : MonoBehaviour
     //public bool playerTouched { get => touched; }
     public GameObject gameSceneRootUI;
     public MyAccount myAccount;
-    public int testBonusPoint;
 
     public bool firstTouchedLastFrame = false;
     public bool secondTouchedLastFrame = false;
@@ -118,7 +117,7 @@ public class SensorLL : MonoBehaviour
             if (jugeArea == JugeArea.Perfect)
             {
                 Debug.Log("Perfect" + "¡AÄ²¸I¦ì¸m: " + firstTouch.position);
-                gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint;
+                gameCanvas.rythmPoint += (int)Mathf.Round(other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint * gameCanvas.PerfectPointBounsMulti);
 
                 gameCanvas.PerfectEffect();
                 jugeArea = JugeArea.None;
@@ -129,7 +128,7 @@ public class SensorLL : MonoBehaviour
             else if (jugeArea == JugeArea.Good)
             {
                 Debug.Log("Perfect" + "¡AÄ²¸I¦ì¸m: " + firstTouch.position);
-                gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint;
+                gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().goodPoint;
 
                 gameCanvas.GoodEffect();
                 jugeArea = JugeArea.None;
@@ -139,7 +138,16 @@ public class SensorLL : MonoBehaviour
             else if (jugeArea == JugeArea.Miss)
             {
                 Debug.Log("Perfect" + "¡AÄ²¸I¦ì¸m: " + firstTouch.position);
-                gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint;
+                
+                if (gameCanvas.CurCharMissShield <= 0) 
+                {
+                    gameCanvas.CurCharMissShield = 0;
+                    gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().missPoint; 
+                }
+                else
+                {
+                    gameCanvas.CurCharMissShield -= 1;
+                }
 
                 jugeArea = JugeArea.None;
                 touchSensor = false;

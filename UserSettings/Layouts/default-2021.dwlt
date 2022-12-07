@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 300}
   m_MaxSize: {x: 32384, y: 24288}
   vertical: 0
-  controlID: 145
+  controlID: 130
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 300}
   m_MaxSize: {x: 16192, y: 24288}
   vertical: 1
-  controlID: 54
+  controlID: 131
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 0
-  controlID: 55
+  controlID: 132
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -190,8 +190,8 @@ MonoBehaviour:
     y: 0
     width: 374
     height: 1118
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 56
+  controlID: 133
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -294,8 +294,8 @@ MonoBehaviour:
     y: 1118
     width: 1724
     height: 181
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -479,7 +479,7 @@ MonoBehaviour:
     - '{"m_SerializationStates":{"thermalFoldout":false,"performanceFoldout":false,"developerFoldout":false,"indexerFoldout":false,"scalersFoldout":false,"deviceSettingsFoldout":false}}'
     - '{"m_SerializationStates":{"settingsFoldout":false,"vrrFoldout":false,"androidSystemFoldout":false}}'
     - '{}'
-    scale: 22
+    scale: 25
     fitToScreenEnabled: 0
     rotationDegree: 0
     highlightSafeAreaEnabled: 0
@@ -518,9 +518,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 46fcfdff
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 3afefdff98fefdff06fffdffd2fffdff3a00feff9200feffec00feffdc05feff2407feff9e0dfeff0e14feff1c2bfeff0237feffd237fefffe3cfeff4e3efeffbc3efeffc843fefffc43feff7249feff8e55fefffc55feff6a56feffd856feff3057feff9057feff5e58feffcc58feff3a59feff9259fefff259feffde60feff1261feff3065feff7a66feff7667feff6a6efeff1071feff9077fefff077feff4a78feffb878feff2679feff9679fefff679feff4e7afeffc27cfeff0e81feff1481feff5e82feffc482feffac8bfeff088cfeff448efeffae93feffaaaefeffa4b0feffcab5feffd4d8feff40d9feffb6d9feff14dafeffccdafeff78e3feffd2e3feff32e4feffdaebfeff3aeefeffc8eefeff0af0feffbaf0feffc617ffff0e19ffff3c51ffff9863ffff9e63ffffe864ffffe072ffff187effffa686ffff4487ffff7289ffff148affff788affff22ebffff88edffffeaedffff82eeffff32fbffff1e6d0000886e0000fe6f000058830000cc8300005e840000368500006285000092850000d0860000f286000086870000bead000084b70000b2bf000056c3000090ca00009ed7000008d90000a2da000058db000004de00002ae100004ce20000ecef000056f100003af2000044050100c00f0100f20f0100d81601009c210100702501003638010068380100ee42010014480100144901007a4b0100864d0100b84d010082510100f8590100706401009464010060660100406801001269010040690100ca690100ee690100186f010092800100
+      m_ExpandedIDs: ca7afcff307bfcffe07ffcff0680fcff0e80fcff1880fcff3a80fcff6e80fcff8880fcff9080fcffd481fcfff486fcff488dfcff029afcff569cfcff009efcff6a9efcff16a3fcff38a3fcff3ca3fcff42a3fcff4aa3fcff78a3fcff8ca3fcff96a3fcff7aa6fcff24a8fcff8aa8fcff34adfcff56adfcff5aadfcff60adfcff80adfcffaaadfcffbeadfcffccadfcff80b0fcffe6b0fcff90b5fcffb2b5fcffb6b5fcffbcb5fcffdcb5fcff06b6fcff1ab6fcff28b6fcff7eb8fcffe4b8fcff92bdfcffb8bdfcffc0bdfcffcabdfcffeebdfcff22befcff3abefcff4cbefcff5ae1fcff3afafcffa4fafcff50fffcff72fffcff76fffcff7cfffcff86fffcffb4fffcffc8fffcffd2fffcff181afdff5c1cfdffc21cfdff6c21fdff8e21fdff9221fdff9821fdffb821fdffe221fdfff621fdff0422fdffb227fdffd42ffdffdc2ffdff6836fdff7636fdff8236fdff9036fdff5237fdff6037fdff6437fdff6c37fdffb638fdff923dfdff3444fdff9444fdff9c44fdffc453fdffcc53fdff1457fdff7e57fdff8857fdff9a57fdff9e57fdffa457fdffae57fdffba57fdffc657fdffca57fdff2c59fdff9659fdff405efdff625efdff665efdff6c5efdff885efdffb25efdffc65efdffd45efdffa26efdffaa6efdfff46ffdff3875fdff2277fdff8877fdff9277fdffa477fdffa877fdffae77fdffb877fdffc477fdffd077fdffd477fdff3279fdff9879fdff447efdff667efdff6a7efdff707efdff7a7efdffa87efdffbc7efdffc67efdffca81fdff3482fdffe086fdff0287fdff0687fdff0c87fdff1687fdff4487fdff5887fdff6287fdff7097fdffd697fdff829cfdffa49cfdffa89cfdffae9cfdffb69cfdffe49cfdfff89cfdff029dfdff6630feff0036feffda3cfeff1044feff304bfeff8c52feff6059feff1e60fefffa66feff947bfeff7282feffba83feffcc89feffb49cfeffba9cfeffa2b2feff08b3feff12b3feff24b3feff28b3feff2eb3feff36b3feff42b3feff4eb3feff52b3feffaeb4feff14b5feffbeb9feffe0b9feffe4b9feffeab9feff06bafeff30bafeff44bafeff52bafeff42bcfeffa8bcfeff52c1feff74c1feff78c1feff7ec1feff9ac1feffc4c1feffd8c1feffe6c1feffe8c3feff4ec4feff58c4feff6ac4feff6ec4feff74c4feff7cc4feff88c4feff94c4feff98c4feffeec5feff54c6fefffecafeff20cbfeff24cbfeff2acbfeff46cbfeff70cbfeff84cbfeff92cbfeffd8cdfeff3ecefeffe8d2feff0ad3feff0ed3feff14d3feff30d3feff5ad3feff6ed3feff7cd3feffc0ddfeff36e0feff9ce0feff4ae5feff70e5feff78e5feff82e5feffa2e5feffd6e5feffeee5feff00e6feff3af9feffa0f9feff4efefeff74fefeff7cfefeff86fefeffa6fefeffdafefefff2fefeff04fffeff5608ffffbc08ffff660dffff880dffff8c0dffff920dffffae0dffffd80dffffec0dfffffa0dffffc62dffff2c2effffd632fffff832fffffc32ffff0233ffff1e33ffff4833ffff5c33ffff6a33ffff0439ffff1a41fffff651ffffe25fffffe85fffff3261ffff6e6cffffd46cffffde6cfffff06cfffff46cfffffa6cffff026dffff146dffff206dffff246dffff046fffff5670ffffbc70ffff6a75ffff9075ffff9875ffffa275ffffc275fffff675ffff0e76ffff2076ffffa07cffff407dffffa67dffff1c7fffff827fffff3084ffff5684ffff5e84ffff6884ffff8884ffffbc84ffffd484ffffe684ffff688bffff7ea6ffff70abffff74ceffff10d1ffffc2d4ffff66dcffffa4e0ffff42f1ffff32fbffff246d00009a6e000010bf000000c1000026c400005e200100e422010076270100c0330100ee33010070a1010038a6010060a801009ea9010056ab01007eb0010036b20100eeb30100a6b501005eb7010016b90100ceba010086bc0100acbd01006ee00100e00402000c090200b21f02007221020018260200382d0200fa2e0200763a0200325402000c820200c0820200c88f0200ae94020018960200fc960200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -765,14 +765,14 @@ MonoBehaviour:
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 1
+  m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -6.009633, y: -13.228743, z: 177.72386}
+    m_Target: {x: 0.6446712, y: -6.8614264, z: 0.045365334}
     speed: 2
-    m_Value: {x: -6.009633, y: -13.228743, z: 177.72386}
+    m_Value: {x: 0.6446712, y: -6.8614264, z: 0.045365334}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -801,17 +801,17 @@ MonoBehaviour:
       m_Size: {x: 0, y: 0}
     yGrid:
       m_Fade:
-        m_Target: 0
+        m_Target: 1
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
-        m_Target: 1
+        m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -819,20 +819,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    m_Target: {x: -0.013809044, y: -0.0054027126, z: 0.0000736922, w: -0.99988097}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 1}
+    m_Value: {x: -0.01380917, y: -0.005402762, z: 0.00007369287, w: -0.9998901}
   m_Size:
-    m_Target: 27.512823
+    m_Target: 11.117934
     speed: 2
-    m_Value: 27.512823
+    m_Value: 11.117934
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 0.10949996
+    m_SpeedNormalized: 0.049999982
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -843,7 +843,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: -0.2144478, y: 0.6333967, z: -0.18888254, w: -0.71912783}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -921,36 +921,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Anims
+    - Assets/Scripts/CharacterScriptObjsInfo
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Anims
+  - Assets/Scripts/CharacterScriptObjsInfo
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity_Work\VSei\VseiTaihen
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 46730000
-    m_LastClickedID: 29510
-    m_ExpandedIDs: 000000002473000026730000287300002a7300002c7300002e73000030730000327300003473000036730000387300003a7300005e7300006c7300003490000000ca9a3b
+    m_SelectedIDs: 8e730000
+    m_LastClickedID: 29582
+    m_ExpandedIDs: 00000000487300004a7300004c7300004e73000050730000527300005473000056730000587300005a7300005c7300005e730000607300006473000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Release
-      m_OriginalName: Release
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 34898
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 13}
     m_SearchString: 
@@ -964,7 +964,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002473000026730000287300002a7300002c7300002e73000030730000327300003473000036730000387300003a730000
+    m_ExpandedIDs: 00000000487300004a7300004c7300004e73000050730000527300005473000056730000587300005a7300005c7300005e730000607300006273000064730000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

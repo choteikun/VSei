@@ -11,6 +11,10 @@ public class CharactersInfo : ScriptableObject
     public string charType;
     [Tooltip("角色等級")]
     public int charLevel;
+    [Tooltip("角色FeverTime")]
+    public float charFeverTime;
+    [Tooltip("角色Hp")]
+    public int charHp;
     [Tooltip("該角色中獎率")]
     public float gashaProbability;
 }

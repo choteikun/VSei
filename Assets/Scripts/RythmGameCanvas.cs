@@ -7,6 +7,11 @@ using TMPro;
 
 public class RythmGameCanvas : MonoBehaviour
 {
+    public SensorLL sensorLL;
+    public SensorL sensorL;
+    public SensorR sensorR;
+    public SensorRR sensorRR;
+
     public GameObject perfectEffectPrefab;
     public GameObject goodEffectPrefab;
     public TMP_Text rythmPointText;
@@ -23,8 +28,14 @@ public class RythmGameCanvas : MonoBehaviour
     public Dictionary<MyAccount.CurCharacterUse, CharactersInfo> charInfoDictionary = new();//item<,ItemsInfo>
 
 
-    public int rythmPoint;
-    public int feverTime;
+    public int rythmPoint;//だ计
+    public int curSpecialCount;//ゴ阑疭竊╃Ω计
+    public int feverNeedPoint;//ㄏノ砆笆м┮惠Ω计兵ン
+    public float PerfectPointBounsMulti { get; private set; }//だ计Θ瞯
+    public float CurCharMissShield;//讽玡à︹╄кMissΩ计
+
+
+
     Canvas canvas;
     
     Vector3 screenPos_sensorLL;
@@ -37,6 +48,12 @@ public class RythmGameCanvas : MonoBehaviour
     RectTransform sensorButtonR;
     RectTransform sensorButtonRR;
 
+    float curCharFeverTime;//讽玡à︹FeverTime
+    int curCharHp;//讽玡à︹﹀秖
+    float charBounsMulti; //à︹だ计Θ瞯
+    int charMissShield;//à︹MissΩ计
+    int charHealHp;//à︹﹀
+
     private Camera cam;
     void Start()
     {
@@ -44,10 +61,15 @@ public class RythmGameCanvas : MonoBehaviour
         rythmPointText = GameObject.Find("RythmPointText").GetComponent<TMP_Text>();
         canvas = GetComponent<Canvas>();
 
-        screenPos_sensorLL = cam.WorldToScreenPoint(GameObject.Find("Sensor(LL)").transform.position);
-        screenPos_sensorL = cam.WorldToScreenPoint(GameObject.Find("Sensor(L)").transform.position);
-        screenPos_sensorR = cam.WorldToScreenPoint(GameObject.Find("Sensor(R)").transform.position);
-        screenPos_sensorRR = cam.WorldToScreenPoint(GameObject.Find("Sensor(RR)").transform.position);
+        sensorLL = GameObject.FindGameObjectWithTag("SensorLL").GetComponent<SensorLL>();
+        sensorL = GameObject.FindGameObjectWithTag("SensorL").GetComponent<SensorL>();
+        sensorR = GameObject.FindGameObjectWithTag("SensorR").GetComponent<SensorR>();
+        sensorRR = GameObject.FindGameObjectWithTag("SensorRR").GetComponent<SensorRR>();
+
+        screenPos_sensorLL = cam.WorldToScreenPoint(sensorLL.transform.position);
+        screenPos_sensorL = cam.WorldToScreenPoint(sensorL.transform.position);
+        screenPos_sensorR = cam.WorldToScreenPoint(sensorR.transform.position);
+        screenPos_sensorRR = cam.WorldToScreenPoint(sensorRR.transform.position);
 
         sensorButtonLL = GameObject.Find("SensorButton(LL)").GetComponent<RectTransform>();
         sensorButtonL = GameObject.Find("SensorButton(L)").GetComponent<RectTransform>();
@@ -64,8 +86,11 @@ public class RythmGameCanvas : MonoBehaviour
         sensorButtonRR.anchoredPosition = new Vector3((screenPos_sensorRR.x - w / 2) / s, (screenPos_sensorRR.y - h / 2) / s, screenPos_sensorRR.z);
 
         InitItemDictionary();
+        ReadCharacterSkillInfo();
 
-
+        curCharFeverTime = 0;//更讽玡à︹feverTime
+        curCharHp = charInfoDictionary[myAccount.curCharacterUse].charHp;//更讽玡à︹﹀秖
+        CurCharMissShield = charMissShield;//更讽玡à︹Miss
     }
     private void InitItemDictionary()
     {
@@ -84,6 +109,28 @@ public class RythmGameCanvas : MonoBehaviour
     void Update()
     {
         rythmPointText.text = "Point : " + rythmPoint.ToString();
+
+        if (curSpecialCount >= feverNeedPoint)//疭竊╃ゴ阑Ω计笷fever┮惠Ω计
+        {
+            curCharFeverTime = charInfoDictionary[myAccount.curCharacterUse].charFeverTime;
+            curCharHp += charHealHp;//﹀
+            curSpecialCount = 0;
+        }
+        if (curCharFeverTime > 0)
+        {
+            curCharFeverTime -= Time.deltaTime;
+            PerfectPointBounsMulti = charBounsMulti;//à︹砆笆だ计
+            
+            if (curCharFeverTime < 0)
+            {
+                curCharFeverTime = 0;
+                PerfectPointBounsMulti = 1.0f;//だ计瞯確1.0
+            }
+        }
+        if(curCharHp >= charInfoDictionary[myAccount.curCharacterUse].charHp)//﹀ぃ禬筁à︹セō﹀秖
+        {
+            curCharHp = charInfoDictionary[myAccount.curCharacterUse].charHp;
+        }
     }
     public void PerfectEffect()
     {
@@ -93,5 +140,81 @@ public class RythmGameCanvas : MonoBehaviour
     {
         PoolManager.Release(goodEffectPrefab);//ネΘGoodEffect
     }
-    
+    public void ReadCharacterSkillInfo()
+    {
+        if (charInfoDictionary[myAccount.curCharacterUse].charName == "滇焊ī产捣")//だ计Θм
+        {
+            switch (charInfoDictionary[myAccount.curCharacterUse].charLevel)
+            {
+                case 1:
+                    charBounsMulti = 1.2f;
+                    break;
+                case 2:
+                    charBounsMulti = 1.4f;
+                    break;
+                case 3:
+                    charBounsMulti = 1.6f;
+                    break;
+                case 4:
+                    charBounsMulti = 1.8f;
+                    break;
+                case 5:
+                    charBounsMulti = 2.0f;
+                    break;
+                default:
+                    break;
+            }
+        }
+        else { charBounsMulti = 1.0f; }
+
+        if (charInfoDictionary[myAccount.curCharacterUse].charName == "礚")//MissΩ计
+        {
+            switch (charInfoDictionary[myAccount.curCharacterUse].charLevel)
+            {
+                case 1:
+                    charMissShield = 10;
+                    break;
+                case 2:
+                    charMissShield = 12;
+                    break;
+                case 3:
+                    charMissShield = 14;
+                    break;
+                case 4:
+                    charMissShield = 16;
+                    break;
+                case 5:
+                    charMissShield = 18;
+                    break;
+                default:
+                    break;
+            }
+        }
+        else { charMissShield = 0; }
+
+        if (charInfoDictionary[myAccount.curCharacterUse].charName == "嚎产ī娥炮")//確﹀秖砆笆м
+        {
+            switch (charInfoDictionary[myAccount.curCharacterUse].charLevel)
+            {
+                case 1:
+                    charHealHp = 120;
+                    break;
+                case 2:
+                    charHealHp = 140;
+                    break;
+                case 3:
+                    charHealHp = 160;
+                    break;
+                case 4:
+                    charHealHp = 180;
+                    break;
+                case 5:
+                    charHealHp = 200;
+                    break;
+                default:
+                    break;
+            }
+        }
+        else { charHealHp = 0; }
+    }
 }
