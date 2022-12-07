@@ -584,7 +584,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u9EDE\u64CAGO\u958B\u59CB\u5427!"
+        value: "\u90A3\u6211\u5011\u5C31\u958B\u59CB\u5427!"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -607,7 +607,20 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 592865551619268737, guid: 2f8a2345ef845f64c97914c8674016d3,
+              type: 3}
+            m_TargetAssemblyTypeName: SkipAndEnter, Assembly-CSharp
+            m_MethodName: ChangeScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 30
@@ -1016,7 +1029,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u9EDE\u64CAGO\u958B\u59CB\u5427!"
+        value: "\u90A3\u6211\u5011\u5C31\u958B\u59CB\u5427!"
         type: 0
         typeString: 
       - title: Sequence
@@ -1035,7 +1048,20 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 592865551619268737, guid: 2f8a2345ef845f64c97914c8674016d3,
+              type: 3}
+            m_TargetAssemblyTypeName: SkipAndEnter, Assembly-CSharp
+            m_MethodName: ChangeScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 30
@@ -1444,7 +1470,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u9EDE\u64CAGO\u958B\u59CB\u5427!"
+        value: "\u90A3\u6211\u5011\u5C31\u958B\u59CB\u5427!"
         type: 0
         typeString: 
       - title: Sequence
@@ -1463,7 +1489,20 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 592865551619268737, guid: 2f8a2345ef845f64c97914c8674016d3,
+              type: 3}
+            m_TargetAssemblyTypeName: SkipAndEnter, Assembly-CSharp
+            m_MethodName: ChangeScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 30
@@ -1817,7 +1856,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u9EDE\u64CAGO\u958B\u59CB\u5427!"
+        value: "\u90A3\u6211\u5011\u5C31\u958B\u59CB\u5427!"
         type: 0
         typeString: 
       - title: Sequence
@@ -1836,7 +1875,20 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 592865551619268737, guid: 2f8a2345ef845f64c97914c8674016d3,
+              type: 3}
+            m_TargetAssemblyTypeName: SkipAndEnter, Assembly-CSharp
+            m_MethodName: ChangeScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 30
@@ -2300,7 +2352,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u9EDE\u64CAGO\u958B\u59CB\u5427!"
+        value: "\u90A3\u6211\u5011\u5C31\u958B\u59CB\u5427!"
         type: 0
         typeString: 
       - title: Sequence
@@ -2319,7 +2371,20 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 592865551619268737, guid: 2f8a2345ef845f64c97914c8674016d3,
+              type: 3}
+            m_TargetAssemblyTypeName: SkipAndEnter, Assembly-CSharp
+            m_MethodName: ChangeScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 30
@@ -2826,7 +2891,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u9EDE\u64CABYE\u96E2\u958B\u5466!"
+        value: "\u6211\u5011\u5373\u5C07\u96E2\u958B\u5466!"
         type: 0
         typeString: 
       - title: Sequence
@@ -2845,7 +2910,20 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: -8319566336743365010, guid: 28ab44a53d5ddce419e6f4688bb86581,
+              type: 3}
+            m_TargetAssemblyTypeName: ExitGame, Assembly-CSharp
+            m_MethodName: ChangeScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 30
@@ -3254,7 +3332,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u9EDE\u64CABYE\u96E2\u958B\u5466!"
+        value: "\u6211\u5011\u5373\u5C07\u96E2\u958B\u5466!"
         type: 0
         typeString: 
       - title: Sequence
@@ -3273,7 +3351,20 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: -8319566336743365010, guid: 28ab44a53d5ddce419e6f4688bb86581,
+              type: 3}
+            m_TargetAssemblyTypeName: ExitGame, Assembly-CSharp
+            m_MethodName: ChangeScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 30
@@ -3682,7 +3773,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u9EDE\u64CABYE\u96E2\u958B\u5466!"
+        value: "\u6211\u5011\u5373\u5C07\u96E2\u958B\u5466!"
         type: 0
         typeString: 
       - title: Sequence
@@ -3701,7 +3792,20 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: -8319566336743365010, guid: 28ab44a53d5ddce419e6f4688bb86581,
+              type: 3}
+            m_TargetAssemblyTypeName: ExitGame, Assembly-CSharp
+            m_MethodName: ChangeScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 30
@@ -4055,7 +4159,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u9EDE\u64CABYE\u96E2\u958B\u5466!"
+        value: "\u6211\u5011\u5373\u5C07\u96E2\u958B\u5466!"
         type: 0
         typeString: 
       - title: Sequence
@@ -4075,9 +4179,9 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 8173718126788456991, guid: 28ab44a53d5ddce419e6f4688bb86581,
+          - m_Target: {fileID: -8319566336743365010, guid: 28ab44a53d5ddce419e6f4688bb86581,
               type: 3}
-            m_TargetAssemblyTypeName: SkipAndEnterGame, Assembly-CSharp
+            m_TargetAssemblyTypeName: ExitGame, Assembly-CSharp
             m_MethodName: ChangeScene
             m_Mode: 1
             m_Arguments:
@@ -4551,7 +4655,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u9EDE\u64CABYE\u96E2\u958B\u5466!"
+        value: "\u6211\u5011\u5373\u5C07\u96E2\u958B\u5466!"
         type: 0
         typeString: 
       - title: Sequence
@@ -4570,7 +4674,20 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: -8319566336743365010, guid: 28ab44a53d5ddce419e6f4688bb86581,
+              type: 3}
+            m_TargetAssemblyTypeName: ExitGame, Assembly-CSharp
+            m_MethodName: ChangeScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 30

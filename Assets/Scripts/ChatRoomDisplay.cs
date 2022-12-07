@@ -11,12 +11,12 @@ public class ChatRoomDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ChatRoom1.SetActive(false);
+        ChatRoom1.SetActive(false); //ChatRoom方塊隱藏
         ChatRoom2.SetActive(false);
         ChatRoom3.SetActive(false);
         ChatRoom4.SetActive(false);
 
-        Invoke("Chat_Show1", 1.0f);
+        Invoke("Chat_Show1", 1.0f); //ChatRoom出現時間
         Invoke("Chat_Show2", 2.0f);
         Invoke("Chat_Show3", 3.0f);
         Invoke("Chat_Show4", 4.0f);
@@ -30,7 +30,7 @@ public class ChatRoomDisplay : MonoBehaviour
 
     void Chat_Show1()
     {
-        ChatRoom1.SetActive(true);
+        ChatRoom1.SetActive(true); //ChatRoom方塊出現
     }
 
     void Chat_Show2()
