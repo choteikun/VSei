@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Item Creation/Item Units")]
+[System.Serializable]
 public class ItemsInfo : ScriptableObject
 {
     [Tooltip("道具名稱")]
     public string itemName;
     [Tooltip("該道具中獎率")]
     public float gashaProbability;
+    
 }

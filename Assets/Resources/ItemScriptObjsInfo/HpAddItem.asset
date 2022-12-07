@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0222deb74a8c207459634e6295bb7ed5, type: 3}
-  m_Name: PointBounsItem
+  m_Name: HpAddItem
   m_EditorClassIdentifier: 
-  itemName: "\u5206\u6578\u52A0\u6210"
+  itemName: "\u8840\u91CF\u52A0\u6210\u9053\u5177"
   gashaProbability: 5

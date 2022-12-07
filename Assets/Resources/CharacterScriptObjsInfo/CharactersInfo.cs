@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Character", menuName = "Character Creation/Character Units")]
+[System.Serializable]
 public class CharactersInfo : ScriptableObject
 {
     [Tooltip("¨¤¦â¦WºÙ")]

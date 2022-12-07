@@ -4,6 +4,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "SongsInfo", menuName = "SongNumberData")]
+[System.Serializable]
 public class SongsInfo : ScriptableObject
 {
     public int songNumIs;

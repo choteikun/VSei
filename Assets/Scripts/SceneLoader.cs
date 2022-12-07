@@ -9,6 +9,7 @@ public class SceneLoader : MonoBehaviour
     private CanvasScaler canvasScaler;
     public MyAccount myAccount;
 
+
     void Start()
     {
         Debug.Log("Screen.width : " + Screen.width);
@@ -55,17 +56,19 @@ public class SceneLoader : MonoBehaviour
     }
     public void CreateAccountScene()
     {
-        if (myAccount.firstPlay)
+        if (myAccount.firstPlay == true)
         {
             //AudioSourceController.PlaySE("Sounds_SE", "");
             StartCoroutine(DelayedCreateAccountScene());
+            myAccount.firstPlay = false;
         }
         else
         {
             //AudioSourceController.PlaySE("Sounds_SE", "");
-            HomeScene();
+            StartCoroutine(DelayedHomeScene());
         }
     }
+    
     //public void FinalScene()
     //{
     //    //AudioSourceController.PlaySE("Sounds_SE", "");
@@ -105,7 +108,6 @@ public class SceneLoader : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         SceneManager.LoadScene("CreateAccount");
     }
-
     //IEnumerator DelayedFinalScene()
     //{
     //    yield return new WaitForSeconds(0.3f);

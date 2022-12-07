@@ -171,8 +171,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSceneRootUI: {fileID: 1515154077}
   myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
-  testBonusPoint: 0
-  perfectPointBounsMulti: 0
   jugeArea: 0
 --- !u!65 &147661751
 BoxCollider:
@@ -246,7 +244,7 @@ Transform:
   m_GameObject: {fileID: 147661749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.35, y: -5, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -374,7 +372,6 @@ GameObject:
   - component: {fileID: 319000560}
   - component: {fileID: 319000559}
   - component: {fileID: 319000558}
-  - component: {fileID: 319000561}
   m_Layer: 5
   m_Name: SensorButton(L)
   m_TagString: Untagged
@@ -484,19 +481,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319000556}
   m_CullTransparentMesh: 1
---- !u!65 &319000561
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319000556}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &323316446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,7 +1049,6 @@ GameObject:
   - component: {fileID: 854853996}
   - component: {fileID: 854853995}
   - component: {fileID: 854853994}
-  - component: {fileID: 854853997}
   m_Layer: 5
   m_Name: SensorButton(LL)
   m_TagString: Untagged
@@ -1175,19 +1158,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 854853992}
   m_CullTransparentMesh: 1
---- !u!65 &854853997
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 854853992}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1031650013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,8 +1449,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSceneRootUI: {fileID: 1515154077}
   myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
-  testBonusPoint: 0
-  perfectPointBounsMulti: 0
   jugeArea: 0
 --- !u!65 &1305982305
 BoxCollider:
@@ -1554,7 +1522,7 @@ Transform:
   m_GameObject: {fileID: 1305982303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.35, y: -5, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 2.55, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1918,7 +1886,6 @@ MonoBehaviour:
     type: 3}
   rythmPointText: {fileID: 689435597}
   myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
-  feverTimer: 0
   charInfoList:
   - curCharacterUse: 0
     charsInfo: {fileID: 11400000, guid: 02c94bbd5181eb643be5b586fd8ea5d5, type: 2}
@@ -1931,8 +1898,9 @@ MonoBehaviour:
   - curCharacterUse: 4
     charsInfo: {fileID: 11400000, guid: ceda1f0cb9007da4f8b19c7b5cc49c47, type: 2}
   rythmPoint: 0
-  specialPoint: 0
+  curSpecialCount: 0
   feverNeedPoint: 0
+  CurCharMissShield: 0
 --- !u!1 &1518320147
 GameObject:
   m_ObjectHideFlags: 0
@@ -3257,8 +3225,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSceneRootUI: {fileID: 1515154077}
   myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
-  testBonusPoint: 0
-  perfectPointBounsMulti: 0
   firstTouchedLastFrame: 0
   secondTouchedLastFrame: 0
   thirdTouchedLastFrame: 0
@@ -3336,7 +3302,7 @@ Transform:
   m_GameObject: {fileID: 1926527005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.05, y: -5, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3393,8 +3359,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSceneRootUI: {fileID: 1515154077}
   myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
-  testBonusPoint: 0
-  perfectPointBounsMulti: 0
   jugeArea: 0
 --- !u!65 &2030646561
 BoxCollider:
@@ -3468,7 +3432,7 @@ Transform:
   m_GameObject: {fileID: 2030646558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.05, y: -5, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

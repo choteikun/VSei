@@ -61,10 +61,10 @@ public class RythmGameCanvas : MonoBehaviour
         rythmPointText = GameObject.Find("RythmPointText").GetComponent<TMP_Text>();
         canvas = GetComponent<Canvas>();
 
-        sensorLL = GameObject.FindGameObjectWithTag("SensorLL").GetComponent<SensorLL>();
-        sensorL = GameObject.FindGameObjectWithTag("SensorL").GetComponent<SensorL>();
-        sensorR = GameObject.FindGameObjectWithTag("SensorR").GetComponent<SensorR>();
-        sensorRR = GameObject.FindGameObjectWithTag("SensorRR").GetComponent<SensorRR>();
+        sensorLL = GameObject.Find("Sensor(LL)").GetComponent<SensorLL>();
+        sensorL = GameObject.Find("Sensor(L)").GetComponent<SensorL>();
+        sensorR = GameObject.Find("Sensor(R)").GetComponent<SensorR>();
+        sensorRR = GameObject.Find("Sensor(RR)").GetComponent<SensorRR>();
 
         screenPos_sensorLL = cam.WorldToScreenPoint(sensorLL.transform.position);
         screenPos_sensorL = cam.WorldToScreenPoint(sensorL.transform.position);
@@ -85,14 +85,14 @@ public class RythmGameCanvas : MonoBehaviour
         sensorButtonR.anchoredPosition = new Vector3((screenPos_sensorR.x - w / 2) / s, (screenPos_sensorR.y - h / 2) / s, screenPos_sensorR.z);
         sensorButtonRR.anchoredPosition = new Vector3((screenPos_sensorRR.x - w / 2) / s, (screenPos_sensorRR.y - h / 2) / s, screenPos_sensorRR.z);
 
-        InitItemDictionary();
+        InitCharInfoDictionary();
         ReadCharacterSkillInfo();
 
         curCharFeverTime = 0;//載入當前角色feverTime
         curCharHp = charInfoDictionary[myAccount.curCharacterUse].charHp;//載入當前角色血量
         CurCharMissShield = charMissShield;//載入當前角色Miss盾值
     }
-    private void InitItemDictionary()
+    private void InitCharInfoDictionary()
     {
         charInfoDictionary = new Dictionary<MyAccount.CurCharacterUse, CharactersInfo>();
         for (int i = 0; i < charInfoList.Length; i++)
