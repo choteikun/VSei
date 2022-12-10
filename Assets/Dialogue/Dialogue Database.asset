@@ -584,7 +584,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u90A3\u6211\u5011\u5C31\u958B\u59CB\u5427!"
+        value: GO!
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -1029,7 +1029,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u90A3\u6211\u5011\u5C31\u958B\u59CB\u5427!"
+        value: GO!
         type: 0
         typeString: 
       - title: Sequence
@@ -1470,7 +1470,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u90A3\u6211\u5011\u5C31\u958B\u59CB\u5427!"
+        value: GO!
         type: 0
         typeString: 
       - title: Sequence
@@ -1856,7 +1856,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u90A3\u6211\u5011\u5C31\u958B\u59CB\u5427!"
+        value: GO!
         type: 0
         typeString: 
       - title: Sequence
@@ -2352,7 +2352,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u90A3\u6211\u5011\u5C31\u958B\u59CB\u5427!"
+        value: GO!
         type: 0
         typeString: 
       - title: Sequence
@@ -2891,7 +2891,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u6211\u5011\u5373\u5C07\u96E2\u958B\u5466!"
+        value: BYE!
         type: 0
         typeString: 
       - title: Sequence
@@ -3332,7 +3332,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u6211\u5011\u5373\u5C07\u96E2\u958B\u5466!"
+        value: BYE!
         type: 0
         typeString: 
       - title: Sequence
@@ -3773,7 +3773,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u6211\u5011\u5373\u5C07\u96E2\u958B\u5466!"
+        value: BYE!
         type: 0
         typeString: 
       - title: Sequence
@@ -4159,7 +4159,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u6211\u5011\u5373\u5C07\u96E2\u958B\u5466!"
+        value: BYE!
         type: 0
         typeString: 
       - title: Sequence
@@ -4655,7 +4655,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u6211\u5011\u5373\u5C07\u96E2\u958B\u5466!"
+        value: BYE!
         type: 0
         typeString: 
       - title: Sequence
@@ -4690,7 +4690,7 @@ MonoBehaviour:
             m_CallState: 2
       canvasRect:
         serializedVersion: 2
-        x: 30
+        x: 31
         y: 320
         width: 160
         height: 30

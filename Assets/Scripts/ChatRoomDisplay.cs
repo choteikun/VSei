@@ -8,6 +8,7 @@ public class ChatRoomDisplay : MonoBehaviour
     public GameObject ChatRoom2;
     public GameObject ChatRoom3;
     public GameObject ChatRoom4;
+    public GameObject ChatRoom5;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +16,13 @@ public class ChatRoomDisplay : MonoBehaviour
         ChatRoom2.SetActive(false);
         ChatRoom3.SetActive(false);
         ChatRoom4.SetActive(false);
+        ChatRoom5.SetActive(false);
 
         Invoke("Chat_Show1", 1.0f); //ChatRoom出現時間
         Invoke("Chat_Show2", 2.0f);
         Invoke("Chat_Show3", 3.0f);
         Invoke("Chat_Show4", 4.0f);
+        Invoke("Chat_Show5", 5.0f);
     }
 
     // Update is called once per frame
@@ -46,5 +49,10 @@ public class ChatRoomDisplay : MonoBehaviour
     void Chat_Show4()
     {
         ChatRoom4.SetActive(true);
+    }
+
+    void Chat_Show5()
+    {
+        ChatRoom5.SetActive(true);
     }
 }
