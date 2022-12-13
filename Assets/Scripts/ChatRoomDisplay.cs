@@ -8,20 +8,21 @@ public class ChatRoomDisplay : MonoBehaviour
     public GameObject ChatRoom2;
     public GameObject ChatRoom3;
     public GameObject ChatRoom4;
+    public GameObject ChatRoom5;
     // Start is called before the first frame update
     void Start()
     {
-        ChatRoomClose(ChatRoom1);
-
         ChatRoom1.SetActive(false); //ChatRoom方塊隱藏
         ChatRoom2.SetActive(false);
         ChatRoom3.SetActive(false);
         ChatRoom4.SetActive(false);
+        ChatRoom5.SetActive(false);
 
         Invoke("Chat_Show1", 1.0f); //ChatRoom出現時間
         Invoke("Chat_Show2", 2.0f);
         Invoke("Chat_Show3", 3.0f);
         Invoke("Chat_Show4", 4.0f);
+        Invoke("Chat_Show5", 5.0f);
     }
 
     // Update is called once per frame
@@ -33,7 +34,6 @@ public class ChatRoomDisplay : MonoBehaviour
     void Chat_Show1()
     {
         ChatRoom1.SetActive(true); //ChatRoom方塊出現
-        ChatRoomOpen(ChatRoom1);
     }
 
     void Chat_Show2()
@@ -50,16 +50,9 @@ public class ChatRoomDisplay : MonoBehaviour
     {
         ChatRoom4.SetActive(true);
     }
-    public void ChatRoomClose(GameObject obj)//UI關閉
+
+    void Chat_Show5()
     {
-        obj.GetComponent<CanvasGroup>().alpha = 0;
-        obj.GetComponent<CanvasGroup>().interactable = false;
-        obj.GetComponent<CanvasGroup>().blocksRaycasts = false;
-    }
-    public void ChatRoomOpen(GameObject obj)//UI打開
-    {
-        obj.GetComponent<CanvasGroup>().alpha = 1;
-        obj.GetComponent<CanvasGroup>().interactable = true;
-        obj.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        ChatRoom5.SetActive(true);
     }
 }
