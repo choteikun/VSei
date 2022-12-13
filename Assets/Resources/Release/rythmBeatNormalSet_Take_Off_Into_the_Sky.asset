@@ -109,75 +109,75 @@ MonoBehaviour:
     BeatPosR: 0
     BeatPosRR: 0
   - BeatElement: 20
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 2
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 21
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 2
+    BeatPosRR: 0
   - BeatElement: 22
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 2
   - BeatElement: 23
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 2
+    BeatPosRR: 0
   - BeatElement: 24
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 2
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 25
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 2
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 26
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 2
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 27
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 2
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 28
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 2
+    BeatPosRR: 0
   - BeatElement: 29
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 2
+    BeatPosRR: 0
   - BeatElement: 30
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 2
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 31
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 2
   - BeatElement: 32
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 2
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 33
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 2
+    BeatPosRR: 0
   - BeatElement: 34
     BeatPosLL: 
     BeatPosL: 

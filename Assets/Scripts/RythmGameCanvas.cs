@@ -14,6 +14,7 @@ public class RythmGameCanvas : MonoBehaviour
 
     public GameObject perfectEffectPrefab;
     public GameObject goodEffectPrefab;
+    public GameObject missEffectPrefab;
     public TMP_Text rythmPointText;
     public MyAccount myAccount;
 
@@ -32,6 +33,7 @@ public class RythmGameCanvas : MonoBehaviour
     public int curSpecialCount;//打擊到的特殊節拍次數
     public int feverNeedPoint;//使用被動技所需的次數條件
     public float PerfectPointBounsMulti { get; private set; }//分數加成的倍率
+    public int curCharHp { get; private set; }//當前角色血量
     public float CurCharMissShield;//當前角色抵抗Miss的次數
 
 
@@ -48,14 +50,13 @@ public class RythmGameCanvas : MonoBehaviour
     RectTransform sensorButtonR;
     RectTransform sensorButtonRR;
 
-    float curCharFeverTime;//當前角色FeverTime
-    int curCharHp;//當前角色血量
+    float curCharFeverTime;//當前角色FeverTime  
     float charBounsMulti; //角色分數加成的倍率
     int charMissShield;//角色免疫Miss的次數
     int charHealHp;//角色回血
 
     private Camera cam;
-    void Start()
+    void Awake()
     {
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rythmPointText = GameObject.Find("RythmPointText").GetComponent<TMP_Text>();
@@ -139,6 +140,10 @@ public class RythmGameCanvas : MonoBehaviour
     public void GoodEffect()
     {
         PoolManager.Release(goodEffectPrefab);//生成GoodEffect
+    }
+    public void MissEffect()
+    {
+        PoolManager.Release(missEffectPrefab);//生成MissEffect
     }
     public void ReadCharacterSkillInfo()
     {

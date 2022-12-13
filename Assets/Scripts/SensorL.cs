@@ -79,28 +79,38 @@ public class SensorL : MonoBehaviour
             print(hit.collider.transform.name);
             if (jugeArea == JugeArea.Perfect)
             {
-                Debug.Log("Perfect" + "¡AÄ²¸I¦ì¸m: " + hit.transform.position);
+                Debug.Log("PerfectL" + "¡AÄ²¸I¦ì¸m: " + hit.transform.position);
                 gameCanvas.rythmPoint += (int)Mathf.Round(other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint * gameCanvas.PerfectPointBounsMulti);
+
+                if (other.GetComponentInParent<ObstaclePrefabDrop>().name == "SpecialBeat(Clone)")
+                {
+                    gameCanvas.curSpecialCount++;
+                }
 
                 gameCanvas.PerfectEffect();
                 jugeArea = JugeArea.None;
                 touchSensor = false;
                 other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
-
+                
             }
             else if (jugeArea == JugeArea.Good)
             {
-                Debug.Log("Perfect" + "¡AÄ²¸I¦ì¸m: " + hit.transform.position);
+                Debug.Log("GoodL" + "¡AÄ²¸I¦ì¸m: " + hit.transform.position);
                 gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().goodPoint;
+                if (other.GetComponentInParent<ObstaclePrefabDrop>().name == "SpecialBeat(Clone)")
+                {
+                    gameCanvas.curSpecialCount++;
+                }
 
                 gameCanvas.GoodEffect();
                 jugeArea = JugeArea.None;
                 touchSensor = false;
                 other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+                
             }
             else if (jugeArea == JugeArea.Miss)
             {
-                Debug.Log("Perfect" + "¡AÄ²¸I¦ì¸m: " + hit.transform.position);
+                Debug.Log("MissL" + "¡AÄ²¸I¦ì¸m: " + hit.transform.position);
                 if (gameCanvas.CurCharMissShield <= 0)
                 {
                     gameCanvas.CurCharMissShield = 0;
@@ -111,6 +121,7 @@ public class SensorL : MonoBehaviour
                     gameCanvas.CurCharMissShield -= 1;
                 }
 
+                gameCanvas.MissEffect();
                 jugeArea = JugeArea.None;
                 touchSensor = false;
                 other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
