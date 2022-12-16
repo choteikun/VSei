@@ -23,6 +23,11 @@ public class MyAccount : ScriptableObject
     [Tooltip("是否持有白灰.亞衣")]
     public bool ShiorhaiYai;
 
+    [Tooltip("是否正在使用分數加成道具")]
+    public bool PointBounsItemUsing = false;
+    [Tooltip("是否正在使用血量加成道具")]
+    public bool HpAddItemUsing = false;
+
     [Tooltip("教學指引關閉")]
     public bool tutorialClose;
 

@@ -19,11 +19,13 @@ MonoBehaviour:
   MalibetaRorem: 0
   Nameless: 0
   ShiorhaiYai: 0
+  PointBounsItemUsing: 0
+  HpAddItemUsing: 0
   tutorialClose: 0
   firstPlay: 1
-  EnergyDrink: 0
-  CharacterFragment: 0
-  PointBounsItem: 0
-  HpAddItem: 0
-  Trash: 0
+  EnergyDrink: 9
+  CharacterFragment: 15
+  PointBounsItem: 7
+  HpAddItem: 3
+  Trash: 1
   curCharacterUse: 0
