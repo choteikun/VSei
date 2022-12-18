@@ -22,6 +22,8 @@ public class RythmBeatSpawner : MonoBehaviour
     public GameObject sensorR;
     public GameObject sensorRR;
 
+    public MyAccount myAccount;
+
     public int curTime;//當前時間
     public int spawnTime;//紀錄當前生成節拍的時間
     public int beatsLimitTimeDifference;//取一個值用於限制拍子間的時間差
@@ -124,7 +126,12 @@ public class RythmBeatSpawner : MonoBehaviour
                 //Debug.Log("Element" + curCheckIdx);
             }
         }
-        
+        if (!audioCom.isPlaying)//如果歌曲播放完
+        {
+            SceneManager.LoadScene("FinalScene");//歌曲播放完轉場
+            myAccount.HpAddItemUsing = false;//血量增加道具效果關閉
+            myAccount.PointBounsItemUsing = false;//分數加成道具效果關閉
+        }
     }
     void NormalMaker(KoreographyEvent koreographyEvent)
     {

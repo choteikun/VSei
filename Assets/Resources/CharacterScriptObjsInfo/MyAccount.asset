@@ -23,9 +23,9 @@ MonoBehaviour:
   HpAddItemUsing: 0
   tutorialClose: 0
   firstPlay: 1
-  EnergyDrink: 9
-  CharacterFragment: 15
-  PointBounsItem: 7
-  HpAddItem: 3
-  Trash: 1
+  EnergyDrink: 50
+  CharacterFragment: 50
+  PointBounsItem: 40
+  HpAddItem: 30
+  Trash: 20
   curCharacterUse: 0

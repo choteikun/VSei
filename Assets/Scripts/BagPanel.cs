@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BagPanel : MonoBehaviour
 {
@@ -44,7 +45,10 @@ public class BagPanel : MonoBehaviour
             Debug.Log("Key: " + item.Key);
             Debug.Log("Value: " + item.Value);
         }
-
+        for(int i=0;i< 4; i++)
+        {
+            Debug.Log(transform.GetChild(i).GetChild(0).gameObject.name);
+        }
 
 
     }
@@ -60,7 +64,7 @@ public class BagPanel : MonoBehaviour
             {
                 itemDictionary.Add(itemList[i].itemInfo, itemList[i].itemAmount);
             }
-            switch (itemDictionary.Keys.ElementAt(i).itemName)//依道具名稱(key)放入對應道具的數量(value)
+            switch(itemDictionary.Keys.ElementAt(i).itemName)//依道具名稱(key)放入對應道具的數量(value)
             {
                 case "能量飲料":
                     itemList[i].itemAmount = myAccount.EnergyDrink;
@@ -86,11 +90,8 @@ public class BagPanel : MonoBehaviour
                     break;
             }
         }
-        
-
         //List<int> bagList = new(itemDictionary.Values);
         //bagList.Sort((x, y) => -x.CompareTo(y));//按道具數量降序
-
     }
     void Update()
     {
@@ -98,7 +99,30 @@ public class BagPanel : MonoBehaviour
     }
     public void BagRefresh()
     {
-        
+        for (int i = 0; i < itemList.Length; i++)
+        {
+            switch (itemDictionary.Keys.ElementAt(i).itemName)//刷新道具value值
+            {
+                case "能量飲料":
+                    itemDictionary[itemDictionary.Keys.ElementAt(i)] = myAccount.EnergyDrink;
+                    break;
+                case "角色碎片":
+                    itemDictionary[itemDictionary.Keys.ElementAt(i)] = myAccount.CharacterFragment;
+                    break;
+                case "血量加成道具":
+                    itemDictionary[itemDictionary.Keys.ElementAt(i)] = myAccount.HpAddItem;
+                    break;
+                case "分數加成道具":
+                    itemDictionary[itemDictionary.Keys.ElementAt(i)] = myAccount.PointBounsItem;
+                    break;
+                case "垃圾":
+                    itemDictionary[itemDictionary.Keys.ElementAt(i)] = myAccount.Trash;
+                    break;
+                default:
+                    break;
+            }
+        }
+
         //這裡定義了一個變量，這個變量是linq語句返回的類型的
         //對linq語句進行解讀,從字典中獲取項，選中項，根據項中的Value排序
         var temp = from pair in itemDictionary orderby pair.Value descending select pair;
@@ -109,28 +133,39 @@ public class BagPanel : MonoBehaviour
 
         for (int i = 0; i < itemList.Length; i++)
         {
-            transform.GetChild(i).GetComponent<Image>().sprite = itemDictionary.Keys.ElementAt(i).itemIcon;//遍歷子物件並按dictionary的圖片順序排進去
-
-            switch (itemDictionary.Keys.ElementAt(i).itemName)//依道具名稱(key)給予該道具按鈕功能
+            switch (itemDictionary.Keys.ElementAt(i).itemName)//依道具名稱(key)給予該道具按鈕功能(button)
             {
                 case "能量飲料":
-                    transform.GetChild(i).GetComponent<Button>().onClick.AddListener(EnergyDrinkBtn);
+                    transform.GetChild(i).GetChild(0).GetComponent<TMP_Text>().text = myAccount.EnergyDrink.ToString();
+                    transform.GetChild(i).GetComponent<Button>().onClick.AddListener(EnergyDrinkBtn);                    
                     break;
                 case "角色碎片":
+                    transform.GetChild(i).GetChild(0).GetComponent<TMP_Text>().text = myAccount.CharacterFragment.ToString();
+                    transform.GetChild(i).GetComponent<Button>().onClick.AddListener(CharacterFragmentBtn);
                     break;
                 case "血量加成道具":
+                    transform.GetChild(i).GetChild(0).GetComponent<TMP_Text>().text = myAccount.HpAddItem.ToString();
                     transform.GetChild(i).GetComponent<Button>().onClick.AddListener(HpAddItemBtn);
                     break;
                 case "分數加成道具":
+                    transform.GetChild(i).GetChild(0).GetComponent<TMP_Text>().text = myAccount.PointBounsItem.ToString();
                     transform.GetChild(i).GetComponent<Button>().onClick.AddListener(PointBounsItemBtn);
                     break;
                 case "垃圾":
+                    transform.GetChild(i).GetChild(0).GetComponent<TMP_Text>().text = myAccount.Trash.ToString();
+                    transform.GetChild(i).GetComponent<Button>().onClick.AddListener(TrashBtn);
                     break;
                 default:
                     break;
             }
+            transform.GetChild(i).GetComponent<Image>().sprite = itemDictionary.Keys.ElementAt(i).itemIcon;//遍歷子物件並按dictionary的圖片順序排進去
         }
 
+        foreach (KeyValuePair<ItemsInfo, int> item in itemDictionary)
+        {
+            Debug.Log("Key: " + item.Key);
+            Debug.Log("Value: " + item.Value);
+        }
         //List<KeyValuePair<ItemsInfo, int>> bagList = new(itemDictionary);
         //bagList.Sort(delegate (KeyValuePair<ItemsInfo, int> s1, KeyValuePair<ItemsInfo, int> s2)
         //{
@@ -146,49 +181,84 @@ public class BagPanel : MonoBehaviour
     }
     void EnergyDrinkBtn()
     {
+        ItemUseCheckButton.onClick.RemoveAllListeners();
         ItemUseCheckButton.onClick.AddListener(UseEnergyDrink);
     }
     void UseEnergyDrink()
     {
-        myAccount.EnergyDrink--;
-        //增加體力
-    }
+        if (myAccount.EnergyDrink > 0)
+        {
+            myAccount.EnergyDrink--;
+            //增加體力
+        }
+        else
+        {
 
+            //體力罐已耗盡
+        }
+        BagRefresh();
+    }
+    void CharacterFragmentBtn()
+    {
+        ItemUseCheckButton.onClick.RemoveAllListeners();
+        //沒有功能
+    }
     void HpAddItemBtn()
     {
+        ItemUseCheckButton.onClick.RemoveAllListeners();
         ItemUseCheckButton.onClick.AddListener(UseHpAddItem);
     }
     void UseHpAddItem()
     { 
         if (!myAccount.HpAddItemUsing)
         {
-            myAccount.HpAddItem--;
-            myAccount.HpAddItemUsing = true;
-            //血量增加
+            if(myAccount.HpAddItem > 0)
+            {
+                myAccount.HpAddItem--;
+                myAccount.HpAddItemUsing = true;
+                //血量增加
+            }
+            else
+            {
+                //血量增加道具已耗盡
+            }
         }
         else
         {
-            //道具效果還在
+            //道具效果還在，不消耗該道具
         }
+        BagRefresh();
     }
 
     void PointBounsItemBtn()
     {
+        ItemUseCheckButton.onClick.RemoveAllListeners();
         ItemUseCheckButton.onClick.AddListener(UsePointBounsItem);
     }
     void UsePointBounsItem()
     {
-        myAccount.PointBounsItem--;
         if (!myAccount.PointBounsItemUsing)
         {
-            myAccount.PointBounsItem--;
-            myAccount.PointBounsItemUsing = true;
-            //分數加成
+            if (myAccount.PointBounsItem > 0)
+            {
+                myAccount.PointBounsItem--;
+                myAccount.PointBounsItemUsing = true;
+                //分數加成
+            }
+            else
+            {
+                //分數加成道具已耗盡
+            }
         }
         else
         {
             //道具效果還在
         }
+        BagRefresh();
     }
-
+    void TrashBtn()
+    {
+        ItemUseCheckButton.onClick.RemoveAllListeners();
+        //沒有功能
+    }
 }
