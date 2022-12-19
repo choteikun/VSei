@@ -14,6 +14,9 @@ public class GashaponPanel : MonoBehaviour
     public MyAccount myAccount;
     public List<CharactersInfo> charactersInfo = new();
 
+    public List<Sprite> gashaResultSprite = new();
+    public List<Sprite> allSprite = new();
+    //int gashaResultIndex;
 
     float totalCharProbability;
 
@@ -30,6 +33,7 @@ public class GashaponPanel : MonoBehaviour
 
     void Start()
     {
+        
         InitItemDictionary();
         gashaPanelAnim = GetComponent<Animation>();
         //gashaCanvasGroup = GetComponent<GashaponPanel>().gameObject.GetComponent<CanvasGroup>();
@@ -45,6 +49,7 @@ public class GashaponPanel : MonoBehaviour
         //{
         //    throw new ArgumentNullException("請輸入正確的索引值(點擊此訊息查看上面的數組長度並在inspector中輸入比他大的數值)，讓UI功能正常運行");
         //}
+
         for (int i = 0; i < charactersInfo.Count; i++) 
         {
             //Debug.Log(charactersInfo[i].charName);
@@ -96,27 +101,33 @@ public class GashaponPanel : MonoBehaviour
             if (gashaCharacter == GetMemberName(() => myAccount.AikaAmimi) && !myAccount.AikaAmimi) //如果抽出角色是艾卡‧阿米米且沒有該角色
             {
                 myAccount.AikaAmimi = true;
+                gashaResultSprite.Add(allSprite[1]);
             }
             else if (gashaCharacter == GetMemberName(() => myAccount.FelbelemAlice) && !myAccount.FelbelemAlice)//如果抽出角色是菲爾貝倫‧阿莉絲且沒有該角色
             {
                 myAccount.FelbelemAlice = true;
+                gashaResultSprite.Add(allSprite[0]);
             }
             else if (gashaCharacter == GetMemberName(() => myAccount.MalibetaRorem) && !myAccount.MalibetaRorem)//如果抽出角色是瑪莉貝塔‧蘿倫且沒有該角色
             {
                 myAccount.MalibetaRorem = true;
+                gashaResultSprite.Add(allSprite[2]);
             }
             else if (gashaCharacter == GetMemberName(() => myAccount.Nameless) && !myAccount.Nameless)//如果抽出角色是無名且沒有該角色
             {
                 myAccount.Nameless = true;
+                gashaResultSprite.Add(allSprite[3]);
             }
             else if (gashaCharacter == GetMemberName(() => myAccount.ShiorhaiYai) && !myAccount.ShiorhaiYai)//如果抽出角色是白灰.亞衣且沒有該角色
             {
                 myAccount.ShiorhaiYai = true;
+                gashaResultSprite.Add(allSprite[4]);
             }
             else if ((gashaCharacter == GetMemberName(() => myAccount.AikaAmimi)) || (gashaCharacter == GetMemberName(() => myAccount.FelbelemAlice)) || (gashaCharacter == GetMemberName(() => myAccount.MalibetaRorem)) || (gashaCharacter == GetMemberName(() => myAccount.Nameless)) || (gashaCharacter == GetMemberName(() => myAccount.ShiorhaiYai)))
             {
                 //抽到重覆角色時
                 Debug.Log("再接再勵");
+                gashaResultSprite.Add(allSprite[5]);
             }
             else
             {
@@ -125,35 +136,46 @@ public class GashaponPanel : MonoBehaviour
         }
         else if (Probability(itemDictionary["角色碎片"].gashaProbability * 100 / (itemDictionary["角色碎片"].gashaProbability + itemDictionary["能量飲料"].gashaProbability + itemDictionary["血量加成"].gashaProbability + itemDictionary["分數加成"].gashaProbability + itemDictionary["垃圾"].gashaProbability))) //角色碎片機率
         {
-            myAccount.CharacterFragment += 10;
+            myAccount.CharacterFragment += 5;
+            gashaResultSprite.Add(allSprite[5]);
         }
         else if (Probability(itemDictionary["能量飲料"].gashaProbability * 100 / (itemDictionary["能量飲料"].gashaProbability + itemDictionary["血量加成"].gashaProbability + itemDictionary["分數加成"].gashaProbability + itemDictionary["垃圾"].gashaProbability)))//能量飲料機率
         {
             myAccount.EnergyDrink += 1;
+            gashaResultSprite.Add(allSprite[6]);
         }
         else if (Probability(itemDictionary["血量加成"].gashaProbability * 100 / (itemDictionary["血量加成"].gashaProbability + itemDictionary["分數加成"].gashaProbability + itemDictionary["垃圾"].gashaProbability)))//分數加成道具機率
         {
             myAccount.PointBounsItem += 1;
+            gashaResultSprite.Add(allSprite[7]);
         }
         else if (Probability(itemDictionary["分數加成"].gashaProbability * 100 / (itemDictionary["分數加成"].gashaProbability + itemDictionary["垃圾"].gashaProbability)))//血量加成道具機率
         {
             myAccount.HpAddItem += 1;
+            gashaResultSprite.Add(allSprite[8]);
         }
         else if (Probability(itemDictionary["垃圾"].gashaProbability * 100 / (itemDictionary["垃圾"].gashaProbability)))//垃圾機率
         {
             myAccount.Trash += 1;
+            gashaResultSprite.Add(allSprite[9]);
         }
         else
         {
-            Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");//驗證用(當機率加總100%他不應該出現)
+            Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");//驗證用(機率加總100%所以他不應該出現)
         }
+        GameObject.Find("OneGachaCharIcon").transform.GetChild(0).GetComponent<Image>().sprite = gashaResultSprite[0];
     }
     public void TenGasha()
     {
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 5; i++)
         {
             OneGasha();
         }
+        for(int i = 0; i < 5; i++)
+        {
+            GameObject.Find("TenGachaCharIcon").transform.GetChild(i).GetComponent<Image>().sprite = gashaResultSprite[i];
+        }
+        
     }
     public void OneGashaPanelFadeIn()//過場
     {
