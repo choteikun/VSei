@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class CreatAssetWithExcel : Editor
 {
-    [MenuItem("Tools/•Õ¶®asset§Â•Û")]
+    [MenuItem("Tools/ÁîüÊàêassetÊñá‰ª∂")]
     private static void CreatExcel()
     {
         ExcelLineManageNormal normalManager = ScriptableObject.CreateInstance<ExcelLineManageNormal>();
         ExcelLineManageHard hardManager = ScriptableObject.CreateInstance<ExcelLineManageHard>();
-        //Ω·≠»
-        //normalManager.dataArray = ExcelTool.CreatNormalBeatArrayWithExcel(ExcelConfig.excelsFolderPath + "rythmBeatNormalSet_StreetCityPop.xlsx");
-        normalManager.dataArray = ExcelTool.CreatNormalBeatArrayWithExcel(ExcelConfig.excelsFolderPath + "rythmBeatNormalSet_Take_Off_Into_the_Sky.xlsx");
+        //Ë≥¶ÂÄº
+        normalManager.dataArray = ExcelTool.CreatNormalBeatArrayWithExcel(ExcelConfig.excelsFolderPath + "rythmBeatNormalSet_StreetCityPop.xlsx");
+        //normalManager.dataArray = ExcelTool.CreatNormalBeatArrayWithExcel(ExcelConfig.excelsFolderPath + "rythmBeatNormalSet_Take_Off_Into_the_Sky.xlsx");
 
-        //hardManager.dataArray = ExcelTool.CreatHardBeatArrayWithExcel(ExcelConfig.excelsFolderPath + "rythmBeatHardSet_StreetCityPop.xlsx");
-        hardManager.dataArray = ExcelTool.CreatHardBeatArrayWithExcel(ExcelConfig.excelsFolderPath + "rythmBeatHardSet_Take_Off_Into_the_Sky.xlsx");
-        //ΩT´O§Â•Ûß®¶s¶b
+        hardManager.dataArray = ExcelTool.CreatHardBeatArrayWithExcel(ExcelConfig.excelsFolderPath + "rythmBeatHardSet_StreetCityPop.xlsx");
+        //hardManager.dataArray = ExcelTool.CreatHardBeatArrayWithExcel(ExcelConfig.excelsFolderPath + "rythmBeatHardSet_Take_Off_Into_the_Sky.xlsx");
+        //Á¢∫‰øùÊñá‰ª∂Â§æÂ≠òÂú®
         if (!Directory.Exists(ExcelConfig.assetPath))
         {
             Directory.CreateDirectory(ExcelConfig.assetPath);
         }
-        //string assetPathNormalBeat = string.Format("{0}{1}.asset", ExcelConfig.assetPath, "rythmBeatNormalSet_StreetCityPop");
-        string assetPathNormalBeat = string.Format("{0}{1}.asset", ExcelConfig.assetPath, "rythmBeatNormalSet_Take_Off_Into_the_Sky");
+        string assetPathNormalBeat = string.Format("{0}{1}.asset", ExcelConfig.assetPath, "rythmBeatNormalSet_StreetCityPop");
+        //string assetPathNormalBeat = string.Format("{0}{1}.asset", ExcelConfig.assetPath, "rythmBeatNormalSet_Take_Off_Into_the_Sky");
 
-        //string assetPathHardBeat = string.Format("{0}{1}.asset", ExcelConfig.assetPath, "rythmBeatHardSet_StreetCityPop");
-        string assetPathHardBeat = string.Format("{0}{1}.asset", ExcelConfig.assetPath, "rythmBeatHardSet_Take_Off_Into_the_Sky");
-        //•Õ¶®Asset§Â•Û
+        string assetPathHardBeat = string.Format("{0}{1}.asset", ExcelConfig.assetPath, "rythmBeatHardSet_StreetCityPop");
+        //string assetPathHardBeat = string.Format("{0}{1}.asset", ExcelConfig.assetPath, "rythmBeatHardSet_Take_Off_Into_the_Sky");
+        //ÁîüÊàêAssetÊñá‰ª∂
         AssetDatabase.CreateAsset(normalManager, assetPathNormalBeat);
         AssetDatabase.CreateAsset(hardManager, assetPathHardBeat);
         AssetDatabase.SaveAssets();

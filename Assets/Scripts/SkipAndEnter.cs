@@ -10,7 +10,7 @@ public class SkipAndEnter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.GetComponent<Button>().onClick.AddListener(ChangeScene); //ÂIÀ»Ä²µoChangeScene
+        this.GetComponent<Button>().onClick.AddListener(ChangeScene); //é»žæ“Šè§¸ç™¼ChangeScene
     }
 
     // Update is called once per frame
@@ -22,6 +22,6 @@ public class SkipAndEnter : MonoBehaviour
     public void ChangeScene()
     {
         Destroy(GameObject.FindGameObjectWithTag("DialogueManager"));
-        //SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("GameScene");
     }
 }

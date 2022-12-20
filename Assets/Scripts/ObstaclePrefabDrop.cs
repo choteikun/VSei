@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class ObstaclePrefabDrop : MonoBehaviour
 {
-    [Tooltip("¸`©ç±¼¸¨³t«×")]
+    [Tooltip("ç¯€æ‹æ‰è½é€Ÿåº¦")]
     public float obstacleDropSpeed;
-    [Tooltip("¸`©çPerfectÀò±o¤À¼Æ")]
+    [Tooltip("ç¯€æ‹Perfectç²å¾—åˆ†æ•¸")]
     public int perfectPoint;
-    [Tooltip("¸`©çGoodÀò±o¤À¼Æ")]
+    [Tooltip("ç¯€æ‹Goodç²å¾—åˆ†æ•¸")]
     public int goodPoint;
-    [Tooltip("¸`©çMiss¦©¤À")]
+    [Tooltip("ç¯€æ‹Missæ‰£åˆ†")]
     public int missPoint;
-    DropMeshRenderCtrl dropMeshRenderCtrl;
-
-    //Renderer rend;
 
     //public SensorL sensorL;
     //public SensorR sensorR;
@@ -24,8 +21,6 @@ public class ObstaclePrefabDrop : MonoBehaviour
 
     void Start()
     {
-        //rend = GetComponent<Renderer>();
-        dropMeshRenderCtrl = GetComponent<DropMeshRenderCtrl>();
         missArea = GetComponentsInChildren<BoxCollider>()[2];
         goodArea = GetComponentsInChildren<BoxCollider>()[1];
         perfectArea = GetComponentsInChildren<BoxCollider>()[0];
@@ -44,9 +39,9 @@ public class ObstaclePrefabDrop : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-            // ¦pªG®g½u»P¥­­±¸I¼²¡A¦C¦L¸I¼²ª«Åé¸ê°T  
-            //Debug.Log("¸I¼²ª«¥ó: " + hit.collider.name);
-            // ¦b³õ´ºÀËµø¤¤Ã¸»s®g½u  
+            // å¦‚æœå°„ç·šèˆ‡å¹³é¢ç¢°æ’ï¼Œåˆ—å°ç¢°æ’ç‰©é«”è³‡è¨Š  
+            //Debug.Log("ç¢°æ’ç‰©ä»¶: " + hit.collider.name);
+            // åœ¨å ´æ™¯æª¢è¦–ä¸­ç¹ªè£½å°„ç·š  
             Debug.DrawLine(ray.origin, hit.point, Color.red);
             if (hit.collider.CompareTag("PerfectArea")|| hit.collider.CompareTag("GoodArea")|| hit.collider.CompareTag("MissArea"))
             {
@@ -68,20 +63,9 @@ public class ObstaclePrefabDrop : MonoBehaviour
             //Destroy(gameObject);
             gameObject.SetActive(false);
         }
-        //if (dropMeshRenderCtrl.dropMeshRenderOpen)
-        //{
-        //    Color customColor = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-        //    rend.material.SetColor("_Color", customColor);
-        //}
-        //else
-        //{
-        //    Color customColor = new Color(0f, 0f, 0f, 0f);
-        //    rend.material.SetColor("_Color", customColor);
-        //}
     }
     public void SetActiveFalseObj()
     {
         gameObject.SetActive(false);
     }
-    
 }

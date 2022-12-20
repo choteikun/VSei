@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -98,6 +98,7 @@ public class GashaponPanel : MonoBehaviour
             string gashaCharacter;
             gashaCharacter = charactersInfo[UnityEngine.Random.Range(0, charactersInfo.Count)].name;//隨機選一隻角色抽出
             Debug.Log(gashaCharacter);
+            //if (gashaResultSprite[0]!=null) { gashaResultSprite.Remove(gashaResultSprite[0]); }
             if (gashaCharacter == GetMemberName(() => myAccount.AikaAmimi) && !myAccount.AikaAmimi) //如果抽出角色是艾卡‧阿米米且沒有該角色
             {
                 myAccount.AikaAmimi = true;
@@ -164,18 +165,29 @@ public class GashaponPanel : MonoBehaviour
             Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");//驗證用(機率加總100%所以他不應該出現)
         }
         GameObject.Find("OneGachaCharIcon").transform.GetChild(0).GetComponent<Image>().sprite = gashaResultSprite[0];
+        if (gashaResultSprite.Count == 2)
+        {
+            gashaResultSprite.Remove(gashaResultSprite[0]);
+        }
     }
     public void TenGasha()
     {
-        for(int i = 0; i < 5; i++)
+        for (int i = 0; i < 5; i++)
         {
             OneGasha();
-        }
-        for(int i = 0; i < 5; i++)
-        {
             GameObject.Find("TenGachaCharIcon").transform.GetChild(i).GetComponent<Image>().sprite = gashaResultSprite[i];
+            if (gashaResultSprite.Count > 5)
+            {
+                gashaResultSprite.Remove(gashaResultSprite[i]);
+            }
         }
-        
+        //if (gashaResultSprite.Count > 5)
+        //{
+        //    for (int j = 0; j < 5; j++)
+        //    {
+        //        gashaResultSprite.Remove(gashaResultSprite[j]);
+        //    }
+        //}
     }
     public void OneGashaPanelFadeIn()//過場
     {

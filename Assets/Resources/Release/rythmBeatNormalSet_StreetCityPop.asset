@@ -34,7 +34,7 @@ MonoBehaviour:
     BeatPosR: 0
     BeatPosRR: 1
   - BeatElement: 5
-    BeatPosLL: 1
+    BeatPosLL: 2
     BeatPosL: 0
     BeatPosR: 0
     BeatPosRR: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   - BeatElement: 7
     BeatPosLL: 0
     BeatPosL: 0
-    BeatPosR: 1
+    BeatPosR: 2
     BeatPosRR: 0
   - BeatElement: 8
     BeatPosLL: 1
@@ -61,12 +61,12 @@ MonoBehaviour:
   - BeatElement: 10
     BeatPosLL: 0
     BeatPosL: 0
-    BeatPosR: 1
+    BeatPosR: 2
     BeatPosRR: 0
   - BeatElement: 11
     BeatPosLL: 0
     BeatPosL: 0
-    BeatPosR: 1
+    BeatPosR: 2
     BeatPosRR: 0
   - BeatElement: 12
     BeatPosLL: 0
@@ -94,13 +94,13 @@ MonoBehaviour:
     BeatPosR: 0
     BeatPosRR: 1
   - BeatElement: 17
-    BeatPosLL: 1
+    BeatPosLL: 2
     BeatPosL: 0
     BeatPosR: 0
     BeatPosRR: 0
   - BeatElement: 18
     BeatPosLL: 0
-    BeatPosL: 1
+    BeatPosL: 2
     BeatPosR: 0
     BeatPosRR: 0
   - BeatElement: 19
@@ -110,496 +110,496 @@ MonoBehaviour:
     BeatPosRR: 0
   - BeatElement: 20
     BeatPosLL: 0
-    BeatPosL: 2
+    BeatPosL: 1
     BeatPosR: 0
     BeatPosRR: 0
   - BeatElement: 21
-    BeatPosLL: 2
+    BeatPosLL: 1
     BeatPosL: 0
     BeatPosR: 0
     BeatPosRR: 0
   - BeatElement: 22
     BeatPosLL: 0
-    BeatPosL: 2
+    BeatPosL: 1
     BeatPosR: 0
     BeatPosRR: 0
   - BeatElement: 23
     BeatPosLL: 0
     BeatPosL: 0
     BeatPosR: 0
-    BeatPosRR: 2
+    BeatPosRR: 1
   - BeatElement: 24
     BeatPosLL: 0
     BeatPosL: 0
     BeatPosR: 0
-    BeatPosRR: 2
+    BeatPosRR: 1
   - BeatElement: 25
-    BeatPosLL: 2
+    BeatPosLL: 1
     BeatPosL: 0
     BeatPosR: 0
     BeatPosRR: 0
   - BeatElement: 26
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 2
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 27
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 2
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 28
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 2
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 29
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 30
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 31
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 32
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 33
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 2
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 34
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 2
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 35
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 36
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 37
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 2
   - BeatElement: 38
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 39
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 40
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 41
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 42
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 43
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 2
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 44
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 2
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 45
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 46
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 47
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 48
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 49
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 50
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 2
+    BeatPosRR: 0
   - BeatElement: 51
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 52
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 53
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 2
+    BeatPosRR: 0
   - BeatElement: 54
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 2
+    BeatPosRR: 0
   - BeatElement: 55
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 56
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 57
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 58
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 59
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 60
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 2
   - BeatElement: 61
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 62
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 63
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 2
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 64
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 2
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 65
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 66
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 67
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 68
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 69
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 70
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 2
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 71
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 2
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 72
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 73
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 74
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 2
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 75
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 76
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 77
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 78
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 2
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 79
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 80
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 81
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 82
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 2
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 83
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 2
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 84
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 85
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 86
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 87
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 2
+    BeatPosRR: 0
   - BeatElement: 88
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 89
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 90
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 91
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 92
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 2
+    BeatPosRR: 0
   - BeatElement: 93
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 2
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 94
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 95
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 2
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 96
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 97
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 98
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 99
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 100
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 101
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 102
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 103
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 104
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 105
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 106
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 107
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 108
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 109
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 110
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0
   - BeatElement: 111
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 112
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 113
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 1
   - BeatElement: 114
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 115
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 1
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 116
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 117
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 1
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 118
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 1
+    BeatPosRR: 0

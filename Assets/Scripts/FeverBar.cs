@@ -24,8 +24,8 @@ public class FeverBar : MonoBehaviour
     {
         hpText.text = rythmGameCanvas.curSpecialCount + "/" + rythmGameCanvas.feverNeedPoint;
 
-        feverSlider.value = (float)rythmGameCanvas.curSpecialCount / 100;
+        feverSlider.value = (float)rythmGameCanvas.curSpecialCount / 30;
 
-        slider2.value = Mathf.Lerp(slider2.value, (float)rythmGameCanvas.curSpecialCount / 100, Time.deltaTime * 10);
+        slider2.value = Mathf.Lerp(slider2.value, (float)rythmGameCanvas.curSpecialCount / 30, Time.deltaTime * 1);
     }
 }

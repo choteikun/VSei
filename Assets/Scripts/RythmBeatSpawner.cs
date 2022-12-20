@@ -9,12 +9,12 @@ using SonicBloom.Koreo.Players;
 
 public class RythmBeatSpawner : MonoBehaviour
 {
-    [Tooltip("NormalÃĞ­±¥Í¦¨ªºª«¥ó")]
+    [Tooltip("Normalè­œé¢ç”Ÿæˆçš„ç‰©ä»¶")]
     public GameObject normalBeatPrefab;
-    [Tooltip("HardÃĞ­±¥Í¦¨ªºª«¥ó")]
+    [Tooltip("Hardè­œé¢ç”Ÿæˆçš„ç‰©ä»¶")]
     public GameObject specialBeatPrefab;
 
-    [Tooltip("¨Ì¾Úºq³æ¿ï¾Üªººq¦±¸¹½XData")]
+    [Tooltip("ä¾æ“šæ­Œå–®é¸æ“‡çš„æ­Œæ›²è™Ÿç¢¼Data")]
     public SongsInfo songsInfo;
 
     public GameObject sensorLL;
@@ -24,9 +24,9 @@ public class RythmBeatSpawner : MonoBehaviour
 
     public MyAccount myAccount;
 
-    public int curTime;//·í«e®É¶¡
-    public int spawnTime;//¬ö¿ı·í«e¥Í¦¨¸`©çªº®É¶¡
-    public int beatsLimitTimeDifference;//¨ú¤@­Ó­È¥Î©ó­­¨î©ç¤l¶¡ªº®É¶¡®t
+    public int curTime;//ç•¶å‰æ™‚é–“
+    public int spawnTime;//ç´€éŒ„ç•¶å‰ç”Ÿæˆç¯€æ‹çš„æ™‚é–“
+    public int beatsLimitTimeDifference;//å–ä¸€å€‹å€¼ç”¨æ–¼é™åˆ¶æ‹å­é–“çš„æ™‚é–“å·®
     public int curCheckIdx;//Normal Event Element
 
     public AudioSource audioCom;
@@ -38,7 +38,7 @@ public class RythmBeatSpawner : MonoBehaviour
     public string hardEventID;
     //public Koreography koreography;
     public List<KoreographyEvent> rhythmEvents;
-    //Àò¨úmusicplayer script
+    //ç²å–musicplayer script
     public SimpleMusicPlayer musicPlayer;
     //koreography list
     public List<Koreography> loadedKoreo = new();
@@ -46,6 +46,7 @@ public class RythmBeatSpawner : MonoBehaviour
     //bool changeTrack;
     private ExcelLineManageNormal LineManageNormal;
     private ExcelLineManageHard LineManageHard;
+    bool gameIsPause;
 
     public enum SensorSet
     {
@@ -111,13 +112,14 @@ public class RythmBeatSpawner : MonoBehaviour
 
         curCheckIdx = 0;
         spawnTime = 0;
+        gameIsPause = false;
     }
     void Update()
     {
         if (curCheckIdx < rhythmEvents.Count)
         {
             curTime = Koreographer.GetSampleTime();
-            //Debug.Log("Element " + curCheckIdx);//²Ä´X©ç
+            //Debug.Log("Element " + curCheckIdx);//ç¬¬å¹¾æ‹
             //Debug.Log("curTime" + curTime);
             //Debug.Log("StartSample" + rhythmEvents[curCheckIdx].StartSample);
             if (curTime > rhythmEvents[curCheckIdx].StartSample)
@@ -126,11 +128,30 @@ public class RythmBeatSpawner : MonoBehaviour
                 //Debug.Log("Element" + curCheckIdx);
             }
         }
-        if (!audioCom.isPlaying)//¦pªGºq¦±¼½©ñ§¹
-        {
-            SceneManager.LoadScene("FinalScene");//ºq¦±¼½©ñ§¹Âà³õ
-            myAccount.HpAddItemUsing = false;//¦å¶q¼W¥[¹D¨ã®ÄªGÃö³¬
-            myAccount.PointBounsItemUsing = false;//¤À¼Æ¥[¦¨¹D¨ã®ÄªGÃö³¬
+        if (!audioCom.isPlaying & !gameIsPause)//å¦‚æœæ­Œæ›²æ’­æ”¾å®Œ
+        { 
+            switch (myAccount.curCharacterUse)
+            {
+                case MyAccount.CurCharacterUse.FelbelemAlice:
+                    SceneManager.LoadScene("AliceFinish");
+                    break;
+                case MyAccount.CurCharacterUse.AikaAmimi:
+                    SceneManager.LoadScene("AmimiFinish");
+                    break;
+                case MyAccount.CurCharacterUse.MalibetaRorem:
+                    SceneManager.LoadScene("LorenFinish");
+                    break;
+                case MyAccount.CurCharacterUse.Nameless:
+                    SceneManager.LoadScene("NonameFinish");
+                    break;
+                case MyAccount.CurCharacterUse.ShiorhaiYai:
+                    SceneManager.LoadScene("YaiFinish");
+                    break;
+                default:
+                    break;
+            }
+            myAccount.HpAddItemUsing = false;//è¡€é‡å¢åŠ é“å…·æ•ˆæœé—œé–‰
+            myAccount.PointBounsItemUsing = false;//åˆ†æ•¸åŠ æˆé“å…·æ•ˆæœé—œé–‰
         }
     }
     void NormalMaker(KoreographyEvent koreographyEvent)
@@ -148,14 +169,14 @@ public class RythmBeatSpawner : MonoBehaviour
         }
     }
 
-    public void RythmNormalBeatPosSet()//´¶³qÃø«×¸`©ç¦ì¸mset
+    public void RythmNormalBeatPosSet()//æ™®é€šé›£åº¦ç¯€æ‹ä½ç½®set
     {
-        if (curTime - spawnTime > beatsLimitTimeDifference)//³Ì¤Ö­n¶W¹L¦h¤ÖbeatsTimeDifference¤~¥Í¦¨¸`©ç
+        if (curTime - spawnTime > beatsLimitTimeDifference)//æœ€å°‘è¦è¶…éå¤šå°‘beatsTimeDifferenceæ‰ç”Ÿæˆç¯€æ‹
         {
-            if (LineManageNormal.dataArray[curCheckIdx].BeatPosLL == "1")//«ö·Óexcel¤Wªºªí®æ¦ì¸m
+            if (LineManageNormal.dataArray[curCheckIdx].BeatPosLL == "1")//æŒ‰ç…§excelä¸Šçš„è¡¨æ ¼ä½ç½®
             {
                 //sensorSet = SensorSet.SensorLL_SetPosX;
-                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//¥Í¦¨¸`©ç
+                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//ç”Ÿæˆç¯€æ‹
                 spawnTime = curTime;
             }
             if (LineManageNormal.dataArray[curCheckIdx].BeatPosL == "1")
@@ -177,10 +198,10 @@ public class RythmBeatSpawner : MonoBehaviour
                 spawnTime = curTime;
             }
             //-----------------------------------------------------------------------------------------------------------------------------------------------------------
-            if (LineManageNormal.dataArray[curCheckIdx].BeatPosLL == "2")//«ö·Óexcel¤Wªºªí®æ¦ì¸m
+            if (LineManageNormal.dataArray[curCheckIdx].BeatPosLL == "2")//æŒ‰ç…§excelä¸Šçš„è¡¨æ ¼ä½ç½®
             {
                 //sensorSet = SensorSet.SensorLL_SetPosX;
-                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//¥Í¦¨¸`©ç
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//ç”Ÿæˆç¯€æ‹
                 spawnTime = curTime;
             }
             if (LineManageNormal.dataArray[curCheckIdx].BeatPosL == "2")
@@ -204,15 +225,15 @@ public class RythmBeatSpawner : MonoBehaviour
             if ((LineManageNormal.dataArray[curCheckIdx].BeatPosLL != "1" && LineManageNormal.dataArray[curCheckIdx].BeatPosL != "1" && LineManageNormal.dataArray[curCheckIdx].BeatPosR != "1" && LineManageNormal.dataArray[curCheckIdx].BeatPosRR != "1")
                 && (LineManageNormal.dataArray[curCheckIdx].BeatPosLL != "0" && LineManageNormal.dataArray[curCheckIdx].BeatPosL != "0" && LineManageNormal.dataArray[curCheckIdx].BeatPosR != "0" && LineManageNormal.dataArray[curCheckIdx].BeatPosRR != "0")
                 && (LineManageNormal.dataArray[curCheckIdx].BeatPosLL != "2" && LineManageNormal.dataArray[curCheckIdx].BeatPosL != "2" && LineManageNormal.dataArray[curCheckIdx].BeatPosR != "2" && LineManageNormal.dataArray[curCheckIdx].BeatPosRR != "2"))
-                //­Yexcel¸Ì¨S¦³¥ô¦ó¼Æ¦r¬O1&0«hÀH¾÷¦w±Æ¦ì¸m(¤@¾î±Æ¥u·|¦³1­Ó¸`©ç¥Í¦¨)
+                //è‹¥excelè£¡æ²’æœ‰ä»»ä½•æ•¸å­—æ˜¯1&0å‰‡éš¨æ©Ÿå®‰æ’ä½ç½®(ä¸€æ©«æ’åªæœƒæœ‰1å€‹ç¯€æ‹ç”Ÿæˆ)
             {
                 //Debug.Log("no rythmBeats");
-                switch (sensorSet)//¤À°t¦ì¸m
+                switch (sensorSet)//åˆ†é…ä½ç½®
                 {
                     case SensorSet.SensorLL_SetPosX:
 
                         //Instantiate(obstaclePrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);
-                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//¥Í¦¨¸`©ç
+                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//ç”Ÿæˆç¯€æ‹
                         spawnTime = curTime;
                         break;
                     case SensorSet.SensorL_SetPosX:
@@ -243,13 +264,13 @@ public class RythmBeatSpawner : MonoBehaviour
             //obstaclePrefab.name = "Element" + curCheckIdx;
         }
     }
-    public void RythmHardBeatPosSet()//§xÃøÃø«×¸`©ç¦ì¸mset
+    public void RythmHardBeatPosSet()//å›°é›£é›£åº¦ç¯€æ‹ä½ç½®set
     {
-        if (curTime - spawnTime > beatsLimitTimeDifference)//³Ì¤Ö­n¶W¹L¦h¤ÖbeatsTimeDifference¤~¥Í¦¨¸`©ç
+        if (curTime - spawnTime > beatsLimitTimeDifference)//æœ€å°‘è¦è¶…éå¤šå°‘beatsTimeDifferenceæ‰ç”Ÿæˆç¯€æ‹
         {
-            if (LineManageHard.dataArray[curCheckIdx].BeatPosLL == "1")//«ö·Óexcel¤Wªºªí®æ¦ì¸m1¬O¤@¯ë±¼¸¨ª«2¬O¯S®í±¼¸¨ª«0¬O¨S¦³
+            if (LineManageHard.dataArray[curCheckIdx].BeatPosLL == "1")//æŒ‰ç…§excelä¸Šçš„è¡¨æ ¼ä½ç½®1æ˜¯ä¸€èˆ¬æ‰è½ç‰©2æ˜¯ç‰¹æ®Šæ‰è½ç‰©0æ˜¯æ²’æœ‰
             {
-                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//¥Í¦¨¸`©ç
+                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//ç”Ÿæˆç¯€æ‹
                 spawnTime = curTime;
             }
             if (LineManageHard.dataArray[curCheckIdx].BeatPosL == "1")
@@ -270,7 +291,7 @@ public class RythmBeatSpawner : MonoBehaviour
             //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             if (LineManageHard.dataArray[curCheckIdx].BeatPosLL == "2")
             {
-                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//¥Í¦¨¸`©ç
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//ç”Ÿæˆç¯€æ‹
                 spawnTime = curTime;
             }
             if (LineManageHard.dataArray[curCheckIdx].BeatPosL == "2")
@@ -290,13 +311,13 @@ public class RythmBeatSpawner : MonoBehaviour
             }
             if ((LineManageHard.dataArray[curCheckIdx].BeatPosLL != "1" && LineManageHard.dataArray[curCheckIdx].BeatPosL != "1" && LineManageHard.dataArray[curCheckIdx].BeatPosR != "1" && LineManageHard.dataArray[curCheckIdx].BeatPosRR != "1")
                 && (LineManageHard.dataArray[curCheckIdx].BeatPosLL != "0" && LineManageHard.dataArray[curCheckIdx].BeatPosL != "0" && LineManageHard.dataArray[curCheckIdx].BeatPosR != "0" && LineManageHard.dataArray[curCheckIdx].BeatPosRR != "0")
-                && (LineManageHard.dataArray[curCheckIdx].BeatPosLL != "2" && LineManageHard.dataArray[curCheckIdx].BeatPosL != "2" && LineManageHard.dataArray[curCheckIdx].BeatPosR != "2" && LineManageHard.dataArray[curCheckIdx].BeatPosRR != "2")) //­Yexcel¸Ì¨S¦³¥ô¦ó¼Æ¦r¬O1«hÀH¾÷¦w±Æ¦ì¸m(¤@¾î±Æ¥u·|¦³1­Ó¸`©ç¥Í¦¨)
+                && (LineManageHard.dataArray[curCheckIdx].BeatPosLL != "2" && LineManageHard.dataArray[curCheckIdx].BeatPosL != "2" && LineManageHard.dataArray[curCheckIdx].BeatPosR != "2" && LineManageHard.dataArray[curCheckIdx].BeatPosRR != "2")) //è‹¥excelè£¡æ²’æœ‰ä»»ä½•æ•¸å­—æ˜¯1å‰‡éš¨æ©Ÿå®‰æ’ä½ç½®(ä¸€æ©«æ’åªæœƒæœ‰1å€‹ç¯€æ‹ç”Ÿæˆ)
             {
                 //Debug.Log("no rythmBeats");
-                switch (sensorSet)//¤À°t¦ì¸m
+                switch (sensorSet)//åˆ†é…ä½ç½®
                 {
                     case SensorSet.SensorLL_SetPosX:
-                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//¥Í¦¨¸`©ç
+                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//ç”Ÿæˆç¯€æ‹
                         spawnTime = curTime;
                         break;
                     case SensorSet.SensorL_SetPosX:
@@ -326,16 +347,19 @@ public class RythmBeatSpawner : MonoBehaviour
         //audioCom.Stop();
         //audioCom.time = 0f;
         //audioCom.Play();
+        gameIsPause = false;
         Time.timeScale = 1;
         SceneManager.LoadScene("GameScene");
     }
     public void PauseButton()
     {
+        gameIsPause = true;
         audioCom.Pause();
         Time.timeScale = 0;
     }
     public void ResumeButton()
     {
+        gameIsPause = false;
         audioCom.Play();
         Time.timeScale = 1;
     }

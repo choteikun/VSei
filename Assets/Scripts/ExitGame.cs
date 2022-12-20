@@ -9,7 +9,7 @@ public class ExitGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.GetComponent<Button>().onClick.AddListener(ChangeScene); //ÂIÀ»Ä²µoChangeScene
+        this.GetComponent<Button>().onClick.AddListener(ChangeScene); //é»žæ“Šè§¸ç™¼ChangeScene
     }
 
     // Update is called once per frame
@@ -21,6 +21,6 @@ public class ExitGame : MonoBehaviour
     public void ChangeScene()
     {
         Destroy(GameObject.FindGameObjectWithTag("DialogueManager"));
-        SceneManager.LoadScene("HomeScene");
+        SceneManager.LoadScene("FinalScene");
     }
 }

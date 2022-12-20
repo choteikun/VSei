@@ -74,9 +74,9 @@ public class LobbySliderCtrl : MonoBehaviour
             }
             scrollbar.value = Mathf.SmoothDamp(scrollbar.value, targetValue, ref moveSpeed, SMOOTH_TIME);
         }
-        if (Input.touchCount == 1 && (Input.GetTouch(0).phase == TouchPhase.Ended)) //¤â«üÂ÷¶}¿Ã¹õ
+        if (Input.touchCount == 1 && (Input.GetTouch(0).phase == TouchPhase.Ended)) //æ‰‹æŒ‡é›¢é–‹è¢å¹•
         {
-            //§PÂ_·í«e¦ì©ó­ş­Ó°Ï¶¡¡A³]¸m¦Û°Ê·Æ°Ê¦Üªº¦ì¸m
+            //åˆ¤æ–·ç•¶å‰ä½æ–¼å“ªå€‹å€é–“ï¼Œè¨­ç½®è‡ªå‹•æ»‘å‹•è‡³çš„ä½ç½®
             if (scrollbar.value <= 0.075f)//125
             {
                 targetValue = 0;
@@ -134,7 +134,27 @@ public class LobbySliderCtrl : MonoBehaviour
     {
         if (allowGamePlay)
         {
-            SceneManager.LoadScene("SongSelectScene");
+            switch (myAccount.curCharacterUse)
+            {
+                case MyAccount.CurCharacterUse.FelbelemAlice:
+                    SceneManager.LoadScene("AliceStart");
+                    break;
+                case MyAccount.CurCharacterUse.AikaAmimi:
+                    SceneManager.LoadScene("AmimiStart");
+                    break;
+                case MyAccount.CurCharacterUse.MalibetaRorem:
+                    SceneManager.LoadScene("LorenStart");
+                    break;
+                case MyAccount.CurCharacterUse.Nameless:
+                    SceneManager.LoadScene("NonameStart");
+                    break;
+                case MyAccount.CurCharacterUse.ShiorhaiYai:
+                    SceneManager.LoadScene("YaiStart");
+                    break;
+                default:
+                    break;
+            }
+            
         }
         else
         {

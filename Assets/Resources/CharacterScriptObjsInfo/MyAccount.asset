@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAccountName: 
   stamina: 0
-  FelbelemAlice: 1
+  FelbelemAlice: 0
   AikaAmimi: 0
   MalibetaRorem: 0
-  Nameless: 1
+  Nameless: 0
   ShiorhaiYai: 0
   PointBounsItemUsing: 0
   HpAddItemUsing: 0
   tutorialClose: 0
-  firstPlay: 1
+  firstPlay: 0
   EnergyDrink: 50
   CharacterFragment: 50
   PointBounsItem: 40
