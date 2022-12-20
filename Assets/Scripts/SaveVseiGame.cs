@@ -275,4 +275,28 @@ public class SaveVseiGame : MonoBehaviour
             return false;
         }
     }
+    public void ResetAllInfo()
+    {
+        myAccount.firstPlay = true;
+        myAccount.tutorialClose = false;
+
+        myAccount.AikaAmimi = false;
+        myAccount.MalibetaRorem = false;
+        myAccount.Nameless = false;
+        myAccount.ShiorhaiYai = false;
+
+        myAccount.curCharacterUse = MyAccount.CurCharacterUse.FelbelemAlice;
+
+        myAccount.EnergyDrink = 0;
+        myAccount.CharacterFragment = 0;
+        myAccount.PointBounsItem = 0;
+        myAccount.HpAddItem = 0;
+        myAccount.Trash = 0;
+
+        charInfoDictionary["µáº¸¨©­Û¡Eªü²úµ·"].charLevel = 1;
+        charInfoDictionary["¦ã¥d¡Eªü¦Ì¦Ì"].charLevel = 1;
+        charInfoDictionary["º¿²ú¨©¶ð¡EÅÚ­Û"].charLevel = 1;
+        charInfoDictionary["µL¦W"].charLevel = 1;
+        charInfoDictionary["¥Õ¦Ç.¨È¦ç"].charLevel = 1;
+    }
 }

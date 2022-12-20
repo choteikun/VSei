@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: CharacterFragment
   m_EditorClassIdentifier: 
   itemName: "\u89D2\u8272\u788E\u7247"
+  itemIcon: {fileID: 21300000, guid: 9fd18771fa7815c40bc83a2473b8b1be, type: 3}
   gashaProbability: 5

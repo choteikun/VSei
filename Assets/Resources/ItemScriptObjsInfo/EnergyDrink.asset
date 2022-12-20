@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: EnergyDrink
   m_EditorClassIdentifier: 
   itemName: "\u80FD\u91CF\u98F2\u6599"
+  itemIcon: {fileID: 21300000, guid: f0405fa01fc187a41a1974d9b3137a14, type: 3}
   gashaProbability: 5

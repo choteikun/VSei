@@ -77,7 +77,7 @@ public class LobbySliderCtrl : MonoBehaviour
         if (Input.touchCount == 1 && (Input.GetTouch(0).phase == TouchPhase.Ended)) //手指離開螢幕
         {
             //判斷當前位於哪個區間，設置自動滑動至的位置
-            if (scrollbar.value <= 0.125f)
+            if (scrollbar.value <= 0.075f)//125
             {
                 targetValue = 0;
                 if (myAccount.FelbelemAlice)
@@ -86,7 +86,7 @@ public class LobbySliderCtrl : MonoBehaviour
                     allowGamePlay = true;
                 }
             }
-            else if (scrollbar.value <= 0.375f)
+            else if (scrollbar.value <= 0.325f)//375
             {
                 targetValue = 0.25f;
                 if (myAccount.AikaAmimi)
@@ -96,7 +96,7 @@ public class LobbySliderCtrl : MonoBehaviour
                 }
                 else { allowGamePlay = false; }
             }
-            else if (scrollbar.value <= 0.625f)
+            else if (scrollbar.value <= 0.575f)//625
             {
                 targetValue = 0.5f;
                 if (myAccount.MalibetaRorem)
@@ -106,7 +106,7 @@ public class LobbySliderCtrl : MonoBehaviour
                 }
                 else { allowGamePlay = false; }
             }
-            else if (scrollbar.value <= 0.875f)
+            else if (scrollbar.value <= 0.825f)//875
             {
                 targetValue = 0.75f;
                 if (myAccount.Nameless)
@@ -116,7 +116,7 @@ public class LobbySliderCtrl : MonoBehaviour
                 }
                 else { allowGamePlay = false; }
             }
-            else if (scrollbar.value <= 1.125f)
+            else if (scrollbar.value <= 1.075f)//1125
             {
                 targetValue = 1.0f;
                 if (myAccount.ShiorhaiYai)

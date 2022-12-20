@@ -14,6 +14,7 @@ public class RythmGameCanvas : MonoBehaviour
 
     public GameObject perfectEffectPrefab;
     public GameObject goodEffectPrefab;
+    public GameObject missEffectPrefab;
     public TMP_Text rythmPointText;
     public MyAccount myAccount;
 
@@ -32,6 +33,8 @@ public class RythmGameCanvas : MonoBehaviour
     public int curSpecialCount;//ゴ阑疭竊╃Ω计
     public int feverNeedPoint;//ㄏノ砆笆м┮惠Ω计兵ン
     public float PerfectPointBounsMulti { get; private set; }//だ计Θ瞯
+    public float ItemPointBounsMulti;
+    public int curCharHp { get; private set; }//讽玡à︹﹀秖
     public float CurCharMissShield;//讽玡à︹╄кMissΩ计
 
 
@@ -48,14 +51,13 @@ public class RythmGameCanvas : MonoBehaviour
     RectTransform sensorButtonR;
     RectTransform sensorButtonRR;
 
-    float curCharFeverTime;//讽玡à︹FeverTime
-    int curCharHp;//讽玡à︹﹀秖
+    float curCharFeverTime;//讽玡à︹FeverTime  
     float charBounsMulti; //à︹だ计Θ瞯
     int charMissShield;//à︹MissΩ计
     int charHealHp;//à︹﹀
 
     private Camera cam;
-    void Start()
+    void Awake()
     {
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rythmPointText = GameObject.Find("RythmPointText").GetComponent<TMP_Text>();
@@ -91,6 +93,21 @@ public class RythmGameCanvas : MonoBehaviour
         curCharFeverTime = 0;//更讽玡à︹feverTime
         curCharHp = charInfoDictionary[myAccount.curCharacterUse].charHp;//更讽玡à︹﹀秖
         CurCharMissShield = charMissShield;//更讽玡à︹Miss
+        PerfectPointBounsMulti = 1.0f;//perfect瞯﹍
+
+        if (myAccount.HpAddItemUsing)//﹀秖Θ笵ㄣㄏノ
+        {
+            curCharHp += 300;
+        }
+
+        if (myAccount.PointBounsItemUsing)//だ计Θ笵ㄣㄏノ
+        {
+            ItemPointBounsMulti = 1.2f;
+        }
+        else
+        {
+            ItemPointBounsMulti = 1.0f;
+        }
     }
     private void InitCharInfoDictionary()
     {
@@ -119,12 +136,12 @@ public class RythmGameCanvas : MonoBehaviour
         if (curCharFeverTime > 0)
         {
             curCharFeverTime -= Time.deltaTime;
-            PerfectPointBounsMulti = charBounsMulti;//à︹砆笆だ计
+            PerfectPointBounsMulti = charBounsMulti * ItemPointBounsMulti;//à︹砆笆だ计
             
-            if (curCharFeverTime < 0)
+            if (curCharFeverTime <= 0)
             {
                 curCharFeverTime = 0;
-                PerfectPointBounsMulti = 1.0f;//だ计瞯確1.0
+                PerfectPointBounsMulti = 1.0f * ItemPointBounsMulti;//だ计瞯確1.0
             }
         }
         if(curCharHp >= charInfoDictionary[myAccount.curCharacterUse].charHp)//﹀ぃ禬筁à︹セō﹀秖
@@ -139,6 +156,10 @@ public class RythmGameCanvas : MonoBehaviour
     public void GoodEffect()
     {
         PoolManager.Release(goodEffectPrefab);//ネΘGoodEffect
+    }
+    public void MissEffect()
+    {
+        PoolManager.Release(missEffectPrefab);//ネΘMissEffect
     }
     public void ReadCharacterSkillInfo()
     {

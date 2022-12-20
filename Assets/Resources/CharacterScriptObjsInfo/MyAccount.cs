@@ -10,7 +10,7 @@ public class MyAccount : ScriptableObject
     public string myAccountName;
 
     [Tooltip("體力值")]
-    public float stamina;
+    public int stamina;
 
     [Tooltip("是否持有菲爾貝倫‧阿莉絲")]
     public bool FelbelemAlice;
@@ -22,6 +22,11 @@ public class MyAccount : ScriptableObject
     public bool Nameless;
     [Tooltip("是否持有白灰.亞衣")]
     public bool ShiorhaiYai;
+
+    [Tooltip("是否正在使用分數加成道具")]
+    public bool PointBounsItemUsing = false;
+    [Tooltip("是否正在使用血量加成道具")]
+    public bool HpAddItemUsing = false;
 
     [Tooltip("教學指引關閉")]
     public bool tutorialClose;

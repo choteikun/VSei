@@ -109,35 +109,35 @@ MonoBehaviour:
     BeatPosR: 0
     BeatPosRR: 0
   - BeatElement: 20
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 2
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 21
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 2
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 22
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 2
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 23
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 2
   - BeatElement: 24
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 0
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 2
   - BeatElement: 25
-    BeatPosLL: 
-    BeatPosL: 
-    BeatPosR: 
-    BeatPosRR: 
+    BeatPosLL: 2
+    BeatPosL: 0
+    BeatPosR: 0
+    BeatPosRR: 0
   - BeatElement: 26
     BeatPosLL: 
     BeatPosL: 

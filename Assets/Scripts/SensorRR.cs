@@ -88,27 +88,38 @@ public class SensorRR : MonoBehaviour
         {
             if (jugeArea == JugeArea.Perfect)
             {
-                Debug.Log("Perfect" + "¡AÄ²¸I¦ì¸m: " + hit.transform.position);
+                Debug.Log("PerfectRR" + "¡AÄ²¸I¦ì¸m: " + hit.transform.position);
                 gameCanvas.rythmPoint += (int)Mathf.Round(other.GetComponentInParent<ObstaclePrefabDrop>().perfectPoint * gameCanvas.PerfectPointBounsMulti);
+
+                if (other.GetComponentInParent<ObstaclePrefabDrop>().name == "SpecialBeat(Clone)")
+                {
+                    gameCanvas.curSpecialCount++;
+                }
 
                 gameCanvas.PerfectEffect();
                 jugeArea = JugeArea.None;
                 touchSensor = false;
                 other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+                
             }
             else if (jugeArea == JugeArea.Good)
             {
-                Debug.Log("Good" + "¡AÄ²¸I¦ì¸m: " + hit.transform.position);
+                Debug.Log("GoodRR" + "¡AÄ²¸I¦ì¸m: " + hit.transform.position);
                 gameCanvas.rythmPoint += other.GetComponentInParent<ObstaclePrefabDrop>().goodPoint;
+                if (other.GetComponentInParent<ObstaclePrefabDrop>().name == "SpecialBeat(Clone)")
+                {
+                    gameCanvas.curSpecialCount++;
+                }
 
                 gameCanvas.GoodEffect();
                 jugeArea = JugeArea.None;
                 touchSensor = false;
                 other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();
+                
             }
             else if (jugeArea == JugeArea.Miss)
             {
-                Debug.Log("Miss" + "¡AÄ²¸I¦ì¸m: " + hit.transform.position);
+                Debug.Log("MissRR" + "¡AÄ²¸I¦ì¸m: " + hit.transform.position);
                 if (gameCanvas.CurCharMissShield <= 0)
                 {
                     gameCanvas.CurCharMissShield = 0;
@@ -119,6 +130,7 @@ public class SensorRR : MonoBehaviour
                     gameCanvas.CurCharMissShield -= 1;
                 }
 
+                gameCanvas.MissEffect();
                 jugeArea = JugeArea.None;
                 touchSensor = false;
                 other.GetComponentInParent<ObstaclePrefabDrop>().SetActiveFalseObj();

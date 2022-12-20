@@ -12,7 +12,7 @@ public class RythmBeatSpawner : MonoBehaviour
     [Tooltip("Normal譜面生成的物件")]
     public GameObject normalBeatPrefab;
     [Tooltip("Hard譜面生成的物件")]
-    public GameObject hardBeatPrefab;
+    public GameObject specialBeatPrefab;
 
     [Tooltip("依據歌單選擇的歌曲號碼Data")]
     public SongsInfo songsInfo;
@@ -21,6 +21,8 @@ public class RythmBeatSpawner : MonoBehaviour
     public GameObject sensorL;
     public GameObject sensorR;
     public GameObject sensorRR;
+
+    public MyAccount myAccount;
 
     public int curTime;//當前時間
     public int spawnTime;//紀錄當前生成節拍的時間
@@ -124,7 +126,12 @@ public class RythmBeatSpawner : MonoBehaviour
                 //Debug.Log("Element" + curCheckIdx);
             }
         }
-        
+        if (!audioCom.isPlaying)//如果歌曲播放完
+        {
+            SceneManager.LoadScene("FinalScene");//歌曲播放完轉場
+            myAccount.HpAddItemUsing = false;//血量增加道具效果關閉
+            myAccount.PointBounsItemUsing = false;//分數加成道具效果關閉
+        }
     }
     void NormalMaker(KoreographyEvent koreographyEvent)
     {
@@ -169,11 +176,37 @@ public class RythmBeatSpawner : MonoBehaviour
                 PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
                 spawnTime = curTime;
             }
+            //-----------------------------------------------------------------------------------------------------------------------------------------------------------
+            if (LineManageNormal.dataArray[curCheckIdx].BeatPosLL == "2")//按照excel上的表格位置
+            {
+                //sensorSet = SensorSet.SensorLL_SetPosX;
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//生成節拍
+                spawnTime = curTime;
+            }
+            if (LineManageNormal.dataArray[curCheckIdx].BeatPosL == "2")
+            {
+                //sensorSet = SensorSet.SensorL_SetPosX;
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
+                spawnTime = curTime;
+            }
+            if (LineManageNormal.dataArray[curCheckIdx].BeatPosR == "2")
+            {
+                //sensorSet = SensorSet.SensorR_SetPosX;
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
+                spawnTime = curTime;
+            }
+            if (LineManageNormal.dataArray[curCheckIdx].BeatPosRR == "2")
+            {
+                //sensorSet = SensorSet.SensorRR_SetPosX;
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
+                spawnTime = curTime;
+            }
             if ((LineManageNormal.dataArray[curCheckIdx].BeatPosLL != "1" && LineManageNormal.dataArray[curCheckIdx].BeatPosL != "1" && LineManageNormal.dataArray[curCheckIdx].BeatPosR != "1" && LineManageNormal.dataArray[curCheckIdx].BeatPosRR != "1")
                 && (LineManageNormal.dataArray[curCheckIdx].BeatPosLL != "0" && LineManageNormal.dataArray[curCheckIdx].BeatPosL != "0" && LineManageNormal.dataArray[curCheckIdx].BeatPosR != "0" && LineManageNormal.dataArray[curCheckIdx].BeatPosRR != "0")
-                ) //若excel裡沒有任何數字是1&0則隨機安排位置(一橫排只會有1個節拍生成)
+                && (LineManageNormal.dataArray[curCheckIdx].BeatPosLL != "2" && LineManageNormal.dataArray[curCheckIdx].BeatPosL != "2" && LineManageNormal.dataArray[curCheckIdx].BeatPosR != "2" && LineManageNormal.dataArray[curCheckIdx].BeatPosRR != "2"))
+                //若excel裡沒有任何數字是1&0則隨機安排位置(一橫排只會有1個節拍生成)
             {
-                Debug.Log("no rythmBeats");
+                //Debug.Log("no rythmBeats");
                 switch (sensorSet)//分配位置
                 {
                     case SensorSet.SensorLL_SetPosX:
@@ -237,29 +270,29 @@ public class RythmBeatSpawner : MonoBehaviour
             //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             if (LineManageHard.dataArray[curCheckIdx].BeatPosLL == "2")
             {
-                PoolManager.Release(hardBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//生成節拍
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//生成節拍
                 spawnTime = curTime;
             }
             if (LineManageHard.dataArray[curCheckIdx].BeatPosL == "2")
             {
-                PoolManager.Release(hardBeatPrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
                 spawnTime = curTime;
             }
             if (LineManageHard.dataArray[curCheckIdx].BeatPosR == "2")
             {
-                PoolManager.Release(hardBeatPrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
                 spawnTime = curTime;
             }
             if (LineManageHard.dataArray[curCheckIdx].BeatPosRR == "2")
             {
-                PoolManager.Release(hardBeatPrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
                 spawnTime = curTime;
             }
             if ((LineManageHard.dataArray[curCheckIdx].BeatPosLL != "1" && LineManageHard.dataArray[curCheckIdx].BeatPosL != "1" && LineManageHard.dataArray[curCheckIdx].BeatPosR != "1" && LineManageHard.dataArray[curCheckIdx].BeatPosRR != "1")
                 && (LineManageHard.dataArray[curCheckIdx].BeatPosLL != "0" && LineManageHard.dataArray[curCheckIdx].BeatPosL != "0" && LineManageHard.dataArray[curCheckIdx].BeatPosR != "0" && LineManageHard.dataArray[curCheckIdx].BeatPosRR != "0")
                 && (LineManageHard.dataArray[curCheckIdx].BeatPosLL != "2" && LineManageHard.dataArray[curCheckIdx].BeatPosL != "2" && LineManageHard.dataArray[curCheckIdx].BeatPosR != "2" && LineManageHard.dataArray[curCheckIdx].BeatPosRR != "2")) //若excel裡沒有任何數字是1則隨機安排位置(一橫排只會有1個節拍生成)
             {
-                Debug.Log("no rythmBeats");
+                //Debug.Log("no rythmBeats");
                 switch (sensorSet)//分配位置
                 {
                     case SensorSet.SensorLL_SetPosX:

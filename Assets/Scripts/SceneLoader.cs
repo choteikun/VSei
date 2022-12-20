@@ -9,9 +9,13 @@ public class SceneLoader : MonoBehaviour
     private CanvasScaler canvasScaler;
     public MyAccount myAccount;
 
-
     void Start()
     {
+        if (!myAccount)
+        {
+            myAccount = Resources.Load<MyAccount>("CharacterScriptObjsInfo/MyAccount");
+        }
+
         Debug.Log("Screen.width : " + Screen.width);
         Debug.Log("Screen.height : " + Screen.height);
 
