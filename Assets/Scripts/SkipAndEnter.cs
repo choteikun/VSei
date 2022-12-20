@@ -22,6 +22,6 @@ public class SkipAndEnter : MonoBehaviour
     public void ChangeScene()
     {
         Destroy(GameObject.FindGameObjectWithTag("DialogueManager"));
-        SceneManager.LoadScene("GameScene");
+        //SceneManager.LoadScene("GameScene");
     }
 }

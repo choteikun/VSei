@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class ChatRoomDisplay : MonoBehaviour
 {
-    public GameObject ChatRoom1;
-    public GameObject ChatRoom2;
-    public GameObject ChatRoom3;
-    public GameObject ChatRoom4;
-    public GameObject ChatRoom5;
+    public GameObject ChatRoom1; //6
+    public GameObject ChatRoom2; //7
+    public GameObject ChatRoom3; //8
+    public GameObject ChatRoom4; //9
+    public GameObject ChatRoom5; //10
     // Start is called before the first frame update
     void Start()
     {
-        ChatRoom1.SetActive(false); //ChatRoom方塊隱藏
-        ChatRoom2.SetActive(false);
-        ChatRoom3.SetActive(false);
-        ChatRoom4.SetActive(false);
-        ChatRoom5.SetActive(false);
+        ChatRoomClose(ChatRoom1); //ChatRoom方塊隱藏
+        ChatRoomClose(ChatRoom2);
+        ChatRoomClose(ChatRoom3);
+        ChatRoomClose(ChatRoom4);
+        ChatRoomClose(ChatRoom5);
 
-        Invoke("Chat_Show1", 1.0f); //ChatRoom出現時間
-        Invoke("Chat_Show2", 2.0f);
+        Invoke("Chat_Show1", 5.0f); //ChatRoom出現時間
+        Invoke("Chat_Show2", 4.0f);
         Invoke("Chat_Show3", 3.0f);
-        Invoke("Chat_Show4", 4.0f);
-        Invoke("Chat_Show5", 5.0f);
+        Invoke("Chat_Show4", 2.0f);
+        Invoke("Chat_Show5", 1.0f);
     }
 
     // Update is called once per frame
@@ -33,26 +33,40 @@ public class ChatRoomDisplay : MonoBehaviour
 
     void Chat_Show1()
     {
-        ChatRoom1.SetActive(true); //ChatRoom方塊出現
+        ChatRoomOpen(ChatRoom1); //ChatRoom方塊出現
     }
 
     void Chat_Show2()
     {
-        ChatRoom2.SetActive(true);
+        ChatRoomOpen(ChatRoom2);
     }
 
     void Chat_Show3()
     {
-        ChatRoom3.SetActive(true);
+        ChatRoomOpen(ChatRoom3);
     }
 
     void Chat_Show4()
     {
-        ChatRoom4.SetActive(true);
+        ChatRoomOpen(ChatRoom4);
     }
 
     void Chat_Show5()
     {
-        ChatRoom5.SetActive(true);
+        ChatRoomOpen(ChatRoom5);
+    }
+
+    public void ChatRoomClose(GameObject obj)
+    {
+        obj.GetComponent<CanvasGroup>().alpha = 0;
+        obj.GetComponent<CanvasGroup>().interactable = false;
+        obj.GetComponent<CanvasGroup>().blocksRaycasts = false;
+    }
+
+    public void ChatRoomOpen(GameObject obj)
+    {
+        obj.GetComponent<CanvasGroup>().alpha = 1;
+        obj.GetComponent<CanvasGroup>().interactable = true;
+        obj.GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
 }
