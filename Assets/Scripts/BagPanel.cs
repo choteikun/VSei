@@ -181,6 +181,7 @@ public class BagPanel : MonoBehaviour
     }
     void EnergyDrinkBtn()
     {
+        OpenItemCheckPanel();
         ItemUseCheckButton.onClick.RemoveAllListeners();
         ItemUseCheckButton.onClick.AddListener(UseEnergyDrink);
     }
@@ -205,6 +206,7 @@ public class BagPanel : MonoBehaviour
     }
     void HpAddItemBtn()
     {
+        OpenItemCheckPanel();
         ItemUseCheckButton.onClick.RemoveAllListeners();
         ItemUseCheckButton.onClick.AddListener(UseHpAddItem);
     }
@@ -232,6 +234,7 @@ public class BagPanel : MonoBehaviour
 
     void PointBounsItemBtn()
     {
+        OpenItemCheckPanel();
         ItemUseCheckButton.onClick.RemoveAllListeners();
         ItemUseCheckButton.onClick.AddListener(UsePointBounsItem);
     }
@@ -258,7 +261,15 @@ public class BagPanel : MonoBehaviour
     }
     void TrashBtn()
     {
+        //OpenItemCheckPanel();
         ItemUseCheckButton.onClick.RemoveAllListeners();
         //沒有功能
+    }
+
+    public void OpenItemCheckPanel()
+    {
+        ItemUseCheckButton.GetComponentInParent<CanvasGroup>().alpha = 1;
+        ItemUseCheckButton.GetComponentInParent<CanvasGroup>().interactable = true;
+        ItemUseCheckButton.GetComponentInParent<CanvasGroup>().blocksRaycasts = true;
     }
 }

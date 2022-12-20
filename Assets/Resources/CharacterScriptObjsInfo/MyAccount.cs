@@ -10,7 +10,7 @@ public class MyAccount : ScriptableObject
     public string myAccountName;
 
     [Tooltip("體力值")]
-    public float stamina;
+    public int stamina;
 
     [Tooltip("是否持有菲爾貝倫‧阿莉絲")]
     public bool FelbelemAlice;

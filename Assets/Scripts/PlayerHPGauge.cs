@@ -15,7 +15,7 @@ public class PlayerHPGauge : MonoBehaviour
 
     void Start()
     {
-        hpText = transform.GetChild(transform.childCount-1).GetComponent<TMP_Text>();
+        hpText = transform.GetChild(transform.childCount - 1).GetComponent<TMP_Text>();
         if (!myAccount)
         {
             myAccount= Resources.Load<MyAccount>("CharacterScriptObjsInfo/MyAccount"); 

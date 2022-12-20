@@ -16,9 +16,9 @@ MonoBehaviour:
   stamina: 0
   FelbelemAlice: 1
   AikaAmimi: 0
-  MalibetaRorem: 1
+  MalibetaRorem: 0
   Nameless: 1
-  ShiorhaiYai: 1
+  ShiorhaiYai: 0
   PointBounsItemUsing: 0
   HpAddItemUsing: 0
   tutorialClose: 0
