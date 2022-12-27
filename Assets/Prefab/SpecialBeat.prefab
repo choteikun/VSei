@@ -159,7 +159,7 @@ MonoBehaviour:
   obstacleDropSpeed: 14
   perfectPoint: 300
   goodPoint: 100
-  missPoint: 150
+  missPoint: -150
 --- !u!1 &6072197142514991268
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,16 +26,16 @@ public class RythmGameCanvas : MonoBehaviour
         public CharactersInfo charsInfo;
     }
 
-    public Dictionary<MyAccount.CurCharacterUse, CharactersInfo> charInfoDictionary = new();//item<¦W¦r,ItemsInfo>
+    public Dictionary<MyAccount.CurCharacterUse, CharactersInfo> charInfoDictionary = new();//item<åå­—,ItemsInfo>
 
 
-    public int rythmPoint;//¤À¼Æ
-    public int curSpecialCount;//¥´À»¨ìªº¯S®í¸`©ç¦¸¼Æ
-    public int feverNeedPoint;//¨Ï¥Î³Q°Ê§Ş©Ò»İªº¦¸¼Æ±ø¥ó
-    public float PerfectPointBounsMulti { get; private set; }//¤À¼Æ¥[¦¨ªº­¿²v
+    public int rythmPoint;//åˆ†æ•¸
+    public int curSpecialCount;//æ‰“æ“Šåˆ°çš„ç‰¹æ®Šç¯€æ‹æ¬¡æ•¸
+    public int feverNeedPoint;//ä½¿ç”¨è¢«å‹•æŠ€æ‰€éœ€çš„æ¬¡æ•¸æ¢ä»¶
+    public float PerfectPointBounsMulti { get; private set; }//åˆ†æ•¸åŠ æˆçš„å€ç‡
     public float ItemPointBounsMulti;
-    public int curCharHp { get; private set; }//·í«e¨¤¦â¦å¶q
-    public float CurCharMissShield;//·í«e¨¤¦â©è§ÜMissªº¦¸¼Æ
+    public int curCharHp { get; private set; }//ç•¶å‰è§’è‰²è¡€é‡
+    public float CurCharMissShield;//ç•¶å‰è§’è‰²æŠµæŠ—Missçš„æ¬¡æ•¸
 
 
 
@@ -51,10 +51,10 @@ public class RythmGameCanvas : MonoBehaviour
     RectTransform sensorButtonR;
     RectTransform sensorButtonRR;
 
-    float curCharFeverTime;//·í«e¨¤¦âFeverTime  
-    float charBounsMulti; //¨¤¦â¤À¼Æ¥[¦¨ªº­¿²v
-    int charMissShield;//¨¤¦â§K¬ÌMissªº¦¸¼Æ
-    int charHealHp;//¨¤¦â¦^¦å
+    float curCharFeverTime;//ç•¶å‰è§’è‰²FeverTime  
+    float charBounsMulti; //è§’è‰²åˆ†æ•¸åŠ æˆçš„å€ç‡
+    int charMissShield;//è§’è‰²å…ç–«Missçš„æ¬¡æ•¸
+    int charHealHp;//è§’è‰²å›è¡€
 
     private Camera cam;
     void Awake()
@@ -90,17 +90,17 @@ public class RythmGameCanvas : MonoBehaviour
         InitCharInfoDictionary();
         ReadCharacterSkillInfo();
 
-        curCharFeverTime = 0;//¸ü¤J·í«e¨¤¦âfeverTime
-        curCharHp = charInfoDictionary[myAccount.curCharacterUse].charHp;//¸ü¤J·í«e¨¤¦â¦å¶q
-        CurCharMissShield = charMissShield;//¸ü¤J·í«e¨¤¦âMiss¬Ş­È
-        PerfectPointBounsMulti = 1.0f;//perfect­¿²vªì©l­È
+        curCharFeverTime = 0;//è¼‰å…¥ç•¶å‰è§’è‰²feverTime
+        curCharHp = charInfoDictionary[myAccount.curCharacterUse].charHp;//è¼‰å…¥ç•¶å‰è§’è‰²è¡€é‡
+        CurCharMissShield = charMissShield;//è¼‰å…¥ç•¶å‰è§’è‰²Missç›¾å€¼
+        PerfectPointBounsMulti = 1.0f;//perfectå€ç‡åˆå§‹å€¼
 
-        if (myAccount.HpAddItemUsing)//¦å¶q¥[¦¨¹D¨ã¨Ï¥Î
+        if (myAccount.HpAddItemUsing)//è¡€é‡åŠ æˆé“å…·ä½¿ç”¨
         {
             curCharHp += 300;
         }
 
-        if (myAccount.PointBounsItemUsing)//¤À¼Æ¥[¦¨¹D¨ã¨Ï¥Î
+        if (myAccount.PointBounsItemUsing)//åˆ†æ•¸åŠ æˆé“å…·ä½¿ç”¨
         {
             ItemPointBounsMulti = 1.2f;
         }
@@ -114,10 +114,10 @@ public class RythmGameCanvas : MonoBehaviour
         charInfoDictionary = new Dictionary<MyAccount.CurCharacterUse, CharactersInfo>();
         for (int i = 0; i < charInfoList.Length; i++)
         {
-            //ª`·N¡G­YcharactersInfoList¥X²{¬Û¦PªºkeyÂà´««á¥u·|¾É¤J²Ä¤@¦¸¥X²{ªº¼Æ¾Ú¡A
-            //­«½Ækey­Èµø¬°bug¨Ã¥B¨S¦³«OÅ@¡A½Ğ¤p¤ß¨Ï¥Î!
+            //æ³¨æ„ï¼šè‹¥charactersInfoListå‡ºç¾ç›¸åŒçš„keyè½‰æ›å¾Œåªæœƒå°å…¥ç¬¬ä¸€æ¬¡å‡ºç¾çš„æ•¸æ“šï¼Œ
+            //é‡è¤‡keyå€¼è¦–ç‚ºbugä¸¦ä¸”æ²’æœ‰ä¿è­·ï¼Œè«‹å°å¿ƒä½¿ç”¨!
 
-            if (!charInfoDictionary.ContainsKey(charInfoList[i].curCharacterUse))//¤£¦s¦b³o­Ókeyªº¸Ü
+            if (!charInfoDictionary.ContainsKey(charInfoList[i].curCharacterUse))//ä¸å­˜åœ¨é€™å€‹keyçš„è©±
             {
                 charInfoDictionary.Add(charInfoList[i].curCharacterUse, charInfoList[i].charsInfo);
             }
@@ -125,45 +125,50 @@ public class RythmGameCanvas : MonoBehaviour
     }
     void Update()
     {
+        if (rythmPoint <= 0)
+        {
+            rythmPoint = 0;
+        }
         rythmPointText.text = "Point : " + rythmPoint.ToString();
+        myAccount.CurRythmPoint = rythmPoint;
 
-        if (curSpecialCount >= feverNeedPoint)//¯S®í¸`©ç¥´À»¦¸¼Æ¹F¨ìfever©Ò»İ¦¸¼Æ¥H¤W®É
+        if (curSpecialCount >= feverNeedPoint)//ç‰¹æ®Šç¯€æ‹æ‰“æ“Šæ¬¡æ•¸é”åˆ°feveræ‰€éœ€æ¬¡æ•¸ä»¥ä¸Šæ™‚
         {
             curCharFeverTime = charInfoDictionary[myAccount.curCharacterUse].charFeverTime;
-            curCharHp += charHealHp;//¦^¦å
+            curCharHp += charHealHp;//å›è¡€
             curSpecialCount = 0;
         }
         if (curCharFeverTime > 0)
         {
             curCharFeverTime -= Time.deltaTime;
-            PerfectPointBounsMulti = charBounsMulti * ItemPointBounsMulti;//¨¤¦â³Q°Ê¤À¼Æ¥[­¼
+            PerfectPointBounsMulti = charBounsMulti * ItemPointBounsMulti;//è§’è‰²è¢«å‹•åˆ†æ•¸åŠ ä¹˜
             
             if (curCharFeverTime <= 0)
             {
                 curCharFeverTime = 0;
-                PerfectPointBounsMulti = 1.0f * ItemPointBounsMulti;//¤À¼Æ¥[­¼­¿²v«ì´_¬°1.0
+                PerfectPointBounsMulti = 1.0f * ItemPointBounsMulti;//åˆ†æ•¸åŠ ä¹˜å€ç‡æ¢å¾©ç‚º1.0
             }
         }
-        if(curCharHp >= charInfoDictionary[myAccount.curCharacterUse].charHp)//¦^¦å¤£¶W¹L¨¤¦â¥»¨­¦å¶q
+        if(curCharHp >= charInfoDictionary[myAccount.curCharacterUse].charHp)//å›è¡€ä¸è¶…éè§’è‰²æœ¬èº«è¡€é‡
         {
             curCharHp = charInfoDictionary[myAccount.curCharacterUse].charHp;
         }
     }
     public void PerfectEffect()
     {
-        PoolManager.Release(perfectEffectPrefab);//¥Í¦¨PerfectEffect
+        PoolManager.Release(perfectEffectPrefab);//ç”ŸæˆPerfectEffect
     }
     public void GoodEffect()
     {
-        PoolManager.Release(goodEffectPrefab);//¥Í¦¨GoodEffect
+        PoolManager.Release(goodEffectPrefab);//ç”ŸæˆGoodEffect
     }
     public void MissEffect()
     {
-        PoolManager.Release(missEffectPrefab);//¥Í¦¨MissEffect
+        PoolManager.Release(missEffectPrefab);//ç”ŸæˆMissEffect
     }
     public void ReadCharacterSkillInfo()
     {
-        if (charInfoDictionary[myAccount.curCharacterUse].charName == "µáº¸¨©­Û¡Eªü²úµ·")//¤À¼Æ¥[¦¨ªº§Ş¯à
+        if (charInfoDictionary[myAccount.curCharacterUse].charName == "è²çˆ¾è²å€«â€§é˜¿è‰çµ²")//åˆ†æ•¸åŠ æˆçš„æŠ€èƒ½
         {
             switch (charInfoDictionary[myAccount.curCharacterUse].charLevel)
             {
@@ -188,7 +193,7 @@ public class RythmGameCanvas : MonoBehaviour
         }
         else { charBounsMulti = 1.0f; }
 
-        if (charInfoDictionary[myAccount.curCharacterUse].charName == "µL¦W")//§K¬ÌMissªº¦¸¼Æ
+        if (charInfoDictionary[myAccount.curCharacterUse].charName == "ç„¡å")//å…ç–«Missçš„æ¬¡æ•¸
         {
             switch (charInfoDictionary[myAccount.curCharacterUse].charLevel)
             {
@@ -213,7 +218,7 @@ public class RythmGameCanvas : MonoBehaviour
         }
         else { charMissShield = 0; }
 
-        if (charInfoDictionary[myAccount.curCharacterUse].charName == "º¿²ú¨©¶ğ¡EÅÚ­Û")//¦^´_¦å¶qªº³Q°Ê§Ş¯à
+        if (charInfoDictionary[myAccount.curCharacterUse].charName == "ç‘ªè‰è²å¡”â€§è˜¿å€«")//å›å¾©è¡€é‡çš„è¢«å‹•æŠ€èƒ½
         {
             switch (charInfoDictionary[myAccount.curCharacterUse].charLevel)
             {

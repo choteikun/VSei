@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq.Expressions;
+using TMPro;
 
 
 public class GashaponPanel : MonoBehaviour
 {
     //public CanvasGroup gashaCanvasGroup;
     //public CanvasGroup[] canvasChildGroups;//抽卡介面子物件的CanvasGroup
-    Animation gashaPanelAnim;
+    
     public MyAccount myAccount;
+    public TMP_Text playerTokenText;
     public List<CharactersInfo> charactersInfo = new();
 
     public List<Sprite> gashaResultSprite = new();
@@ -19,6 +21,7 @@ public class GashaponPanel : MonoBehaviour
     //int gashaResultIndex;
 
     float totalCharProbability;
+    Animation gashaPanelAnim;
 
     public Item[] itemList;
     [System.Serializable]
@@ -33,8 +36,8 @@ public class GashaponPanel : MonoBehaviour
 
     void Start()
     {
-        
         InitItemDictionary();
+        playerTokenText = GameObject.Find("MyToken(Gasha_TMP)").GetComponent<TMP_Text>();
         gashaPanelAnim = GetComponent<Animation>();
         //gashaCanvasGroup = GetComponent<GashaponPanel>().gameObject.GetComponent<CanvasGroup>();
 
@@ -73,7 +76,7 @@ public class GashaponPanel : MonoBehaviour
 
     void Update()
     {
-        
+        playerTokenText.text = myAccount.MyToken.ToString();
     }
     public bool Probability(float percent)//比較大小確率計算
     {

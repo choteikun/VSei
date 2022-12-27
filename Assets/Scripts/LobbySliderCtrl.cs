@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LobbySliderCtrl : MonoBehaviour
 {
+    public MyAccount myAccount;
     public Scrollbar scrollbar;
     public ScrollRect scrollRect;
     public GameObject warningTextPrefab;
-    public MyAccount myAccount;
+    public TMP_Text playerTokenText;
 
 
     private float targetValue;
@@ -41,6 +43,7 @@ public class LobbySliderCtrl : MonoBehaviour
     void Start()
     {
         allowGamePlay = true;
+        playerTokenText = GameObject.Find("MyToken(Lobby_TMP)").GetComponent<TMP_Text>();
     }
     public void OnButtonClick(int value)
     {
@@ -71,6 +74,7 @@ public class LobbySliderCtrl : MonoBehaviour
 
     void Update()
     {
+        playerTokenText.text = myAccount.MyToken.ToString();
         if (needMove)
         {
             if (Mathf.Abs(scrollbar.value - targetValue) < 0.01f)

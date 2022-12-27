@@ -6,43 +6,49 @@ using UnityEngine;
 public class MyAccount : ScriptableObject
 {
 
-    [Tooltip("ª±®a©Ò³Ğ«Øªº¦W¦r")]
+    [Tooltip("ç©å®¶æ‰€å‰µå»ºçš„åå­—")]
     public string myAccountName;
 
-    [Tooltip("Åé¤O­È")]
+    [Tooltip("ç©å®¶é‡‘å¹£")]
+    public int MyCoin;
+    [Tooltip("ç©å®¶ä»£å¹£")]
+    public int MyToken;
+    [Tooltip("ç©å®¶é«”åŠ›å€¼")]
     public int stamina;
+    [Tooltip("ç©å®¶ç•¶å‰éŸ³éŠåˆ†æ•¸")]
+    public int CurRythmPoint;
 
-    [Tooltip("¬O§_«ù¦³µáº¸¨©­Û¡Eªü²úµ·")]
+    [Tooltip("æ˜¯å¦æŒæœ‰è²çˆ¾è²å€«â€§é˜¿è‰çµ²")]
     public bool FelbelemAlice;
-    [Tooltip("¬O§_«ù¦³¦ã¥d¡Eªü¦Ì¦Ì")]
+    [Tooltip("æ˜¯å¦æŒæœ‰è‰¾å¡â€§é˜¿ç±³ç±³")]
     public bool AikaAmimi;
-    [Tooltip("¬O§_«ù¦³º¿²ú¨©¶ğ¡EÅÚ­Û")]
+    [Tooltip("æ˜¯å¦æŒæœ‰ç‘ªè‰è²å¡”â€§è˜¿å€«")]
     public bool MalibetaRorem;
-    [Tooltip("¬O§_«ù¦³µL¦W")]
+    [Tooltip("æ˜¯å¦æŒæœ‰ç„¡å")]
     public bool Nameless;
-    [Tooltip("¬O§_«ù¦³¥Õ¦Ç.¨È¦ç")]
+    [Tooltip("æ˜¯å¦æŒæœ‰ç™½ç°.äºè¡£")]
     public bool ShiorhaiYai;
 
-    [Tooltip("¬O§_¥¿¦b¨Ï¥Î¤À¼Æ¥[¦¨¹D¨ã")]
+    [Tooltip("æ˜¯å¦æ­£åœ¨ä½¿ç”¨åˆ†æ•¸åŠ æˆé“å…·")]
     public bool PointBounsItemUsing = false;
-    [Tooltip("¬O§_¥¿¦b¨Ï¥Î¦å¶q¥[¦¨¹D¨ã")]
+    [Tooltip("æ˜¯å¦æ­£åœ¨ä½¿ç”¨è¡€é‡åŠ æˆé“å…·")]
     public bool HpAddItemUsing = false;
 
-    [Tooltip("±Ğ¾Ç«ü¤ŞÃö³¬")]
+    [Tooltip("æ•™å­¸æŒ‡å¼•é—œé–‰")]
     public bool tutorialClose;
 
-    [Tooltip("²Ä¤@¦¸¶i¤J¹CÀ¸")]
+    [Tooltip("ç¬¬ä¸€æ¬¡é€²å…¥éŠæˆ²")]
     public bool firstPlay;
 
-    [Tooltip("¯à¶q¶¼®Æ")]
+    [Tooltip("èƒ½é‡é£²æ–™")]
     public int EnergyDrink;
-    [Tooltip("¨¤¦â¸H¤ù")]
+    [Tooltip("è§’è‰²ç¢ç‰‡")]
     public int CharacterFragment;
-    [Tooltip("¤À¼Æ¥[¦¨¹D¨ã")]
+    [Tooltip("åˆ†æ•¸åŠ æˆé“å…·")]
     public int PointBounsItem;
-    [Tooltip("¦å¶q¥[¦¨¹D¨ã")]
+    [Tooltip("è¡€é‡åŠ æˆé“å…·")]
     public int HpAddItem;
-    [Tooltip("©U§£")]
+    [Tooltip("åƒåœ¾")]
     public int Trash;
     public enum CurCharacterUse
     {

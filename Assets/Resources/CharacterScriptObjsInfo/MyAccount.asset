@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: MyAccount
   m_EditorClassIdentifier: 
   myAccountName: 
+  MyCoin: 0
+  MyToken: 0
   stamina: 5
+  CurRythmPoint: 900
   FelbelemAlice: 1
   AikaAmimi: 0
   MalibetaRorem: 0
