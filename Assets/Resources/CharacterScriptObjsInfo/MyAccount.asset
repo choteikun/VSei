@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: MyAccount
   m_EditorClassIdentifier: 
   myAccountName: 
-  stamina: 0
-  FelbelemAlice: 0
+  stamina: 5
+  FelbelemAlice: 1
   AikaAmimi: 0
   MalibetaRorem: 0
   Nameless: 0
@@ -22,7 +22,7 @@ MonoBehaviour:
   PointBounsItemUsing: 0
   HpAddItemUsing: 0
   tutorialClose: 0
-  firstPlay: 0
+  firstPlay: 1
   EnergyDrink: 50
   CharacterFragment: 50
   PointBounsItem: 40

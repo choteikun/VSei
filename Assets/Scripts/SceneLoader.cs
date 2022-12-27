@@ -11,6 +11,7 @@ public class SceneLoader : MonoBehaviour
 
     void Start()
     {
+        
         if (!myAccount)
         {
             myAccount = Resources.Load<MyAccount>("CharacterScriptObjsInfo/MyAccount");

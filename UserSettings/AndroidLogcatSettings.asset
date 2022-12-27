@@ -1,53 +1,41 @@
 {
     "m_SelectedDeviceId": "emulator-5558",
     "m_SelectedPackage": {
-        "deviceId": "emulator-5558",
-        "name": "com.DefaultCompany.VSeiTaihen",
-        "processId": 6275,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "emulator-5558",
+            "name": "com.DefaultCompany.VSeiTaihen",
+            "processId": 6449,
+            "exited": true
+        },
+        {
+            "deviceId": "emulator-5558",
+            "name": "com.DefaultCompany.VSeiTaihen",
+            "processId": 6534,
+            "exited": true
+        },
+        {
+            "deviceId": "emulator-5558",
+            "name": "com.DefaultCompany.VSeiTaihen",
+            "processId": 6714,
+            "exited": true
+        },
+        {
+            "deviceId": "emulator-5558",
+            "name": "com.DefaultCompany.VSeiTaihen",
+            "processId": 6937,
+            "exited": true
+        },
+        {
+            "deviceId": "emulator-5558",
             "name": "com.ldmnq.launcher3",
-            "processId": 1794,
-            "exited": false
-        },
-        {
-            "deviceId": "emulator-5558",
-            "name": "com.DefaultCompany.VSeiTaihen",
-            "processId": 5349,
-            "exited": true
-        },
-        {
-            "deviceId": "emulator-5558",
-            "name": "com.DefaultCompany.VSeiTaihen",
-            "processId": 5691,
-            "exited": true
-        },
-        {
-            "deviceId": "emulator-5558",
-            "name": "com.DefaultCompany.VSeiTaihen",
-            "processId": 5765,
-            "exited": true
-        },
-        {
-            "deviceId": "emulator-5558",
-            "name": "com.DefaultCompany.VSeiTaihen",
-            "processId": 5971,
-            "exited": true
-        },
-        {
-            "deviceId": "emulator-5558",
-            "name": "com.DefaultCompany.VSeiTaihen",
-            "processId": 6047,
-            "exited": false
-        },
-        {
-            "deviceId": "emulator-5558",
-            "name": "com.DefaultCompany.VSeiTaihen",
-            "processId": 6275,
+            "processId": 1766,
             "exited": false
         }
     ],

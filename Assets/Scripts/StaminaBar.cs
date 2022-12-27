@@ -6,41 +6,53 @@ using TMPro;
 
 public class StaminaBar : MonoBehaviour
 {
-    [Tooltip("¨C´X¤ÀÄÁ«ì´_1ÂIÅé¤O­È")]
+    [Tooltip("æ¯å¹¾åˆ†é˜æ¢å¾©1é»é«”åŠ›å€¼")]
     public float restoreStaminaMinute = 5;
     public MyAccount myAccount;
     public Slider staminaSlider;
     public TMP_Text StaminaText;
 
     public float timer;
-    int staminaMax = 10;//Åé¤O³Ì¤j­È
-    
+    int staminaMax = 10;//é«”åŠ›æœ€å¤§å€¼
+    float staminaSecRequired;//å›æ»¿é«”çš„æ‰€éœ€ç§’æ•¸
+    float staminaMinuteRequired;//å›æ»¿é«”çš„æ‰€éœ€åˆ†é˜
+
 
     // Start is called before the first frame update
     void Start()
     {
         StaminaText = transform.GetChild(transform.childCount - 1).GetComponent<TMP_Text>();
+        staminaSecRequired = 60;
+        staminaMinuteRequired = restoreStaminaMinute * (staminaMax - myAccount.stamina);
     }
 
     // Update is called once per frame
     void Update()
     {
-        StaminaText.text = myAccount.stamina.ToString();
-        staminaSlider.value = myAccount.stamina / 100;
+        staminaMinuteRequired = restoreStaminaMinute * (staminaMax - myAccount.stamina);
+        if (staminaMinuteRequired <= 0)
+        {
+            staminaMinuteRequired = 0;
+            StaminaText.text = myAccount.stamina + "/" + staminaMax;
+        }
+        else
+        {
+            StaminaText.text = myAccount.stamina + "/" + staminaMax;/*+ "å‰©é¤˜" + (int)staminaMinuteRequired + " : " + (int)staminaSecRequired + "å›æ»¿é«”åŠ›";*/
+        }
+        
+        staminaSlider.value = (float)myAccount.stamina / staminaMax;
 
         timer += Time.deltaTime;
-        if (timer >= 60 * restoreStaminaMinute)
+        staminaSecRequired -= Time.deltaTime;
+        if (timer >= 60 * restoreStaminaMinute && myAccount.stamina < staminaMax)//é«”åŠ›å€¼ä¸è¶…é10é»çš„æƒ…æ³ä¸‹æ¯5åˆ†é˜æ¢å¾©1é»é«”åŠ›
         {
+            staminaSecRequired = 60;
             myAccount.stamina += 1;
             timer = 0;
         }
-        if (myAccount.stamina >= staminaMax)//¦pªG¶W¹LÅé¤O³Ì¤j­È
-        {
-            myAccount.stamina = staminaMax;
-        }
         if (myAccount.stamina <= 0)
         {
-            myAccount.stamina = 0;//Åé¤O­È¤£·|¤p©ó0
+            myAccount.stamina = 0;//é«”åŠ›å€¼ä¸æœƒå°æ–¼0
         }
 
     }
