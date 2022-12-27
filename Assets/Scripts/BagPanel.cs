@@ -28,7 +28,7 @@ public class BagPanel : MonoBehaviour
         public int itemAmount;
     }
 
-    public Dictionary<ItemsInfo, int> itemDictionary = new();//itemDictionary<Name,item¼Æ¶q>
+    public Dictionary<ItemsInfo, int> itemDictionary = new();//itemDictionary<Name,itemæ•¸é‡>
 
     
 
@@ -57,32 +57,32 @@ public class BagPanel : MonoBehaviour
         itemDictionary = new Dictionary<ItemsInfo, int>();
         for (int i = 0; i < itemList.Length; i++)
         {
-            //ª`·N¡G­YInitItemDictionary¥X²{¬Û¦PªºkeyÂà´««á¥u·|¾É¤J²Ä¤@¦¸¥X²{ªº¼Æ¾Ú¡A
-            //­«½Ækey­Èµø¬°bug¨Ã¥B¨S¦³«OÅ@¡A½Ğ¤p¤ß¨Ï¥Î!
+            //æ³¨æ„ï¼šè‹¥InitItemDictionaryå‡ºç¾ç›¸åŒçš„keyè½‰æ›å¾Œåªæœƒå°å…¥ç¬¬ä¸€æ¬¡å‡ºç¾çš„æ•¸æ“šï¼Œ
+            //é‡è¤‡keyå€¼è¦–ç‚ºbugä¸¦ä¸”æ²’æœ‰ä¿è­·ï¼Œè«‹å°å¿ƒä½¿ç”¨!
 
-            if (!itemDictionary.ContainsKey(itemList[i].itemInfo))//¤£¦s¦b³o­Ókeyªº¸Ü
+            if (!itemDictionary.ContainsKey(itemList[i].itemInfo))//ä¸å­˜åœ¨é€™å€‹keyçš„è©±
             {
                 itemDictionary.Add(itemList[i].itemInfo, itemList[i].itemAmount);
             }
-            switch(itemDictionary.Keys.ElementAt(i).itemName)//¨Ì¹D¨ã¦WºÙ(key)©ñ¤J¹ïÀ³¹D¨ãªº¼Æ¶q(value)
+            switch(itemDictionary.Keys.ElementAt(i).itemName)//ä¾é“å…·åç¨±(key)æ”¾å…¥å°æ‡‰é“å…·çš„æ•¸é‡(value)
             {
-                case "¯à¶q¶¼®Æ":
+                case "èƒ½é‡é£²æ–™":
                     itemList[i].itemAmount = myAccount.EnergyDrink;
                     itemDictionary[itemList[i].itemInfo] = myAccount.EnergyDrink;
                     break;
-                case "¨¤¦â¸H¤ù":
+                case "è§’è‰²ç¢ç‰‡":
                     itemList[i].itemAmount = myAccount.CharacterFragment;
                     itemDictionary[itemList[i].itemInfo] = myAccount.CharacterFragment;
                     break;
-                case "¦å¶q¥[¦¨¹D¨ã":
+                case "è¡€é‡åŠ æˆé“å…·":
                     itemList[i].itemAmount = myAccount.HpAddItem;
                     itemDictionary[itemList[i].itemInfo] = myAccount.HpAddItem;
                     break;
-                case "¤À¼Æ¥[¦¨¹D¨ã":
+                case "åˆ†æ•¸åŠ æˆé“å…·":
                     itemList[i].itemAmount = myAccount.PointBounsItem;
                     itemDictionary[itemList[i].itemInfo] = myAccount.PointBounsItem;
                     break;
-                case "©U§£":
+                case "åƒåœ¾":
                     itemList[i].itemAmount = myAccount.Trash;
                     itemDictionary[itemList[i].itemInfo] = myAccount.Trash;
                     break;
@@ -91,7 +91,7 @@ public class BagPanel : MonoBehaviour
             }
         }
         //List<int> bagList = new(itemDictionary.Values);
-        //bagList.Sort((x, y) => -x.CompareTo(y));//«ö¹D¨ã¼Æ¶q­°§Ç
+        //bagList.Sort((x, y) => -x.CompareTo(y));//æŒ‰é“å…·æ•¸é‡é™åº
     }
     void Update()
     {
@@ -101,21 +101,21 @@ public class BagPanel : MonoBehaviour
     {
         for (int i = 0; i < itemList.Length; i++)
         {
-            switch (itemDictionary.Keys.ElementAt(i).itemName)//¨ê·s¹D¨ãvalue­È
+            switch (itemDictionary.Keys.ElementAt(i).itemName)//åˆ·æ–°é“å…·valueå€¼
             {
-                case "¯à¶q¶¼®Æ":
+                case "èƒ½é‡é£²æ–™":
                     itemDictionary[itemDictionary.Keys.ElementAt(i)] = myAccount.EnergyDrink;
                     break;
-                case "¨¤¦â¸H¤ù":
+                case "è§’è‰²ç¢ç‰‡":
                     itemDictionary[itemDictionary.Keys.ElementAt(i)] = myAccount.CharacterFragment;
                     break;
-                case "¦å¶q¥[¦¨¹D¨ã":
+                case "è¡€é‡åŠ æˆé“å…·":
                     itemDictionary[itemDictionary.Keys.ElementAt(i)] = myAccount.HpAddItem;
                     break;
-                case "¤À¼Æ¥[¦¨¹D¨ã":
+                case "åˆ†æ•¸åŠ æˆé“å…·":
                     itemDictionary[itemDictionary.Keys.ElementAt(i)] = myAccount.PointBounsItem;
                     break;
-                case "©U§£":
+                case "åƒåœ¾":
                     itemDictionary[itemDictionary.Keys.ElementAt(i)] = myAccount.Trash;
                     break;
                 default:
@@ -123,42 +123,42 @@ public class BagPanel : MonoBehaviour
             }
         }
 
-        //³o¸Ì©w¸q¤F¤@­ÓÅÜ¶q¡A³o­ÓÅÜ¶q¬Olinq»y¥yªğ¦^ªºÃş«¬ªº
-        //¹ïlinq»y¥y¶i¦æ¸ÑÅª,±q¦r¨å¤¤Àò¨ú¶µ¡A¿ï¤¤¶µ¡A®Ú¾Ú¶µ¤¤ªºValue±Æ§Ç
+        //é€™è£¡å®šç¾©äº†ä¸€å€‹è®Šé‡ï¼Œé€™å€‹è®Šé‡æ˜¯linqèªå¥è¿”å›çš„é¡å‹çš„
+        //å°linqèªå¥é€²è¡Œè§£è®€,å¾å­—å…¸ä¸­ç²å–é …ï¼Œé¸ä¸­é …ï¼Œæ ¹æ“šé …ä¸­çš„Valueæ’åº
         var temp = from pair in itemDictionary orderby pair.Value descending select pair;
 
-        //±N¤W­±ªºÅÜ¶qÂà´«¦^¦r¨å
+        //å°‡ä¸Šé¢çš„è®Šé‡è½‰æ›å›å­—å…¸
         itemDictionary =
         temp.ToDictionary(pair => pair.Key, pair => pair.Value);
 
         for (int i = 0; i < itemList.Length; i++)
         {
-            switch (itemDictionary.Keys.ElementAt(i).itemName)//¨Ì¹D¨ã¦WºÙ(key)µ¹¤©¸Ó¹D¨ã«ö¶s¥\¯à(button)
+            switch (itemDictionary.Keys.ElementAt(i).itemName)//ä¾é“å…·åç¨±(key)çµ¦äºˆè©²é“å…·æŒ‰éˆ•åŠŸèƒ½(button)
             {
-                case "¯à¶q¶¼®Æ":
+                case "èƒ½é‡é£²æ–™":
                     transform.GetChild(i).GetChild(0).GetComponent<TMP_Text>().text = myAccount.EnergyDrink.ToString();
                     transform.GetChild(i).GetComponent<Button>().onClick.AddListener(EnergyDrinkBtn);                    
                     break;
-                case "¨¤¦â¸H¤ù":
+                case "è§’è‰²ç¢ç‰‡":
                     transform.GetChild(i).GetChild(0).GetComponent<TMP_Text>().text = myAccount.CharacterFragment.ToString();
                     transform.GetChild(i).GetComponent<Button>().onClick.AddListener(CharacterFragmentBtn);
                     break;
-                case "¦å¶q¥[¦¨¹D¨ã":
+                case "è¡€é‡åŠ æˆé“å…·":
                     transform.GetChild(i).GetChild(0).GetComponent<TMP_Text>().text = myAccount.HpAddItem.ToString();
                     transform.GetChild(i).GetComponent<Button>().onClick.AddListener(HpAddItemBtn);
                     break;
-                case "¤À¼Æ¥[¦¨¹D¨ã":
+                case "åˆ†æ•¸åŠ æˆé“å…·":
                     transform.GetChild(i).GetChild(0).GetComponent<TMP_Text>().text = myAccount.PointBounsItem.ToString();
                     transform.GetChild(i).GetComponent<Button>().onClick.AddListener(PointBounsItemBtn);
                     break;
-                case "©U§£":
+                case "åƒåœ¾":
                     transform.GetChild(i).GetChild(0).GetComponent<TMP_Text>().text = myAccount.Trash.ToString();
                     transform.GetChild(i).GetComponent<Button>().onClick.AddListener(TrashBtn);
                     break;
                 default:
                     break;
             }
-            transform.GetChild(i).GetComponent<Image>().sprite = itemDictionary.Keys.ElementAt(i).itemIcon;//¹M¾ú¤lª«¥ó¨Ã«ödictionaryªº¹Ï¤ù¶¶§Ç±Æ¶i¥h
+            transform.GetChild(i).GetComponent<Image>().sprite = itemDictionary.Keys.ElementAt(i).itemIcon;//éæ­·å­ç‰©ä»¶ä¸¦æŒ‰dictionaryçš„åœ–ç‰‡é †åºæ’é€²å»
         }
 
         foreach (KeyValuePair<ItemsInfo, int> item in itemDictionary)
@@ -169,7 +169,7 @@ public class BagPanel : MonoBehaviour
         //List<KeyValuePair<ItemsInfo, int>> bagList = new(itemDictionary);
         //bagList.Sort(delegate (KeyValuePair<ItemsInfo, int> s1, KeyValuePair<ItemsInfo, int> s2)
         //{
-        //    return s2.Value.CompareTo(s1.Value);//«ö¹D¨ã¼Æ¶q­°§Ç
+        //    return s2.Value.CompareTo(s1.Value);//æŒ‰é“å…·æ•¸é‡é™åº
         //});
 
         //itemList.Add(myAccount.EnergyDrink);
@@ -190,19 +190,20 @@ public class BagPanel : MonoBehaviour
         if (myAccount.EnergyDrink > 0)
         {
             myAccount.EnergyDrink--;
-            //¼W¥[Åé¤O
+            //å¢åŠ é«”åŠ›
+            myAccount.stamina += 1;
         }
         else
         {
 
-            //Åé¤OÅø¤w¯ÓºÉ
+            //é«”åŠ›ç½å·²è€—ç›¡
         }
         BagRefresh();
     }
     void CharacterFragmentBtn()
     {
         ItemUseCheckButton.onClick.RemoveAllListeners();
-        //¨S¦³¥\¯à
+        //æ²’æœ‰åŠŸèƒ½
     }
     void HpAddItemBtn()
     {
@@ -218,16 +219,16 @@ public class BagPanel : MonoBehaviour
             {
                 myAccount.HpAddItem--;
                 myAccount.HpAddItemUsing = true;
-                //¦å¶q¼W¥[
+                //è¡€é‡å¢åŠ 
             }
             else
             {
-                //¦å¶q¼W¥[¹D¨ã¤w¯ÓºÉ
+                //è¡€é‡å¢åŠ é“å…·å·²è€—ç›¡
             }
         }
         else
         {
-            //¹D¨ã®ÄªGÁÙ¦b¡A¤£®ø¯Ó¸Ó¹D¨ã
+            //é“å…·æ•ˆæœé‚„åœ¨ï¼Œä¸æ¶ˆè€—è©²é“å…·
         }
         BagRefresh();
     }
@@ -246,16 +247,16 @@ public class BagPanel : MonoBehaviour
             {
                 myAccount.PointBounsItem--;
                 myAccount.PointBounsItemUsing = true;
-                //¤À¼Æ¥[¦¨
+                //åˆ†æ•¸åŠ æˆ
             }
             else
             {
-                //¤À¼Æ¥[¦¨¹D¨ã¤w¯ÓºÉ
+                //åˆ†æ•¸åŠ æˆé“å…·å·²è€—ç›¡
             }
         }
         else
         {
-            //¹D¨ã®ÄªGÁÙ¦b
+            //é“å…·æ•ˆæœé‚„åœ¨
         }
         BagRefresh();
     }
@@ -263,7 +264,7 @@ public class BagPanel : MonoBehaviour
     {
         //OpenItemCheckPanel();
         ItemUseCheckButton.onClick.RemoveAllListeners();
-        //¨S¦³¥\¯à
+        //æ²’æœ‰åŠŸèƒ½
     }
 
     public void OpenItemCheckPanel()

@@ -1616,7 +1616,6 @@ GameObject:
   - component: {fileID: 232921957}
   - component: {fileID: 232921956}
   - component: {fileID: 232921955}
-  - component: {fileID: 232921958}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1701,7 +1700,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 232921958}
+      - m_Target: {fileID: 489925109}
         m_TargetAssemblyTypeName: SaveVseiGame, Assembly-CSharp
         m_MethodName: SaveGame
         m_Mode: 1
@@ -1751,43 +1750,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232921953}
   m_CullTransparentMesh: 1
---- !u!114 &232921958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232921953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7af68c6adb8cf5e45b64abb525f557d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlayingWithDefaultData: 0
-  myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
-  songsInfo: {fileID: 11400000, guid: 7b3e157f0d896e441859084b6de2d579, type: 2}
-  charInfoList:
-  - charName: "\u83F2\u723E\u8C9D\u502B\u2027\u963F\u8389\u7D72"
-    charsInfo: {fileID: 11400000, guid: 02c94bbd5181eb643be5b586fd8ea5d5, type: 2}
-  - charName: "\u827E\u5361\u2027\u963F\u7C73\u7C73"
-    charsInfo: {fileID: 11400000, guid: 112604bfe00e98f4ca18c4e2e76c4ea0, type: 2}
-  - charName: "\u746A\u8389\u8C9D\u5854\u2027\u863F\u502B"
-    charsInfo: {fileID: 11400000, guid: 66ce227707b81d04c94e45b8d36bbe45, type: 2}
-  - charName: "\u7121\u540D"
-    charsInfo: {fileID: 11400000, guid: e6dadc6ae31cc854080782c452cf5a93, type: 2}
-  - charName: "\u767D\u7070.\u4E9E\u8863"
-    charsInfo: {fileID: 11400000, guid: ceda1f0cb9007da4f8b19c7b5cc49c47, type: 2}
-  itemInfoList:
-  - itemName: "\u89D2\u8272\u788E\u7247"
-    itemsInfo: {fileID: 11400000, guid: 7c66d6e27259d9a498e3aa534d783ab6, type: 2}
-  - itemName: "\u80FD\u91CF\u98F2\u6599"
-    itemsInfo: {fileID: 11400000, guid: 435e12b759b9cfe4f84b7e2ca9837a95, type: 2}
-  - itemName: "\u8840\u91CF\u52A0\u6210\u9053\u5177"
-    itemsInfo: {fileID: 11400000, guid: d271ef9860f24ff40af9af1636b77e45, type: 2}
-  - itemName: "\u5206\u6578\u52A0\u6210\u9053\u5177"
-    itemsInfo: {fileID: 11400000, guid: 4aad2e84285bdcf4090053399ae6445a, type: 2}
-  - itemName: "\u5783\u573E"
-    itemsInfo: {fileID: 11400000, guid: 2367538001634564c95b8b63854a8126, type: 2}
 --- !u!1 &235778628
 GameObject:
   m_ObjectHideFlags: 0
@@ -3099,6 +3061,7 @@ GameObject:
   - component: {fileID: 489925105}
   - component: {fileID: 489925104}
   - component: {fileID: 489925108}
+  - component: {fileID: 489925109}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3189,7 +3152,6 @@ RectTransform:
   - {fileID: 1773691584}
   - {fileID: 1994646885}
   - {fileID: 1666610448}
-  - {fileID: 5972284337437265650}
   - {fileID: 704937792}
   - {fileID: 734353563}
   m_Father: {fileID: 0}
@@ -3213,6 +3175,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
+--- !u!114 &489925109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489925103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7af68c6adb8cf5e45b64abb525f557d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayingWithDefaultData: 0
+  myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
+  songsInfo: {fileID: 11400000, guid: 7b3e157f0d896e441859084b6de2d579, type: 2}
+  charInfoList:
+  - charName: "\u83F2\u723E\u8C9D\u502B\u2027\u963F\u8389\u7D72"
+    charsInfo: {fileID: 11400000, guid: 02c94bbd5181eb643be5b586fd8ea5d5, type: 2}
+  - charName: "\u827E\u5361\u2027\u963F\u7C73\u7C73"
+    charsInfo: {fileID: 11400000, guid: 112604bfe00e98f4ca18c4e2e76c4ea0, type: 2}
+  - charName: "\u746A\u8389\u8C9D\u5854\u2027\u863F\u502B"
+    charsInfo: {fileID: 11400000, guid: 66ce227707b81d04c94e45b8d36bbe45, type: 2}
+  - charName: "\u7121\u540D"
+    charsInfo: {fileID: 11400000, guid: e6dadc6ae31cc854080782c452cf5a93, type: 2}
+  - charName: "\u767D\u7070.\u4E9E\u8863"
+    charsInfo: {fileID: 11400000, guid: ceda1f0cb9007da4f8b19c7b5cc49c47, type: 2}
+  itemInfoList:
+  - itemName: "\u89D2\u8272\u788E\u7247"
+    itemsInfo: {fileID: 11400000, guid: 7c66d6e27259d9a498e3aa534d783ab6, type: 2}
+  - itemName: "\u80FD\u91CF\u98F2\u6599"
+    itemsInfo: {fileID: 11400000, guid: 435e12b759b9cfe4f84b7e2ca9837a95, type: 2}
+  - itemName: "\u8840\u91CF\u52A0\u6210\u9053\u5177"
+    itemsInfo: {fileID: 11400000, guid: d271ef9860f24ff40af9af1636b77e45, type: 2}
+  - itemName: "\u5206\u6578\u52A0\u6210\u9053\u5177"
+    itemsInfo: {fileID: 11400000, guid: 4aad2e84285bdcf4090053399ae6445a, type: 2}
+  - itemName: "\u5783\u573E"
+    itemsInfo: {fileID: 11400000, guid: 2367538001634564c95b8b63854a8126, type: 2}
 --- !u!1 &494640523
 GameObject:
   m_ObjectHideFlags: 0
@@ -3616,7 +3615,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -40}
-  m_SizeDelta: {x: 998, y: 1736}
+  m_SizeDelta: {x: 1024, y: 1751}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &545691523
 MonoBehaviour:
@@ -3638,7 +3637,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ffe6c71fedb74e447bd355eae454aa99, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 33236cfd06cb25a40862c2aacf64929a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3751,6 +3750,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 489925109}
+        m_TargetAssemblyTypeName: SaveVseiGame, Assembly-CSharp
+        m_MethodName: SaveGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 489925109}
+        m_TargetAssemblyTypeName: SaveVseiGame, Assembly-CSharp
+        m_MethodName: LoadCheck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1724407759}
         m_TargetAssemblyTypeName: LobbySliderCtrl, Assembly-CSharp
         m_MethodName: AllowGamePlay
@@ -4335,7 +4358,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 489925107}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4726,7 +4749,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 489925107}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5454,7 +5477,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -40}
-  m_SizeDelta: {x: 998, y: 1736}
+  m_SizeDelta: {x: 1037, y: 1763}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &764769868
 MonoBehaviour:
@@ -5476,7 +5499,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ffe6c71fedb74e447bd355eae454aa99, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6dd6d653b1cbbe6488158d0e2ed62b28, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5638,7 +5661,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -40}
-  m_SizeDelta: {x: 998, y: 1736}
+  m_SizeDelta: {x: 988, y: 1716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &773725332
 MonoBehaviour:
@@ -5660,7 +5683,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ffe6c71fedb74e447bd355eae454aa99, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 844edb71af4865648aba81356b25c0ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7490,6 +7513,7 @@ RectTransform:
   - {fileID: 1450675640}
   - {fileID: 1724407753}
   - {fileID: 1443838709}
+  - {fileID: 5972284337437265650}
   m_Father: {fileID: 489925107}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11725,7 +11749,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 260, y: 290}
-  m_SizeDelta: {x: 243, y: 130}
+  m_SizeDelta: {x: 222, y: 126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1579466141
 MonoBehaviour:
@@ -11803,7 +11827,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f3cae146f9ecfc14bb11f1ed4483fe15, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 88c89ed0376e4924caa2c648d97a2812, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12686,6 +12710,7 @@ MonoBehaviour:
     type: 3}
   myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
   needMove: 0
+  offsetTime: 0.01
 --- !u!1 &1727384451
 GameObject:
   m_ObjectHideFlags: 0
@@ -14140,7 +14165,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -55}
-  m_SizeDelta: {x: 900, y: 1756}
+  m_SizeDelta: {x: 1040, y: 1765}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1902026098
 MonoBehaviour:
@@ -14162,7 +14187,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 55332592e96879a48affb6acb3c74d52, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c391c2f7647a54daa78dbb57a8477b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15462,7 +15487,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -40}
-  m_SizeDelta: {x: 998, y: 1736}
+  m_SizeDelta: {x: 1024, y: 1751}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2124604817
 MonoBehaviour:
@@ -15484,7 +15509,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ffe6c71fedb74e447bd355eae454aa99, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 05a2279da222fa14e8a28311387d988e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17054,7 +17079,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -17280,7 +17305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5972284337437265650
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17288,7 +17313,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5972284337437265649}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17296,8 +17321,8 @@ RectTransform:
   - {fileID: 5972284337236099870}
   - {fileID: 5972284336945060052}
   - {fileID: 4588098291965335705}
-  m_Father: {fileID: 489925107}
-  m_RootOrder: 10
+  m_Father: {fileID: 1064724148}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17351,7 +17376,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

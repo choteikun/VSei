@@ -347,7 +347,7 @@ public class RythmBeatSpawner : MonoBehaviour
         //audioCom.Stop();
         //audioCom.time = 0f;
         //audioCom.Play();
-        gameIsPause = false;
+        //gameIsPause = false;
         Time.timeScale = 1;
         SceneManager.LoadScene("GameScene");
     }
