@@ -11,7 +11,11 @@ public class VtuberTextPosRefresh : MonoBehaviour
     {
         DialogueBox = GameObject.Find("DialogueBox").gameObject;
     }
-    void LateUpdate()
+    void Update()
+    {
+        Invoke("FindNpcSubtitlePanel", 0.1f);
+    }
+    public void FindNpcSubtitlePanel()
     {
         if (NpcSubtitlePanel == null)
         {
