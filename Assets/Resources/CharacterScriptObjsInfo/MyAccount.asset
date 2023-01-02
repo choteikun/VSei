@@ -15,7 +15,7 @@ MonoBehaviour:
   myAccountName: 
   MyCoin: 0
   MyToken: 0
-  stamina: 5
+  stamina: 6
   CurRythmPoint: 900
   FelbelemAlice: 1
   AikaAmimi: 0

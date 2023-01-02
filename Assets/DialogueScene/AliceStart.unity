@@ -157,6 +157,138 @@ MonoBehaviour:
     onExecute:
       m_PersistentCalls:
         m_Calls: []
+  - guid: e4b458c7-a51a-410e-8579-bd72a69c0044
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 697881659}
+          m_TargetAssemblyTypeName: SaveVseiGame, Assembly-CSharp
+          m_MethodName: LoadCheck
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 697881659}
+          m_TargetAssemblyTypeName: SaveVseiGame, Assembly-CSharp
+          m_MethodName: SaveGame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: d2311a33-8dd3-445f-aec0-a13b3e95bdaa
+    onExecute:
+      m_PersistentCalls:
+        m_Calls: []
+  - guid: 777e32ae-a5c0-4d58-91f0-84f111eb9e02
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
+          m_MethodName: SongSelect_2
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: c91ac003-e8a6-4580-9dda-8aeed579977b
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 697881659}
+          m_TargetAssemblyTypeName: SaveVseiGame, Assembly-CSharp
+          m_MethodName: LoadCheck
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 697881659}
+          m_TargetAssemblyTypeName: SaveVseiGame, Assembly-CSharp
+          m_MethodName: SaveGame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 08381baf-478b-4320-a0e7-4eb4e85c4e3c
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 697881659}
+          m_TargetAssemblyTypeName: SaveVseiGame, Assembly-CSharp
+          m_MethodName: LoadCheck
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 697881659}
+          m_TargetAssemblyTypeName: SaveVseiGame, Assembly-CSharp
+          m_MethodName: SaveGame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: a38806b5-47b4-4dce-bfc5-c7bce293aa2b
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 697881659}
+          m_TargetAssemblyTypeName: SaveVseiGame, Assembly-CSharp
+          m_MethodName: LoadCheck
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 697881659}
+          m_TargetAssemblyTypeName: SaveVseiGame, Assembly-CSharp
+          m_MethodName: SaveGame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &61982452
 Transform:
   m_ObjectHideFlags: 0
@@ -697,6 +829,7 @@ GameObject:
   - component: {fileID: 697881655}
   - component: {fileID: 697881654}
   - component: {fileID: 697881653}
+  - component: {fileID: 697881659}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -854,6 +987,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &697881659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697881652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7af68c6adb8cf5e45b64abb525f557d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayingWithDefaultData: 1
+  myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
+  songsInfo: {fileID: 11400000, guid: 7b3e157f0d896e441859084b6de2d579, type: 2}
+  charInfoList:
+  - charName: "\u83F2\u723E\u8C9D\u502B\u2027\u963F\u8389\u7D72"
+    charsInfo: {fileID: 11400000, guid: 02c94bbd5181eb643be5b586fd8ea5d5, type: 2}
+  - charName: "\u827E\u5361\u2027\u963F\u7C73\u7C73"
+    charsInfo: {fileID: 11400000, guid: 112604bfe00e98f4ca18c4e2e76c4ea0, type: 2}
+  - charName: "\u746A\u8389\u8C9D\u5854\u2027\u863F\u502B"
+    charsInfo: {fileID: 11400000, guid: 66ce227707b81d04c94e45b8d36bbe45, type: 2}
+  - charName: "\u7121\u540D"
+    charsInfo: {fileID: 11400000, guid: e6dadc6ae31cc854080782c452cf5a93, type: 2}
+  - charName: "\u767D\u7070.\u4E9E\u8863"
+    charsInfo: {fileID: 11400000, guid: ceda1f0cb9007da4f8b19c7b5cc49c47, type: 2}
+  itemInfoList:
+  - itemName: "\u89D2\u8272\u788E\u7247"
+    itemsInfo: {fileID: 11400000, guid: 7c66d6e27259d9a498e3aa534d783ab6, type: 2}
+  - itemName: "\u80FD\u91CF\u98F2\u6599"
+    itemsInfo: {fileID: 11400000, guid: 435e12b759b9cfe4f84b7e2ca9837a95, type: 2}
+  - itemName: "\u8840\u91CF\u52A0\u6210\u9053\u5177"
+    itemsInfo: {fileID: 11400000, guid: d271ef9860f24ff40af9af1636b77e45, type: 2}
+  - itemName: "\u5206\u6578\u52A0\u6210\u9053\u5177"
+    itemsInfo: {fileID: 11400000, guid: 4aad2e84285bdcf4090053399ae6445a, type: 2}
+  - itemName: "\u5783\u573E"
+    itemsInfo: {fileID: 11400000, guid: 2367538001634564c95b8b63854a8126, type: 2}
 --- !u!1 &718076664
 GameObject:
   m_ObjectHideFlags: 0

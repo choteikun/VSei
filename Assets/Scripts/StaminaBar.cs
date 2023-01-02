@@ -21,7 +21,7 @@ public class StaminaBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StaminaText = transform.GetChild(transform.childCount - 1).GetComponent<TMP_Text>();
+        StaminaText = GameObject.Find("StaminaRequiredText (TMP)").GetComponent<TMP_Text>();
         staminaSecRequired = 60;
         staminaMinuteRequired = restoreStaminaMinute * (staminaMax - myAccount.stamina);
     }
@@ -30,15 +30,16 @@ public class StaminaBar : MonoBehaviour
     void Update()
     {
         staminaMinuteRequired = restoreStaminaMinute * (staminaMax - myAccount.stamina);
-        if (staminaMinuteRequired <= 0)
-        {
-            staminaMinuteRequired = 0;
-            StaminaText.text = myAccount.stamina + "/" + staminaMax;
-        }
-        else
-        {
-            StaminaText.text = myAccount.stamina + "/" + staminaMax;/*+ "剩餘" + (int)staminaMinuteRequired + " : " + (int)staminaSecRequired + "回滿體力";*/
-        }
+        StaminaText.text = (int)staminaMinuteRequired + " : " + (int)staminaSecRequired;
+        //if (staminaMinuteRequired <= 0)
+        //{
+        //    staminaMinuteRequired = 0;
+        //    StaminaText.text = myAccount.stamina + "/" + staminaMax;
+        //}
+        //else
+        //{
+        //    StaminaText.text = myAccount.stamina + "/" + staminaMax;/*+ "剩餘" + (int)staminaMinuteRequired + " : " + (int)staminaSecRequired + "回滿體力";*/
+        //}
         
         staminaSlider.value = (float)myAccount.stamina / staminaMax;
 
@@ -55,5 +56,13 @@ public class StaminaBar : MonoBehaviour
             myAccount.stamina = 0;//體力值不會小於0
         }
 
+    }
+    public void StaminaRecovery()//補充體力
+    {
+        if((myAccount.stamina < staminaMax) && (myAccount.MyToken >= 150))
+        {
+            myAccount.MyToken -= 150;
+            myAccount.stamina += 1;
+        }
     }
 }
