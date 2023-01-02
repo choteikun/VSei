@@ -10,7 +10,8 @@ public class StaminaBar : MonoBehaviour
     public float restoreStaminaMinute = 5;
     public MyAccount myAccount;
     public Slider staminaSlider;
-    public TMP_Text StaminaText;
+    public TMP_Text staminaText;
+    public Button staminaRecoveryButton;
 
     public float timer;
     int staminaMax = 10;//體力最大值
@@ -21,16 +22,30 @@ public class StaminaBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StaminaText = GameObject.Find("StaminaRequiredText (TMP)").GetComponent<TMP_Text>();
+        staminaText = GameObject.Find("StaminaRequiredText (TMP)").GetComponent<TMP_Text>();
+        staminaRecoveryButton = GameObject.Find("StaminaRecovery(Button)").GetComponent<Button>();
         staminaSecRequired = 60;
-        staminaMinuteRequired = restoreStaminaMinute * (staminaMax - myAccount.stamina);
     }
 
     // Update is called once per frame
     void Update()
     {
-        staminaMinuteRequired = restoreStaminaMinute * (staminaMax - myAccount.stamina);
-        StaminaText.text = (int)staminaMinuteRequired + " : " + (int)staminaSecRequired;
+        if (myAccount.stamina <= staminaMax && myAccount.stamina > 0)//現有體力值小於最大體力值且大於0
+        {
+            staminaMinuteRequired = restoreStaminaMinute * (staminaMax - myAccount.stamina);
+            staminaSecRequired -= Time.deltaTime;
+            if (staminaSecRequired <= 0)//每60秒跳一次計時
+            {
+                staminaSecRequired = 60;
+            }
+        }
+        else//體力值超過最大體力值或為0
+        {
+            staminaMinuteRequired = 0;
+            staminaSecRequired = 0;
+        }
+
+        staminaText.text = (int)staminaMinuteRequired + " : " + (int)staminaSecRequired;
         //if (staminaMinuteRequired <= 0)
         //{
         //    staminaMinuteRequired = 0;
@@ -44,16 +59,28 @@ public class StaminaBar : MonoBehaviour
         staminaSlider.value = (float)myAccount.stamina / staminaMax;
 
         timer += Time.deltaTime;
-        staminaSecRequired -= Time.deltaTime;
         if (timer >= 60 * restoreStaminaMinute && myAccount.stamina < staminaMax)//體力值不超過10點的情況下每5分鐘恢復1點體力
         {
-            staminaSecRequired = 60;
             myAccount.stamina += 1;
             timer = 0;
         }
+
+        
+        
+
         if (myAccount.stamina <= 0)
         {
             myAccount.stamina = 0;//體力值不會小於0
+        }
+
+
+        if((myAccount.stamina > staminaMax) || (myAccount.MyToken < 150))//如果體力值超出或代幣不足，將補充按鈕disable
+        {
+            staminaRecoveryButton.interactable = false;
+        }
+        else
+        {
+            staminaRecoveryButton.interactable = true;
         }
 
     }

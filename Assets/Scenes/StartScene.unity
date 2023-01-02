@@ -1174,7 +1174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd7581d6897ff24ab475c80b591bfd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myAccount: {fileID: 11400000, guid: 6e75d13d5c205f04793d1673bbf41929, type: 2}
   dropIconSpawner: {fileID: 1319705642}
+  dropIconList: []
   dropIconImages:
   - {fileID: 4053226082776320421, guid: 9f8d80dc764b4a748bbfd2bc37d06f38, type: 3}
   - {fileID: 7142191678918861790, guid: b0f13681bbd709f41ba6cb9d3fe676d5, type: 3}

@@ -156,14 +156,17 @@ public class RythmGameCanvas : MonoBehaviour
     }
     public void PerfectEffect()
     {
+        myAccount.CurPerfectCount += 1;
         PoolManager.Release(perfectEffectPrefab);//生成PerfectEffect
     }
     public void GoodEffect()
     {
+        myAccount.CurGoodCount += 1;
         PoolManager.Release(goodEffectPrefab);//生成GoodEffect
     }
     public void MissEffect()
     {
+        myAccount.CurMissCount += 1;
         PoolManager.Release(missEffectPrefab);//生成MissEffect
     }
     public void ReadCharacterSkillInfo()

@@ -598,7 +598,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
-        value: d2311a33-8dd3-445f-aec0-a13b3e95bdaa
+        value: 485bacee-123d-4a6b-a659-39fa28efadfa
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 1
@@ -625,24 +625,11 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongSelect_1
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 30
-        y: 318
+        x: 31.06382
+        y: 312.7738
         width: 160
         height: 30
     - id: 7
@@ -675,6 +662,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 55dcf1c1-9557-4073-aa51-b704f9d27acf
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -699,24 +690,11 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongSelect_2
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 382.87122
-        y: 317.87195
+        x: 380.74356
+        y: 316.80814
         width: 160
         height: 30
     - id: 8
@@ -765,24 +743,11 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Normal
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 28.029129
-        y: 366
+        x: 31.034698
+        y: 362.8085
         width: 160
         height: 30
     - id: 9
@@ -831,24 +796,11 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Hard
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 203.39021
-        y: 365.11652
+        x: 203.29726
+        y: 364.14566
         width: 160
         height: 30
     - id: 10
@@ -897,24 +849,11 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Normal
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 381.87122
-        y: 367.24695
+        x: 380.80737
+        y: 365.21225
         width: 160
         height: 30
     - id: 11
@@ -963,29 +902,16 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Hard
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 559.7463
-        y: 367.24695
+        x: 557.71155
+        y: 366.2761
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 16.327332, y: 31.326164}
-    canvasZoom: 1.03
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.94000006
   - id: 2
     fields:
     - title: Title
@@ -1398,6 +1324,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 2b99bed2-d718-4aa3-ad0a-097287fa5913
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -1438,8 +1368,8 @@ MonoBehaviour:
             m_CallState: 2
       canvasRect:
         serializedVersion: 2
-        x: 30
-        y: 318
+        x: 27
+        y: 317
         width: 160
         height: 30
     - id: 7
@@ -1472,6 +1402,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 921a6c45-5e41-4ae7-9012-c4f732e24588
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -1496,24 +1430,11 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongSelect_2
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 385
-        y: 319.15607
+        y: 318.15607
         width: 160
         height: 30
     - id: 8
@@ -1521,11 +1442,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -1537,19 +1458,19 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "\u7C21\u55AE"
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: EventGuid
-        value: 1ee9a8b1-348c-464e-a869-a2d11b5c972b
+        value: 5d17215c-79b0-4854-b728-87983a76f385
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -1566,7 +1487,7 @@ MonoBehaviour:
           - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
               type: 3}
             m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Normal
+            m_MethodName: SongSelect_1
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -1578,8 +1499,8 @@ MonoBehaviour:
             m_CallState: 2
       canvasRect:
         serializedVersion: 2
-        x: 29
-        y: 368
+        x: 27
+        y: 367
         width: 160
         height: 30
     - id: 9
@@ -1613,7 +1534,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: EventGuid
-        value: a5cb544f-a8f8-402d-960b-04375c8a240e
+        value: 02f724fa-43c0-4839-bc7a-56f01bdf5ea7
         type: 0
         typeString: 
       conversationID: 2
@@ -1628,23 +1549,10 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Hard
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 207
+        x: 208
         y: 367
         width: 160
         height: 30
@@ -1679,7 +1587,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: EventGuid
-        value: e32cdbd8-62cd-45e3-bb70-768d496c55e0
+        value: 5b7e2723-aa19-4d07-910b-bfb67cab2175
         type: 0
         typeString: 
       conversationID: 2
@@ -1694,20 +1602,7 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Normal
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 385
@@ -1760,20 +1655,7 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Hard
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 563.0346
@@ -2195,6 +2077,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: b1947c18-c4f1-4cf3-8fac-db566a5d8da2
+        type: 0
+        typeString: 
       conversationID: 3
       isRoot: 0
       isGroup: 0
@@ -2219,20 +2105,7 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongSelect_1
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 30
@@ -2269,6 +2142,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 04ced9cb-1cb7-4a4b-b31b-a486fbb3a962
+        type: 0
+        typeString: 
       conversationID: 3
       isRoot: 0
       isGroup: 0
@@ -2293,20 +2170,7 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongSelect_2
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 376.5
@@ -2359,20 +2223,7 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Normal
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 30
@@ -2425,23 +2276,10 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Hard
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 205.5
+        x: 204.5
         y: 369
         width: 160
         height: 30
@@ -2491,24 +2329,11 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Normal
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 376.5
-        y: 368.5
+        x: 377.5
+        y: 367.5
         width: 160
         height: 30
     - id: 11
@@ -2557,24 +2382,11 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Hard
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 552.5
-        y: 367.5
+        y: 365.5
         width: 160
         height: 30
     entryGroups: []
@@ -2937,6 +2749,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 8a23c643-9831-4f50-8f8f-1b350415276e
+        type: 0
+        typeString: 
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -2961,24 +2777,11 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongSelect_1
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 30
-        y: 320
+        y: 319
         width: 160
         height: 30
     - id: 8
@@ -3066,6 +2869,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 4a0b4b85-eb12-4a3a-b9f3-42d24b193c02
+        type: 0
+        typeString: 
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -3090,20 +2897,7 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongSelect_2
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 378
@@ -3156,20 +2950,7 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Normal
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 30
@@ -3222,20 +3003,7 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Hard
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 206
@@ -3288,20 +3056,7 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Normal
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 378
@@ -3354,20 +3109,7 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Hard
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 554
@@ -3789,6 +3531,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 389520a0-2722-4c43-a2d0-52d82fb9f2d4
+        type: 0
+        typeString: 
       conversationID: 5
       isRoot: 0
       isGroup: 0
@@ -3813,23 +3559,10 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongSelect_1
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 30
+        x: 29
         y: 319
         width: 160
         height: 30
@@ -3863,6 +3596,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 884a0138-9c76-4bd6-b1fa-6f55796fa8e0
+        type: 0
+        typeString: 
       conversationID: 5
       isRoot: 0
       isGroup: 0
@@ -3887,20 +3624,7 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongSelect_2
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 374
@@ -3953,20 +3677,7 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Normal
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 29
@@ -4019,20 +3730,7 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Hard
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 200
@@ -4085,20 +3783,7 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Normal
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 372
@@ -4151,20 +3836,7 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4458252380284384935, guid: e3c2d8b6347aec749a9edd821da6ffde,
-              type: 3}
-            m_TargetAssemblyTypeName: SongSelect, Assembly-CSharp
-            m_MethodName: SongDifficultySelection_Hard
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 547
