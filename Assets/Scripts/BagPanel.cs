@@ -10,6 +10,8 @@ public class BagPanel : MonoBehaviour
 {
     public MyAccount myAccount;
     public Button ItemUseCheckButton;
+    public Image[] itemInfoImages;
+    public Button[] buttons;
 
 
     [Serializable]
@@ -179,11 +181,26 @@ public class BagPanel : MonoBehaviour
         //itemList.Add(myAccount.Trash);
         //itemList.Sort((x, y) => -x.CompareTo(y));
     }
+   
+    void CharacterFragmentBtn()
+    {
+        BlockAllItemButton();
+        OpenItemCheckPanel();
+        CloseAllItemInfo();
+        itemInfoImages[0].GetComponent<CanvasGroup>().alpha = 1;
+        ItemUseCheckButton.onClick.RemoveAllListeners();
+        ItemUseCheckButton.interactable = false;
+        BagRefresh();
+    }
     void EnergyDrinkBtn()
     {
+        BlockAllItemButton();
         OpenItemCheckPanel();
+        CloseAllItemInfo();
+        itemInfoImages[1].GetComponent<CanvasGroup>().alpha = 1;
         ItemUseCheckButton.onClick.RemoveAllListeners();
         ItemUseCheckButton.onClick.AddListener(UseEnergyDrink);
+        BagRefresh();
     }
     void UseEnergyDrink()
     {
@@ -200,16 +217,15 @@ public class BagPanel : MonoBehaviour
         }
         BagRefresh();
     }
-    void CharacterFragmentBtn()
-    {
-        ItemUseCheckButton.onClick.RemoveAllListeners();
-        //沒有功能
-    }
     void HpAddItemBtn()
     {
+        BlockAllItemButton();
         OpenItemCheckPanel();
+        CloseAllItemInfo();
+        itemInfoImages[2].GetComponent<CanvasGroup>().alpha = 1;
         ItemUseCheckButton.onClick.RemoveAllListeners();
         ItemUseCheckButton.onClick.AddListener(UseHpAddItem);
+        BagRefresh();
     }
     void UseHpAddItem()
     { 
@@ -235,9 +251,13 @@ public class BagPanel : MonoBehaviour
 
     void PointBounsItemBtn()
     {
+        BlockAllItemButton();
         OpenItemCheckPanel();
+        CloseAllItemInfo();
+        itemInfoImages[3].GetComponent<CanvasGroup>().alpha = 1;
         ItemUseCheckButton.onClick.RemoveAllListeners();
         ItemUseCheckButton.onClick.AddListener(UsePointBounsItem);
+        BagRefresh();
     }
     void UsePointBounsItem()
     {
@@ -262,9 +282,22 @@ public class BagPanel : MonoBehaviour
     }
     void TrashBtn()
     {
-        //OpenItemCheckPanel();
+        BlockAllItemButton();
+        OpenItemCheckPanel();
+        CloseAllItemInfo();
+        itemInfoImages[4].GetComponent<CanvasGroup>().alpha = 1;
         ItemUseCheckButton.onClick.RemoveAllListeners();
-        //沒有功能
+        ItemUseCheckButton.onClick.AddListener(TrashChargeToken);
+        BagRefresh();
+    }
+    void TrashChargeToken()
+    {
+        if (myAccount.Trash > 0)
+        {
+            myAccount.MyToken += myAccount.Trash;//垃圾轉換代幣
+            myAccount.Trash = 0;//將垃圾歸0
+        }
+        BagRefresh();
     }
 
     public void OpenItemCheckPanel()
@@ -272,5 +305,25 @@ public class BagPanel : MonoBehaviour
         ItemUseCheckButton.GetComponentInParent<CanvasGroup>().alpha = 1;
         ItemUseCheckButton.GetComponentInParent<CanvasGroup>().interactable = true;
         ItemUseCheckButton.GetComponentInParent<CanvasGroup>().blocksRaycasts = true;
+    }
+    public void CloseItemCheckPanel()
+    {
+        ItemUseCheckButton.GetComponentInParent<CanvasGroup>().alpha = 0;
+        ItemUseCheckButton.GetComponentInParent<CanvasGroup>().interactable = false;
+        ItemUseCheckButton.GetComponentInParent<CanvasGroup>().blocksRaycasts = false;
+    }
+    public void CloseAllItemInfo()
+    {
+        for (int i = 0; i < itemInfoImages.Length; i++)
+        {
+            itemInfoImages[i].GetComponent<CanvasGroup>().alpha = 0;
+        }
+    }
+    public void BlockAllItemButton()
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].GetComponent<Button>().interactable = false;
+        }
     }
 }

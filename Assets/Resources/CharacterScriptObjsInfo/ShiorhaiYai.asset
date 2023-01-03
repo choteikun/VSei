@@ -16,5 +16,5 @@ MonoBehaviour:
   charType: "\u6728"
   charLevel: 1
   charFeverTime: 10
-  charHp: 500
+  charHp: 1000
   gashaProbability: 12

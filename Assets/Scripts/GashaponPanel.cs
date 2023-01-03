@@ -22,6 +22,8 @@ public class GashaponPanel : MonoBehaviour
 
     public List<Sprite> gashaResultSprite = new();
     public List<Sprite> allSprite = new();
+
+    public Button[] buttons;
     //int gashaResultIndex;
 
     float totalCharProbability;
@@ -80,6 +82,22 @@ public class GashaponPanel : MonoBehaviour
 
     void Update()
     {
+        if(myAccount.MyToken >= OneGashaTokens)
+        {
+            buttons[0].GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            buttons[0].GetComponent<Button>().interactable = false;
+        }
+        if (myAccount.MyToken >= TenGashaTokens)
+        {
+            buttons[1].GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            buttons[1].GetComponent<Button>().interactable = false;
+        }
         playerTokenText.text = myAccount.MyToken.ToString();
     }
     public bool Probability(float percent)//比較大小確率計算

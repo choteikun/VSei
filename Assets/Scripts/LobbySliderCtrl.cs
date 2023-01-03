@@ -12,6 +12,7 @@ public class LobbySliderCtrl : MonoBehaviour
     public ScrollRect scrollRect;
     public GameObject warningTextPrefab;
     public TMP_Text playerTokenText;
+    public Image[] charactersImage;
 
 
     private float targetValue;
@@ -74,6 +75,39 @@ public class LobbySliderCtrl : MonoBehaviour
 
     void Update()
     {
+        if (!myAccount.AikaAmimi)
+        {
+            charactersImage[1].color = Color.black;
+        }
+        else
+        {
+            charactersImage[1].color = Color.white;
+        }
+        if (!myAccount.MalibetaRorem)
+        {
+            charactersImage[2].color = Color.black;
+        }
+        else
+        {
+            charactersImage[2].color = Color.white;
+        }
+        if (!myAccount.Nameless)
+        {
+            charactersImage[3].color = Color.black;
+        }
+        else
+        {
+            charactersImage[3].color = Color.white;
+        }
+        if (!myAccount.ShiorhaiYai)
+        {
+            charactersImage[4].color = Color.black;
+        }
+        else
+        {
+            charactersImage[4].color = Color.white;
+        }
+
         playerTokenText.text = myAccount.MyToken.ToString();
         if (needMove)
         {
@@ -189,8 +223,10 @@ public class LobbySliderCtrl : MonoBehaviour
     }
     public void AllowGamePlay()
     {
-        if (allowGamePlay)
+        if (allowGamePlay && myAccount.stamina > 0) 
         {
+            myAccount.stamina -= 1;
+
             switch (myAccount.curCharacterUse)
             {
                 case MyAccount.CurCharacterUse.FelbelemAlice:
@@ -210,13 +246,11 @@ public class LobbySliderCtrl : MonoBehaviour
                     break;
                 default:
                     break;
-            }
-            
+            } 
         }
         else
         {
             PoolManager.Release(warningTextPrefab);
-        }
-        
+        } 
     }
 }

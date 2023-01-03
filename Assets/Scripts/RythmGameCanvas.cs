@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Pool;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class RythmGameCanvas : MonoBehaviour
 {
@@ -129,7 +130,7 @@ public class RythmGameCanvas : MonoBehaviour
         {
             rythmPoint = 0;
         }
-        rythmPointText.text = "Point : " + rythmPoint.ToString();
+        rythmPointText.text = rythmPoint.ToString();
         myAccount.CurRythmPoint = rythmPoint;
 
         if (curSpecialCount >= feverNeedPoint)//特殊節拍打擊次數達到fever所需次數以上時
@@ -153,6 +154,34 @@ public class RythmGameCanvas : MonoBehaviour
         {
             curCharHp = charInfoDictionary[myAccount.curCharacterUse].charHp;
         }
+        if (curCharHp < 0)//體力值小於0，失敗回大廳，計分歸0
+        {
+            curCharHp = 0;
+            myAccount.CurPerfectCount = 0;
+            myAccount.CurGoodCount = 0;
+            myAccount.CurMissCount = 0;
+            myAccount.CurRythmPoint = 0;
+            switch (myAccount.curCharacterUse)
+            {
+                case MyAccount.CurCharacterUse.FelbelemAlice:
+                    SceneManager.LoadScene("AliceFinish");
+                    break;
+                case MyAccount.CurCharacterUse.AikaAmimi:
+                    SceneManager.LoadScene("AmimiFinish");
+                    break;
+                case MyAccount.CurCharacterUse.MalibetaRorem:
+                    SceneManager.LoadScene("LorenFinish");
+                    break;
+                case MyAccount.CurCharacterUse.Nameless:
+                    SceneManager.LoadScene("NonameFinish");
+                    break;
+                case MyAccount.CurCharacterUse.ShiorhaiYai:
+                    SceneManager.LoadScene("YaiFinish");
+                    break;
+                default:
+                    break;
+            }
+        }
     }
     public void PerfectEffect()
     {
@@ -167,6 +196,7 @@ public class RythmGameCanvas : MonoBehaviour
     public void MissEffect()
     {
         myAccount.CurMissCount += 1;
+        curCharHp -= 150;
         PoolManager.Release(missEffectPrefab);//生成MissEffect
     }
     public void ReadCharacterSkillInfo()

@@ -17,6 +17,7 @@ public class StaminaBar : MonoBehaviour
     int staminaMax = 10;//體力最大值
     float staminaSecRequired;//回滿體的所需秒數
     float staminaMinuteRequired;//回滿體的所需分鐘
+    float secToMinuteCount;//回滿體計算用
 
 
     // Start is called before the first frame update
@@ -32,10 +33,15 @@ public class StaminaBar : MonoBehaviour
     {
         if (myAccount.stamina <= staminaMax && myAccount.stamina > 0)//現有體力值小於最大體力值且大於0
         {
-            staminaMinuteRequired = restoreStaminaMinute * (staminaMax - myAccount.stamina);
+            staminaMinuteRequired = restoreStaminaMinute * (staminaMax - myAccount.stamina) - secToMinuteCount;
             staminaSecRequired -= Time.deltaTime;
             if (staminaSecRequired <= 0)//每60秒跳一次計時
             {
+                secToMinuteCount += 1;
+                if (secToMinuteCount >= restoreStaminaMinute)//回滿體計算用
+                {
+                    secToMinuteCount = 0;
+                }
                 staminaSecRequired = 60;
             }
         }
@@ -68,7 +74,7 @@ public class StaminaBar : MonoBehaviour
         
         
 
-        if (myAccount.stamina <= 0)
+        if (myAccount.stamina < 0)
         {
             myAccount.stamina = 0;//體力值不會小於0
         }
@@ -92,4 +98,5 @@ public class StaminaBar : MonoBehaviour
             myAccount.stamina += 1;
         }
     }
+    
 }

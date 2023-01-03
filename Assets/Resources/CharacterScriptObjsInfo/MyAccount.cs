@@ -59,6 +59,12 @@ public class MyAccount : ScriptableObject
     [Tooltip("垃圾")]
     public int Trash;
 
+    [Tooltip("商店購買的蒐集品[社畜]")]
+    public bool Shachiku;
+    [Tooltip("商店購買的蒐集品[碎片愛好者]")]
+    public bool FragmentLover;
+    [Tooltip("商店購買的蒐集品[搶救財貨]")]
+    public bool Salvage;
 
     public enum CurCharacterUse
     {

@@ -19,7 +19,7 @@ public class SaveVseiGame : MonoBehaviour
         public string charName;
         public CharactersInfo charsInfo;
     }
-    public Dictionary<string, CharactersInfo> charInfoDictionary = new();//Character<¦W¦r,charsInfo>
+    public Dictionary<string, CharactersInfo> charInfoDictionary = new();//Character<åå­—,charsInfo>
 
     
     [System.Serializable]
@@ -28,7 +28,7 @@ public class SaveVseiGame : MonoBehaviour
         public string itemName;
         public ItemsInfo itemsInfo;
     }
-    public Dictionary<string, ItemsInfo> itemInfoDictionary = new();//item<¦W¦r,ItemsInfo>
+    public Dictionary<string, ItemsInfo> itemInfoDictionary = new();//item<åå­—,ItemsInfo>
 
     string saveMyAccountToJson;
 
@@ -55,10 +55,10 @@ public class SaveVseiGame : MonoBehaviour
         charInfoDictionary = new Dictionary<string, CharactersInfo>();
         for (int i = 0; i < charInfoList.Length; i++)
         {
-            //ª`·N¡G­YcharactersInfoList¥X²{¬Û¦PªºkeyÂà´««á¥u·|¾É¤J²Ä¤@¦¸¥X²{ªº¼Æ¾Ú¡A
-            //­«½Ækey­Èµø¬°bug¨Ã¥B¨S¦³«OÅ@¡A½Ğ¤p¤ß¨Ï¥Î!
+            //æ³¨æ„ï¼šè‹¥charactersInfoListå‡ºç¾ç›¸åŒçš„keyè½‰æ›å¾Œåªæœƒå°å…¥ç¬¬ä¸€æ¬¡å‡ºç¾çš„æ•¸æ“šï¼Œ
+            //é‡è¤‡keyå€¼è¦–ç‚ºbugä¸¦ä¸”æ²’æœ‰ä¿è­·ï¼Œè«‹å°å¿ƒä½¿ç”¨!
 
-            if (!charInfoDictionary.ContainsKey(charInfoList[i].charName))//¤£¦s¦b³o­Ókeyªº¸Ü
+            if (!charInfoDictionary.ContainsKey(charInfoList[i].charName))//ä¸å­˜åœ¨é€™å€‹keyçš„è©±
             {
                 charInfoDictionary.Add(charInfoList[i].charName, charInfoList[i].charsInfo);
             }
@@ -69,10 +69,10 @@ public class SaveVseiGame : MonoBehaviour
         itemInfoDictionary = new Dictionary<string, ItemsInfo>();
         for (int i = 0; i < charInfoList.Length; i++)
         {
-            //ª`·N¡G­YitemsInfoList¥X²{¬Û¦PªºkeyÂà´««á¥u·|¾É¤J²Ä¤@¦¸¥X²{ªº¼Æ¾Ú¡A
-            //­«½Ækey­Èµø¬°bug¨Ã¥B¨S¦³«OÅ@¡A½Ğ¤p¤ß¨Ï¥Î!
+            //æ³¨æ„ï¼šè‹¥itemsInfoListå‡ºç¾ç›¸åŒçš„keyè½‰æ›å¾Œåªæœƒå°å…¥ç¬¬ä¸€æ¬¡å‡ºç¾çš„æ•¸æ“šï¼Œ
+            //é‡è¤‡keyå€¼è¦–ç‚ºbugä¸¦ä¸”æ²’æœ‰ä¿è­·ï¼Œè«‹å°å¿ƒä½¿ç”¨!
 
-            if (!itemInfoDictionary.ContainsKey(itemInfoList[i].itemName))//¤£¦s¦b³o­Ókeyªº¸Ü
+            if (!itemInfoDictionary.ContainsKey(itemInfoList[i].itemName))//ä¸å­˜åœ¨é€™å€‹keyçš„è©±
             {
                 itemInfoDictionary.Add(itemInfoList[i].itemName, itemInfoList[i].itemsInfo);
             }
@@ -99,45 +99,46 @@ public class SaveVseiGame : MonoBehaviour
         {
             savePath = savePathPC;
         }
+
     }
 
     public void SaveGame()
     {
         saveMyAccountToJson = JsonUtility.ToJson(myAccount);
 
-        saveFelbelemAliceInfoToJson = JsonUtility.ToJson(charInfoDictionary["µáº¸¨©­Û¡Eªü²úµ·"]);
-        saveAikaAmimiInfoToJson = JsonUtility.ToJson(charInfoDictionary["¦ã¥d¡Eªü¦Ì¦Ì"]);
-        saveMalibetaRoremInfoToJson = JsonUtility.ToJson(charInfoDictionary["º¿²ú¨©¶ğ¡EÅÚ­Û"]);
-        saveNamelessInfoToJson = JsonUtility.ToJson(charInfoDictionary["µL¦W"]);
-        saveShiorhaiYaiInfoToJson = JsonUtility.ToJson(charInfoDictionary["¥Õ¦Ç.¨È¦ç"]);
+        saveFelbelemAliceInfoToJson = JsonUtility.ToJson(charInfoDictionary["è²çˆ¾è²å€«â€§é˜¿è‰çµ²"]);
+        saveAikaAmimiInfoToJson = JsonUtility.ToJson(charInfoDictionary["è‰¾å¡â€§é˜¿ç±³ç±³"]);
+        saveMalibetaRoremInfoToJson = JsonUtility.ToJson(charInfoDictionary["ç‘ªè‰è²å¡”â€§è˜¿å€«"]);
+        saveNamelessInfoToJson = JsonUtility.ToJson(charInfoDictionary["ç„¡å"]);
+        saveShiorhaiYaiInfoToJson = JsonUtility.ToJson(charInfoDictionary["ç™½ç°.äºè¡£"]);
 
-        saveCharacterFragmentInfoToJson = JsonUtility.ToJson(itemInfoDictionary["¨¤¦â¸H¤ù"]);
-        saveEnergyDrinkInfoToJson = JsonUtility.ToJson(itemInfoDictionary["¯à¶q¶¼®Æ"]);
-        saveHpAddItemInfoToJson = JsonUtility.ToJson(itemInfoDictionary["¦å¶q¥[¦¨¹D¨ã"]);
-        savePointBounsItemInfoToJson = JsonUtility.ToJson(itemInfoDictionary["¤À¼Æ¥[¦¨¹D¨ã"]);
-        saveTrashInfoToJson = JsonUtility.ToJson(itemInfoDictionary["©U§£"]);
+        saveCharacterFragmentInfoToJson = JsonUtility.ToJson(itemInfoDictionary["è§’è‰²ç¢ç‰‡"]);
+        saveEnergyDrinkInfoToJson = JsonUtility.ToJson(itemInfoDictionary["èƒ½é‡é£²æ–™"]);
+        saveHpAddItemInfoToJson = JsonUtility.ToJson(itemInfoDictionary["è¡€é‡åŠ æˆé“å…·"]);
+        savePointBounsItemInfoToJson = JsonUtility.ToJson(itemInfoDictionary["åˆ†æ•¸åŠ æˆé“å…·"]);
+        saveTrashInfoToJson = JsonUtility.ToJson(itemInfoDictionary["åƒåœ¾"]);
 
         saveSongsInfoToJson = JsonUtility.ToJson(songsInfo);
 
 
-        //if (!Directory.Exists(savePathPC)) { Directory.CreateDirectory(savePathPC); }//PC¸ô®|¨S¦³StreamingAssets«h³Ğ«Ø¤@­Ó
+        //if (!Directory.Exists(savePathPC)) { Directory.CreateDirectory(savePathPC); }//PCè·¯å¾‘æ²’æœ‰StreamingAssetså‰‡å‰µå»ºä¸€å€‹
 
         File.WriteAllText(savePath + "/saveMyAccount.Json", saveMyAccountToJson);
-        //-------------------------------------------------------------------------------------------------¥H¤W¼g¤Jª±®a­Ó¤H±b¤á¸ê°T
+        //-------------------------------------------------------------------------------------------------ä»¥ä¸Šå¯«å…¥ç©å®¶å€‹äººå¸³æˆ¶è³‡è¨Š
         File.WriteAllText(savePath + "/saveFelbelemAliceInfo.Json", saveFelbelemAliceInfoToJson);
         File.WriteAllText(savePath + "/saveAikaAmimiInfo.Json", saveAikaAmimiInfoToJson);
         File.WriteAllText(savePath + "/saveMalibetaRoremInfo.Json", saveMalibetaRoremInfoToJson);
         File.WriteAllText(savePath + "/saveNamelessInfo.Json", saveNamelessInfoToJson);
         File.WriteAllText(savePath + "/saveShiorhaiYaiInfo.Json", saveShiorhaiYaiInfoToJson);
-        //-------------------------------------------------------------------------------------------------¥H¤W¼g¤J¨¤¦âjsonÀÉ
+        //-------------------------------------------------------------------------------------------------ä»¥ä¸Šå¯«å…¥è§’è‰²jsonæª”
         File.WriteAllText(savePath + "/saveCharacterFragmentInfo.Json", saveCharacterFragmentInfoToJson);
         File.WriteAllText(savePath + "/saveEnergyDrinkInfo.Json", saveEnergyDrinkInfoToJson);
         File.WriteAllText(savePath + "/saveHpAddItemInfo.Json", saveHpAddItemInfoToJson);
         File.WriteAllText(savePath + "/savePointBounsItemInfo.Json", savePointBounsItemInfoToJson);
         File.WriteAllText(savePath + "/saveTrashInfo.Json", saveTrashInfoToJson);
-        //-------------------------------------------------------------------------------------------------¥H¤W¼g¤JItemjsonÀÉ
+        //-------------------------------------------------------------------------------------------------ä»¥ä¸Šå¯«å…¥Itemjsonæª”
         File.WriteAllText(savePath + "/saveSongsInfo.Json", saveSongsInfoToJson);
-        //-------------------------------------------------------------------------------------------------¥H¤W¼g¤Jºq¦±¸ê°TjsonÀÉ
+        //-------------------------------------------------------------------------------------------------ä»¥ä¸Šå¯«å…¥æ­Œæ›²è³‡è¨Šjsonæª”
 
         Debug.Log("DataSave");
     }
@@ -155,6 +156,7 @@ public class SaveVseiGame : MonoBehaviour
     }
     public bool LoadGame()
     {
+        
         if (File.Exists(savePath + "/saveMyAccount.Json"))
         {
             saveMyAccountToJson = File.ReadAllText(savePath + "/saveMyAccount.Json");
@@ -172,7 +174,7 @@ public class SaveVseiGame : MonoBehaviour
             Debug.Log("Save FelbelemAlice_Data Already");
             dataSO = Resources.Load<CharactersInfo>("CharacterScriptObjsInfo/FelbelemAlice");
             JsonUtility.FromJsonOverwrite(saveFelbelemAliceInfoToJson, dataSO);
-            charInfoDictionary["µáº¸¨©­Û¡Eªü²úµ·"] = dataSO;
+            charInfoDictionary["è²çˆ¾è²å€«â€§é˜¿è‰çµ²"] = dataSO;
         }
         if (File.Exists(savePath + "/saveAikaAmimiInfo.Json"))
         {
@@ -181,7 +183,7 @@ public class SaveVseiGame : MonoBehaviour
             Debug.Log("Save AikaAmimi_Data Already");
             dataSO = Resources.Load<CharactersInfo>("CharacterScriptObjsInfo/AikaAmimi");
             JsonUtility.FromJsonOverwrite(saveAikaAmimiInfoToJson, dataSO);
-            charInfoDictionary["¦ã¥d¡Eªü¦Ì¦Ì"] = dataSO;
+            charInfoDictionary["è‰¾å¡â€§é˜¿ç±³ç±³"] = dataSO;
         }
         if (File.Exists(savePath + "/saveMalibetaRoremInfo.Json"))
         {
@@ -190,7 +192,7 @@ public class SaveVseiGame : MonoBehaviour
             Debug.Log("Save MalibetaRorem_Data Already");
             dataSO = Resources.Load<CharactersInfo>("CharacterScriptObjsInfo/MalibetaRorem");
             JsonUtility.FromJsonOverwrite(saveFelbelemAliceInfoToJson, dataSO);
-            charInfoDictionary["º¿²ú¨©¶ğ¡EÅÚ­Û"] = dataSO;
+            charInfoDictionary["ç‘ªè‰è²å¡”â€§è˜¿å€«"] = dataSO;
         }
         if (File.Exists(savePath + "/saveNamelessInfo.Json"))
         {
@@ -199,7 +201,7 @@ public class SaveVseiGame : MonoBehaviour
             Debug.Log("Save Nameless_Data Already");
             dataSO = Resources.Load<CharactersInfo>("CharacterScriptObjsInfo/Nameless");
             JsonUtility.FromJsonOverwrite(saveNamelessInfoToJson, dataSO);
-            charInfoDictionary["µL¦W"] = dataSO;
+            charInfoDictionary["ç„¡å"] = dataSO;
         }
         if (File.Exists(savePath + "/saveShiorhaiYaiInfo.Json"))
         {
@@ -208,7 +210,7 @@ public class SaveVseiGame : MonoBehaviour
             Debug.Log("Save ShiorhaiYai_Data Already");
             dataSO = Resources.Load<CharactersInfo>("CharacterScriptObjsInfo/ShiorhaiYai");
             JsonUtility.FromJsonOverwrite(saveShiorhaiYaiInfoToJson, dataSO);
-            charInfoDictionary["¥Õ¦Ç.¨È¦ç"] = dataSO;
+            charInfoDictionary["ç™½ç°.äºè¡£"] = dataSO;
         }
         //-------------------------------------------------------------------------------------------------------------------------
         if (File.Exists(savePath + "/saveCharacterFragmentInfo.Json"))
@@ -218,7 +220,7 @@ public class SaveVseiGame : MonoBehaviour
             Debug.Log("Save CharacterFragment_Data Already");
             dataSO = Resources.Load<ItemsInfo>("ItemScriptObjsInfo/CharacterFragment");
             JsonUtility.FromJsonOverwrite(saveCharacterFragmentInfoToJson, dataSO);
-            itemInfoDictionary["¨¤¦â¸H¤ù"] = dataSO;
+            itemInfoDictionary["è§’è‰²ç¢ç‰‡"] = dataSO;
         }
         if (File.Exists(savePath + "/saveEnergyDrinkInfo.Json"))
         {
@@ -227,7 +229,7 @@ public class SaveVseiGame : MonoBehaviour
             Debug.Log("Save EnergyDrink_Data Already");
             dataSO = Resources.Load<ItemsInfo>("ItemScriptObjsInfo/EnergyDrink");
             JsonUtility.FromJsonOverwrite(saveEnergyDrinkInfoToJson, dataSO);
-            itemInfoDictionary["¯à¶q¶¼®Æ"] = dataSO;
+            itemInfoDictionary["èƒ½é‡é£²æ–™"] = dataSO;
         }
         if (File.Exists(savePath + "/saveHpAddItemInfo.Json"))
         {
@@ -236,7 +238,7 @@ public class SaveVseiGame : MonoBehaviour
             Debug.Log("Save HpAddItem_Data Already");
             dataSO = Resources.Load<ItemsInfo>("ItemScriptObjsInfo/HpAddItem");
             JsonUtility.FromJsonOverwrite(saveHpAddItemInfoToJson, dataSO);
-            itemInfoDictionary["¦å¶q¼W¥[¹D¨ã"] = dataSO;
+            itemInfoDictionary["è¡€é‡å¢åŠ é“å…·"] = dataSO;
         }
         if (File.Exists(savePath + "/savePointBounsItemInfo.Json"))
         {
@@ -245,7 +247,7 @@ public class SaveVseiGame : MonoBehaviour
             Debug.Log("Save PointBounsItem_Data Already");
             dataSO = Resources.Load<ItemsInfo>("ItemScriptObjsInfo/PointBounsItem");
             JsonUtility.FromJsonOverwrite(savePointBounsItemInfoToJson, dataSO);
-            itemInfoDictionary["¤À¼Æ¥[¦¨¹D¨ã"] = dataSO;
+            itemInfoDictionary["åˆ†æ•¸åŠ æˆé“å…·"] = dataSO;
         }
         if (File.Exists(savePath + "/saveTrashInfo.Json"))
         {
@@ -254,7 +256,7 @@ public class SaveVseiGame : MonoBehaviour
             Debug.Log("Save Trash_Data Already");
             dataSO = Resources.Load<ItemsInfo>("ItemScriptObjsInfo/Trash");
             JsonUtility.FromJsonOverwrite(saveTrashInfoToJson, dataSO);
-            itemInfoDictionary["©U§£"] = dataSO;
+            itemInfoDictionary["åƒåœ¾"] = dataSO;
         }
         //----------------------------------------------------------------------------------------------------------------------------------------------------
         if (File.Exists(savePath + "/saveSongsInfo.Json"))
@@ -285,6 +287,10 @@ public class SaveVseiGame : MonoBehaviour
         myAccount.Nameless = false;
         myAccount.ShiorhaiYai = false;
 
+        myAccount.Shachiku = false;
+        myAccount.FragmentLover = false;
+        myAccount.Salvage = false;
+
         myAccount.curCharacterUse = MyAccount.CurCharacterUse.FelbelemAlice;
 
         myAccount.EnergyDrink = 0;
@@ -293,10 +299,10 @@ public class SaveVseiGame : MonoBehaviour
         myAccount.HpAddItem = 0;
         myAccount.Trash = 0;
 
-        charInfoDictionary["µáº¸¨©­Û¡Eªü²úµ·"].charLevel = 1;
-        charInfoDictionary["¦ã¥d¡Eªü¦Ì¦Ì"].charLevel = 1;
-        charInfoDictionary["º¿²ú¨©¶ğ¡EÅÚ­Û"].charLevel = 1;
-        charInfoDictionary["µL¦W"].charLevel = 1;
-        charInfoDictionary["¥Õ¦Ç.¨È¦ç"].charLevel = 1;
+        charInfoDictionary["è²çˆ¾è²å€«â€§é˜¿è‰çµ²"].charLevel = 1;
+        charInfoDictionary["è‰¾å¡â€§é˜¿ç±³ç±³"].charLevel = 1;
+        charInfoDictionary["ç‘ªè‰è²å¡”â€§è˜¿å€«"].charLevel = 1;
+        charInfoDictionary["ç„¡å"].charLevel = 1;
+        charInfoDictionary["ç™½ç°.äºè¡£"].charLevel = 1;
     }
 }
