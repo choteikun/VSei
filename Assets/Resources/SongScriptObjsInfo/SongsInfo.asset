@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36756abb91cb5d4788bd2e09386cfc0, type: 3}
   m_Name: SongsInfo
   m_EditorClassIdentifier: 
-  songNumIs: 1
+  songNumIs: 2
   trackID: 0
+  difficultySelection: Hard

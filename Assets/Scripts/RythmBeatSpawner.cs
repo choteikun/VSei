@@ -176,50 +176,50 @@ public class RythmBeatSpawner : MonoBehaviour
             if (LineManageNormal.dataArray[curCheckIdx].BeatPosLL == "1")//按照excel上的表格位置
             {
                 //sensorSet = SensorSet.SensorLL_SetPosX;
-                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//生成節拍
+                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));//生成節拍
                 spawnTime = curTime;
             }
             if (LineManageNormal.dataArray[curCheckIdx].BeatPosL == "1")
             {
                 //sensorSet = SensorSet.SensorL_SetPosX;
-                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
+                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                 spawnTime = curTime;
             }
             if (LineManageNormal.dataArray[curCheckIdx].BeatPosR == "1")
             {
                 //sensorSet = SensorSet.SensorR_SetPosX;
-                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
+                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                 spawnTime = curTime;
             }
             if (LineManageNormal.dataArray[curCheckIdx].BeatPosRR == "1")
             {
                 //sensorSet = SensorSet.SensorRR_SetPosX;
-                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
+                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                 spawnTime = curTime;
             }
             //-----------------------------------------------------------------------------------------------------------------------------------------------------------
             if (LineManageNormal.dataArray[curCheckIdx].BeatPosLL == "2")//按照excel上的表格位置
             {
                 //sensorSet = SensorSet.SensorLL_SetPosX;
-                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//生成節拍
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));//生成節拍
                 spawnTime = curTime;
             }
             if (LineManageNormal.dataArray[curCheckIdx].BeatPosL == "2")
             {
                 //sensorSet = SensorSet.SensorL_SetPosX;
-                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                 spawnTime = curTime;
             }
             if (LineManageNormal.dataArray[curCheckIdx].BeatPosR == "2")
             {
                 //sensorSet = SensorSet.SensorR_SetPosX;
-                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                 spawnTime = curTime;
             }
             if (LineManageNormal.dataArray[curCheckIdx].BeatPosRR == "2")
             {
                 //sensorSet = SensorSet.SensorRR_SetPosX;
-                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                 spawnTime = curTime;
             }
             if ((LineManageNormal.dataArray[curCheckIdx].BeatPosLL != "1" && LineManageNormal.dataArray[curCheckIdx].BeatPosL != "1" && LineManageNormal.dataArray[curCheckIdx].BeatPosR != "1" && LineManageNormal.dataArray[curCheckIdx].BeatPosRR != "1")
@@ -233,25 +233,25 @@ public class RythmBeatSpawner : MonoBehaviour
                     case SensorSet.SensorLL_SetPosX:
 
                         //Instantiate(obstaclePrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);
-                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//生成節拍
+                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));//生成節拍
                         spawnTime = curTime;
                         break;
                     case SensorSet.SensorL_SetPosX:
 
                         //Instantiate(obstaclePrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
-                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
+                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                         spawnTime = curTime;
                         break;
                     case SensorSet.SensorR_SetPosX:
 
                         //Instantiate(obstaclePrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
-                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
+                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                         spawnTime = curTime;
                         break;
                     case SensorSet.SensorRR_SetPosX:
 
                         //Instantiate(obstaclePrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
-                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
+                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                         spawnTime = curTime;
                         break;
                     default:
@@ -270,43 +270,43 @@ public class RythmBeatSpawner : MonoBehaviour
         {
             if (LineManageHard.dataArray[curCheckIdx].BeatPosLL == "1")//按照excel上的表格位置1是一般掉落物2是特殊掉落物0是沒有
             {
-                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//生成節拍
+                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));//生成節拍
                 spawnTime = curTime;
             }
             if (LineManageHard.dataArray[curCheckIdx].BeatPosL == "1")
             {
-                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
+                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                 spawnTime = curTime;
             }
             if (LineManageHard.dataArray[curCheckIdx].BeatPosR == "1")
             {
-                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
+                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                 spawnTime = curTime;
             }
             if (LineManageHard.dataArray[curCheckIdx].BeatPosRR == "1")
             {
-                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
+                PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                 spawnTime = curTime;
             }
             //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             if (LineManageHard.dataArray[curCheckIdx].BeatPosLL == "2")
             {
-                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//生成節拍
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));//生成節拍
                 spawnTime = curTime;
             }
             if (LineManageHard.dataArray[curCheckIdx].BeatPosL == "2")
             {
-                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                 spawnTime = curTime;
             }
             if (LineManageHard.dataArray[curCheckIdx].BeatPosR == "2")
             {
-                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                 spawnTime = curTime;
             }
             if (LineManageHard.dataArray[curCheckIdx].BeatPosRR == "2")
             {
-                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
+                PoolManager.Release(specialBeatPrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                 spawnTime = curTime;
             }
             if ((LineManageHard.dataArray[curCheckIdx].BeatPosLL != "1" && LineManageHard.dataArray[curCheckIdx].BeatPosL != "1" && LineManageHard.dataArray[curCheckIdx].BeatPosR != "1" && LineManageHard.dataArray[curCheckIdx].BeatPosRR != "1")
@@ -317,19 +317,19 @@ public class RythmBeatSpawner : MonoBehaviour
                 switch (sensorSet)//分配位置
                 {
                     case SensorSet.SensorLL_SetPosX:
-                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.identity);//生成節拍
+                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorLL.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));//生成節拍
                         spawnTime = curTime;
                         break;
                     case SensorSet.SensorL_SetPosX:
-                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.identity);
+                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorL.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                         spawnTime = curTime;
                         break;
                     case SensorSet.SensorR_SetPosX:
-                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.identity);
+                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorR.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                         spawnTime = curTime;
                         break;
                     case SensorSet.SensorRR_SetPosX:
-                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.identity);
+                        PoolManager.Release(normalBeatPrefab, transform.position + new Vector3(sensorRR.transform.position.x, 0, 0), Quaternion.Euler(0, 180, 0));
                         spawnTime = curTime;
                         break;
                     default:

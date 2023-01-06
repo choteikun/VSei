@@ -49,11 +49,6 @@ public class SceneLoader : MonoBehaviour
         //AudioSourceController.PlaySE("Sounds_SE", "");
         StartCoroutine(DelayedGameScene());
     }
-    public void StoreScene()
-    {
-        //AudioSourceController.PlaySE("Sounds_SE", "");
-        StartCoroutine(DelayedStoreScene());
-    }
     public void SongSelectScene()
     {
         //AudioSourceController.PlaySE("Sounds_SE", "");
@@ -97,11 +92,6 @@ public class SceneLoader : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         SceneManager.LoadScene("GameScene");
-    }
-    IEnumerator DelayedStoreScene()
-    {
-        yield return new WaitForSeconds(0.3f);
-        SceneManager.LoadScene("StoreScene");
     }
     IEnumerator DelayedSongSelectScene()
     {

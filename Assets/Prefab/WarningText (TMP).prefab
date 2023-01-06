@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: you don't have this character, please choose again.
+  m_text: you don't have this character or your Stamina not enough !!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c786198f043bc904393a13dccba5014f, type: 2}
   m_sharedMaterial: {fileID: -3310987242563775992, guid: c786198f043bc904393a13dccba5014f,

@@ -4,11 +4,15 @@ using UnityEngine;
 using SonicBloom;
 using SonicBloom.Koreo;
 using UnityEngine.UI;
+using System.IO;
 
 public class IconDropSpawner : MonoBehaviour
 {
+    public MyAccount myAccount;
     public GameObject dropIconSpawner;
-    [Tooltip("titleµe≠±±º∏®§U®”™∫icon")]
+    [Tooltip("titleÁï´Èù¢ÊéâËêΩ‰∏ã‰æÜÁöÑiconList")]
+    public List<Image> dropIconList = new();
+    [Tooltip("titleÁï´Èù¢ÊéâËêΩ‰∏ã‰æÜÁöÑiconImages")]
     public Image[] dropIconImages;
 
     [EventID]
@@ -16,11 +20,57 @@ public class IconDropSpawner : MonoBehaviour
     public Koreography koreography;
     public List<KoreographyEvent> rhythmEvents;
 
+    string saveMyAccountToJson;
 
-
+    void Awake()
+    {
+        //dropIconList.Add(dropIconImages[0]);
+        //dropIconList.Add(dropIconImages[1]);
+        //if (myAccount.FragmentLover)
+        //{
+        //    dropIconList.Add(dropIconImages[2]);
+        //}
+        //if (myAccount.Shachiku)
+        //{
+        //    dropIconList.Add(dropIconImages[3]);
+        //}
+        //if (myAccount.Salvage)
+        //{
+        //    dropIconList.Add(dropIconImages[4]);
+        //}
+    }
     void Start()
     {
-        //¿Ú®˙koreography§Â•Û
+        if (File.Exists(Application.persistentDataPath + "/saveMyAccount.Json"))
+        {
+            saveMyAccountToJson = File.ReadAllText(Application.persistentDataPath + "/saveMyAccount.Json");
+            MyAccount dataSO;
+            Debug.Log("Save MyAccount_Data Already");
+            dataSO = Resources.Load<MyAccount>("CharacterScriptObjsInfo/MyAccount");
+            JsonUtility.FromJsonOverwrite(saveMyAccountToJson, dataSO);
+            myAccount = dataSO;
+            Debug.Log("FirstPlayer: " + myAccount.firstPlay);
+        }
+
+        dropIconList.Add(dropIconImages[0]);
+        dropIconList.Add(dropIconImages[1]);
+        if (myAccount.FragmentLover)
+        {
+            dropIconList.Add(dropIconImages[2]);
+        }
+        if (myAccount.Shachiku)
+        {
+            dropIconList.Add(dropIconImages[3]);
+        }
+        if (myAccount.Salvage)
+        {
+            dropIconList.Add(dropIconImages[4]);
+        }
+
+        Debug.Log(dropIconList.Count);
+        Debug.Log(myAccount.FragmentLover);
+
+        //Áç≤ÂèñkoreographyÊñá‰ª∂
         koreography = Koreographer.Instance.GetKoreographyAtIndex(0);
 
         rhythmEvents = koreography.GetTrackByID(eventID).GetAllEvents();
@@ -28,13 +78,9 @@ public class IconDropSpawner : MonoBehaviour
         Koreographer.Instance.RegisterForEvents(eventID, Maker);
     }
 
-    void Update()
-    {
-        
-    }
     void Maker(KoreographyEvent koreographyEvent)
     {   
         //Instantiate(DropIconImages[Random.Range(0, 2)], transform.position + new Vector3(Random.Range(-360.0f, 360.0f), 1000, 0), Quaternion.identity);
-        Instantiate(dropIconImages[Random.Range(0, 2)], transform.position + new Vector3(Random.Range(-320.0f, 320.0f), 0, 0), Quaternion.identity).transform.SetParent(dropIconSpawner.transform, false);
+        Instantiate(dropIconList[Random.Range(0, dropIconList.Count)], transform.position + new Vector3(Random.Range(-320.0f, 320.0f), 0, 0), Quaternion.identity).transform.SetParent(dropIconSpawner.transform, false);
     }
 }

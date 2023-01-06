@@ -14,10 +14,16 @@ public class GashaponPanel : MonoBehaviour
     
     public MyAccount myAccount;
     public TMP_Text playerTokenText;
+    [Tooltip("單抽價格")]
+    public int OneGashaTokens = 300;
+    [Tooltip("五抽價格")]
+    public int TenGashaTokens = 1400;
     public List<CharactersInfo> charactersInfo = new();
 
     public List<Sprite> gashaResultSprite = new();
     public List<Sprite> allSprite = new();
+
+    public Button[] buttons;
     //int gashaResultIndex;
 
     float totalCharProbability;
@@ -76,6 +82,22 @@ public class GashaponPanel : MonoBehaviour
 
     void Update()
     {
+        if(myAccount.MyToken >= OneGashaTokens)
+        {
+            buttons[0].GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            buttons[0].GetComponent<Button>().interactable = false;
+        }
+        if (myAccount.MyToken >= TenGashaTokens)
+        {
+            buttons[1].GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            buttons[1].GetComponent<Button>().interactable = false;
+        }
         playerTokenText.text = myAccount.MyToken.ToString();
     }
     public bool Probability(float percent)//比較大小確率計算
@@ -94,8 +116,8 @@ public class GashaponPanel : MonoBehaviour
             return false;
         }
     }
-    public void OneGasha()
-    {
+    public void Gasha()
+    { 
         if (Probability(totalCharProbability))//如果抽中角色
         {
             string gashaCharacter;
@@ -131,6 +153,7 @@ public class GashaponPanel : MonoBehaviour
             {
                 //抽到重覆角色時
                 Debug.Log("再接再勵");
+                myAccount.CharacterFragment += 5;
                 gashaResultSprite.Add(allSprite[5]);
             }
             else
@@ -167,30 +190,35 @@ public class GashaponPanel : MonoBehaviour
         {
             Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");//驗證用(機率加總100%所以他不應該出現)
         }
-        GameObject.Find("OneGachaCharIcon").transform.GetChild(0).GetComponent<Image>().sprite = gashaResultSprite[0];
-        if (gashaResultSprite.Count == 2)
+    }
+    public void OneGasha()
+    {
+        if (myAccount.MyToken >= OneGashaTokens)
         {
-            gashaResultSprite.Remove(gashaResultSprite[0]);
+            myAccount.MyToken -= OneGashaTokens;
+            Gasha();
+            GameObject.Find("OneGachaCharIcon").transform.GetChild(0).GetComponent<Image>().sprite = gashaResultSprite[0];
+            if (gashaResultSprite.Count == 2)
+            {
+                gashaResultSprite.Remove(gashaResultSprite[0]);
+            }
         }
     }
     public void TenGasha()
     {
-        for (int i = 0; i < 5; i++)
+        if (myAccount.MyToken >= TenGashaTokens) 
         {
-            OneGasha();
-            GameObject.Find("TenGachaCharIcon").transform.GetChild(i).GetComponent<Image>().sprite = gashaResultSprite[i];
-            if (gashaResultSprite.Count > 5)
+            myAccount.MyToken -= TenGashaTokens;
+            for (int i = 0; i < 5; i++)
             {
-                gashaResultSprite.Remove(gashaResultSprite[i]);
+                Gasha();
+                GameObject.Find("TenGachaCharIcon").transform.GetChild(i).GetComponent<Image>().sprite = gashaResultSprite[i];
+                if (gashaResultSprite.Count > 5)
+                {
+                    gashaResultSprite.Remove(gashaResultSprite[i]);
+                }
             }
         }
-        //if (gashaResultSprite.Count > 5)
-        //{
-        //    for (int j = 0; j < 5; j++)
-        //    {
-        //        gashaResultSprite.Remove(gashaResultSprite[j]);
-        //    }
-        //}
     }
     public void OneGashaPanelFadeIn()//過場
     {
@@ -209,4 +237,6 @@ public class GashaponPanel : MonoBehaviour
         MemberExpression expressionBody = (MemberExpression)memberExpression.Body;
         return expressionBody.Member.Name;
     }
+
+
 }

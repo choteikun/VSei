@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: MyAccount
   m_EditorClassIdentifier: 
   myAccountName: 
-  MyCoin: 0
-  MyToken: 0
-  stamina: 6
-  CurRythmPoint: 900
+  MyToken: 3000
+  stamina: 5
+  CurRythmPoint: 0
+  CurPerfectCount: 0
+  CurGoodCount: 0
+  CurMissCount: 0
   FelbelemAlice: 1
   AikaAmimi: 0
   MalibetaRorem: 0
@@ -25,10 +27,13 @@ MonoBehaviour:
   PointBounsItemUsing: 0
   HpAddItemUsing: 0
   tutorialClose: 0
-  firstPlay: 1
-  EnergyDrink: 50
-  CharacterFragment: 50
-  PointBounsItem: 40
-  HpAddItem: 30
-  Trash: 20
+  firstPlay: 0
+  EnergyDrink: 1
+  CharacterFragment: 1
+  PointBounsItem: 1
+  HpAddItem: 1
+  Trash: 1
+  Shachiku: 0
+  FragmentLover: 0
+  Salvage: 0
   curCharacterUse: 0

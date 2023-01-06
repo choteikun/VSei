@@ -9,14 +9,22 @@ public class MyAccount : ScriptableObject
     [Tooltip("玩家所創建的名字")]
     public string myAccountName;
 
-    [Tooltip("玩家金幣")]
-    public int MyCoin;
+    //[Tooltip("玩家金幣")]
+    //public int MyCoin;
     [Tooltip("玩家代幣")]
     public int MyToken;
     [Tooltip("玩家體力值")]
     public int stamina;
     [Tooltip("玩家當前音遊分數")]
     public int CurRythmPoint;
+    [Tooltip("玩家當前Perfect觸發次數")]
+    public int CurPerfectCount;
+    [Tooltip("玩家當前Good觸發次數")]
+    public int CurGoodCount;
+    [Tooltip("玩家當前Miss觸發次數")]
+    public int CurMissCount;
+
+
 
     [Tooltip("是否持有菲爾貝倫‧阿莉絲")]
     public bool FelbelemAlice;
@@ -50,6 +58,14 @@ public class MyAccount : ScriptableObject
     public int HpAddItem;
     [Tooltip("垃圾")]
     public int Trash;
+
+    [Tooltip("商店購買的蒐集品[社畜]")]
+    public bool Shachiku;
+    [Tooltip("商店購買的蒐集品[碎片愛好者]")]
+    public bool FragmentLover;
+    [Tooltip("商店購買的蒐集品[搶救財貨]")]
+    public bool Salvage;
+
     public enum CurCharacterUse
     {
         FelbelemAlice,
